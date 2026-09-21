@@ -22,7 +22,7 @@ export default function Amenities() {
           </div>
         ))}
       </div>
-      <button className={styles.showAllBtn}>Show all 24 amenities</button>
+      <button className={styles.showAllBtn}>Show all 50 amenities</button>
     </div>
   );
 }
