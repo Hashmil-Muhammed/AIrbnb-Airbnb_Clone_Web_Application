@@ -32,7 +32,7 @@ export default function ListingDetails() {
         </div>
         <div className={styles.gfRight}>
           <div className={styles.gfStat}>
-            <span className={styles.gfStatValue}>4.95</span>
+            <span className={styles.gfStatValue}>   4.95</span>
             <span className={styles.gfStatLabelStars}><b>★★★★★</b></span>
           </div>
           <div className={styles.gfDivider}></div>
