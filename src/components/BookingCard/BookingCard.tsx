@@ -31,25 +31,23 @@ export default function BookingCard() {
           </div>
           <button className={styles.guests} aria-label="Select number of guests">
             <span className={styles.label}>GUESTS</span>
-            <span className={styles.value}>1 guest</span>
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%'}}>
+              <span className={styles.value}>2 guests</span>
+              <svg viewBox="0 0 32 32" style={{height: 16, width: 16, fill: 'currentcolor'}}><path d="M28 9v5L16 26 4 14V9l12 12z"></path></svg>
+            </div>
           </button>
+        </div>
+
+        <div className={styles.cancellationNotice}>
+          Free cancellation before <strong>17 October</strong>
         </div>
 
         <button className={styles.reserveBtn}>Reserve</button>
         <p className={styles.disclaimer}>You won't be charged yet</p>
 
-        <div className={styles.feeBreakdown}>
-          <div className={styles.feeRow} style={{textDecoration: 'underline'}}>
-            <span className={styles.feeName}>{listing.price.currency}{listing.price.perNight} x 5 nights</span>
-            <span className={styles.feeAmount}>{listing.price.currency}{listing.price.perNight}</span>
-          </div>
-        </div>
-
-        <hr className={styles.divider} />
-
-        <div className={styles.totalRow}>
-          <span>Total before taxes</span>
-          <span>{listing.price.currency}{listing.price.perNight}</span>
+        <div className={styles.reportListing}>
+          <svg viewBox="0 0 32 32" style={{height: 16, width: 16, fill: 'currentcolor', marginRight: 8}}><path d="M28 6H17V4a2 2 0 0 0-2-2H3v28h2V18h10v2a2 2 0 0 0 2 2h11l1.15-8L28 6zm-11 2v8H5V4h10v4h11l-.85 6H17z"></path></svg>
+          <span style={{textDecoration: 'underline'}}>Report this listing</span>
         </div>
       </div>
     </div>

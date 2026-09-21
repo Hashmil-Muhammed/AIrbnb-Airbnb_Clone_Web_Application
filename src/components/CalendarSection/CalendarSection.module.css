@@ -105,15 +105,24 @@
 }
 
 .selectedStart {
-  background-color: var(--color-text-primary);
-  color: white;
-  border-radius: 50%;
+  background: linear-gradient(to right, transparent 50%, #f7f7f7 50%);
+  border-radius: 0;
 }
 
 .selectedEnd {
+  background: linear-gradient(to right, #f7f7f7 50%, transparent 50%);
+  border-radius: 0;
+}
+
+.dayInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
   background-color: var(--color-text-primary);
   color: white;
-  border-radius: 50%;
 }
 
 .footer {

@@ -13,6 +13,7 @@ import ReviewsSection from "@/components/ReviewsSection/ReviewsSection";
 import LocationSection from "@/components/LocationSection/LocationSection";
 import MeetYourHost from "@/components/MeetYourHost/MeetYourHost";
 import ThingsToKnow from "@/components/ThingsToKnow/ThingsToKnow";
+import GuestFavouriteBadge from "@/components/GuestFavouriteBadge/GuestFavouriteBadge";
 import PhotoTour from "@/components/PhotoTour/PhotoTour";
 import Lightbox from "@/components/Lightbox/Lightbox";
 import styles from "./page.module.css"; 
@@ -60,6 +61,7 @@ export default function Home() {
         </div>
 
         <CalendarSection />
+        <GuestFavouriteBadge />
         <ReviewsSection />
         <LocationSection />
         <MeetYourHost />

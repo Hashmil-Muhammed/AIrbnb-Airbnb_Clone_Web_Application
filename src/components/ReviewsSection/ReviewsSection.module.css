@@ -89,9 +89,17 @@
 .pill {
   padding: 8px 16px;
   border: 1px solid var(--color-border);
-  border-radius: 24px;
+  border-radius: var(--border-radius-full);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-primary);
+}
+
+.pillIcon {
+  color: var(--color-text-secondary);
 }
 
 /* Reviews Grid */

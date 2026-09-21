@@ -48,12 +48,12 @@ export default function CalendarSection() {
             <div className={styles.day}>16</div>
             <div className={styles.day}>17</div>
             
-            <div className={`${styles.day} ${styles.selectedStart}`}>18</div>
+            <div className={`${styles.day} ${styles.selectedStart}`}><span className={styles.dayInner}>18</span></div>
             <div className={`${styles.day} ${styles.selected}`}>19</div>
             <div className={`${styles.day} ${styles.selected}`}>20</div>
             <div className={`${styles.day} ${styles.selected}`}>21</div>
             <div className={`${styles.day} ${styles.selected}`}>22</div>
-            <div className={`${styles.day} ${styles.selectedEnd}`}>23</div>
+            <div className={`${styles.day} ${styles.selectedEnd}`}><span className={styles.dayInner}>23</span></div>
             <div className={styles.day}>24</div>
             
             <div className={styles.day}>25</div>

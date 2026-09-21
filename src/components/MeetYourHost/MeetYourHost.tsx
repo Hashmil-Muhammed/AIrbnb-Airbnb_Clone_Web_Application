@@ -14,7 +14,10 @@ export default function MeetYourHost() {
             <div className={styles.hostCardInner}>
               <div className={styles.hostAvatarSection}>
                 <div className={styles.avatarWrapper}>
-                  <Image src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150" alt="Mirashya" width={104} height={104} className={styles.avatar} />
+                  <div className={styles.avatarLogo}>
+                    <span>MIRASHYA</span>
+                    <span className={styles.logoSub}>HOMES</span>
+                  </div>
                   <div className={styles.badge}>
                     <svg viewBox="0 0 32 32" style={{height: 16, width: 16, fill: 'white'}}><path d="M16 31a15 15 0 1 1 15-15 15.02 15.02 0 0 1-15 15zm8.42-19.5L13.5 22.41l-5.91-5.91 1.41-1.42 4.5 4.5 9.5-9.5z"></path></svg>
                   </div>

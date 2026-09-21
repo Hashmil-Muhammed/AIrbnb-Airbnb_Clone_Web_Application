@@ -58,6 +58,29 @@
   object-fit: cover;
 }
 
+.avatarLogo {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  background-color: #12352F;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.logoSub {
+  font-size: 8px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
 .badge {
   position: absolute;
   bottom: 0;

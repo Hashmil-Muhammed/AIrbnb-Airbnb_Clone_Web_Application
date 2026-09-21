@@ -93,13 +93,14 @@
 
 .reserveBtn {
   width: 100%;
-  background: var(--color-brand);
+  background: linear-gradient(to right, #E61E4D 0%, #E31C5F 50%, #D70466 100%);
   color: white;
-  font-size: 16px;
-  font-weight: 600;
   padding: 14px 24px;
   border-radius: var(--border-radius-md);
-  margin-bottom: var(--spacing-md);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 16px;
   transition: opacity 0.2s ease;
 }
 
@@ -111,7 +112,16 @@
   text-align: center;
   font-size: 14px;
   color: var(--color-text-primary);
-  margin-bottom: var(--spacing-lg);
+  margin: 0 0 24px 0;
+}
+
+.cancellationNotice {
+  background-color: #f7f7f7;
+  border-radius: var(--border-radius-md);
+  padding: 12px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 14px;
 }
 
 .feeBreakdown {
@@ -144,4 +154,14 @@
   font-size: 16px;
   font-weight: 600;
   color: var(--color-text-primary);
+}
+
+.reportListing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  margin-top: 24px;
+  cursor: pointer;
 }
