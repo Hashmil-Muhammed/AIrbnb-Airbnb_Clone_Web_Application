@@ -27,8 +27,7 @@ export default function ListingDetails() {
             </div>
           </div>
           <div className={styles.gfDesc}>
-            <span className={styles.gfDescLine}>One of the most loved homes on Airbnb,</span>
-            <span className={styles.gfDescLine}>according to guests</span>
+            One of the most loved homes on Airbnb,<br/>according to guests
           </div>
         </div>
         <div className={styles.gfRight}>
