@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   gap: 8px;
-  height: 450px;
+  height: 560px;
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   margin-bottom: var(--spacing-2xl);
