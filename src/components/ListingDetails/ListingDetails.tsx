@@ -30,7 +30,6 @@ export default function ListingDetails() {
             One of the most loved homes on Airbnb,<br/>according to guests
           </div>
         </div>
-        <div></div>
         <div className={styles.gfRight}>
           <div className={styles.gfStat}>
             <span className={styles.gfStatValue}>4.95</span>
