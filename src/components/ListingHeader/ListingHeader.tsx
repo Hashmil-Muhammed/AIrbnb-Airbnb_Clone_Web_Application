@@ -6,6 +6,7 @@ import { listing } from '@/data/listing';
 export default function ListingHeader() {
   return (
     <div className={styles.header}>
+      <br />
       <h1 className={styles.title}>{listing.title}</h1>
       
       <div className={styles.actions}>
