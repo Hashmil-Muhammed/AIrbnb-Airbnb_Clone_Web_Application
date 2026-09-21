@@ -25,15 +25,8 @@
   flex: 1;
 }
 
-.logoIcon {
-  transform: rotate(-45deg); /* To make it look a bit more abstract/directional */
+.logo svg {
   fill: var(--color-brand);
-}
-
-.logoText {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
 }
 
 /* Search Bar */

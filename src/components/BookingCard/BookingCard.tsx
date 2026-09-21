@@ -15,13 +15,6 @@ export default function BookingCard() {
           <div className={styles.price}>
             <span className={styles.currency}>{listing.price.currency}</span>
             <span className={styles.amount}>{listing.price.perNight}</span>
-            <span className={styles.night}> night</span>
-          </div>
-          <div className={styles.reviews}>
-            <Star size={14} fill="currentColor" />
-            <span className={styles.rating}>{listing.rating}</span>
-            <span className={styles.dot}>·</span>
-            <span className={styles.reviewsCount}>{listing.reviewsCount} reviews</span>
           </div>
         </div>
 
@@ -29,11 +22,11 @@ export default function BookingCard() {
           <div className={styles.dates}>
             <button className={styles.checkin} aria-label="Select check-in date">
               <span className={styles.label}>CHECK-IN</span>
-              <span className={styles.value}>Add date</span>
+              <span className={styles.value}>10/18/2026</span>
             </button>
             <button className={styles.checkout} aria-label="Select check-out date">
               <span className={styles.label}>CHECKOUT</span>
-              <span className={styles.value}>Add date</span>
+              <span className={styles.value}>10/23/2026</span>
             </button>
           </div>
           <button className={styles.guests} aria-label="Select number of guests">
@@ -46,17 +39,9 @@ export default function BookingCard() {
         <p className={styles.disclaimer}>You won't be charged yet</p>
 
         <div className={styles.feeBreakdown}>
-          <div className={styles.feeRow}>
+          <div className={styles.feeRow} style={{textDecoration: 'underline'}}>
             <span className={styles.feeName}>{listing.price.currency}{listing.price.perNight} x 5 nights</span>
-            <span className={styles.feeAmount}>{listing.price.currency}{listing.price.perNight * 5}</span>
-          </div>
-          <div className={styles.feeRow}>
-            <span className={styles.feeName}>Cleaning fee</span>
-            <span className={styles.feeAmount}>{listing.price.currency}{cleaningFee}</span>
-          </div>
-          <div className={styles.feeRow}>
-            <span className={styles.feeName}>Airbnb service fee</span>
-            <span className={styles.feeAmount}>{listing.price.currency}{serviceFee}</span>
+            <span className={styles.feeAmount}>{listing.price.currency}{listing.price.perNight}</span>
           </div>
         </div>
 
@@ -64,7 +49,7 @@ export default function BookingCard() {
 
         <div className={styles.totalRow}>
           <span>Total before taxes</span>
-          <span>{listing.price.currency}{total}</span>
+          <span>{listing.price.currency}{listing.price.perNight}</span>
         </div>
       </div>
     </div>

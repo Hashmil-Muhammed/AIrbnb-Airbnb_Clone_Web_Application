@@ -6,6 +6,13 @@ import ListingHeader from "@/components/ListingHeader/ListingHeader";
 import HeroGallery from "@/components/HeroGallery/HeroGallery";
 import ListingDetails from "@/components/ListingDetails/ListingDetails";
 import BookingCard from "@/components/BookingCard/BookingCard";
+import PromoCard from "@/components/PromoCard/PromoCard";
+import StickyNav from "@/components/StickyNav/StickyNav";
+import CalendarSection from "@/components/CalendarSection/CalendarSection";
+import ReviewsSection from "@/components/ReviewsSection/ReviewsSection";
+import LocationSection from "@/components/LocationSection/LocationSection";
+import MeetYourHost from "@/components/MeetYourHost/MeetYourHost";
+import ThingsToKnow from "@/components/ThingsToKnow/ThingsToKnow";
 import PhotoTour from "@/components/PhotoTour/PhotoTour";
 import Lightbox from "@/components/Lightbox/Lightbox";
 import styles from "./page.module.css"; 
@@ -33,6 +40,7 @@ export default function Home() {
   return (
     <>
       <Header />
+      <StickyNav />
       <main className="container">
         <ListingHeader />
         <HeroGallery 
@@ -44,9 +52,18 @@ export default function Home() {
             <ListingDetails />
           </div>
           <div className={styles.sidebarColumn}>
-            <BookingCard />
+            <PromoCard />
+            <div className={styles.stickyWrapper}>
+              <BookingCard />
+            </div>
           </div>
         </div>
+
+        <CalendarSection />
+        <ReviewsSection />
+        <LocationSection />
+        <MeetYourHost />
+        <ThingsToKnow />
       </main>
 
       <PhotoTour 

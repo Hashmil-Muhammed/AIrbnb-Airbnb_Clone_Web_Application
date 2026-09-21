@@ -4,121 +4,41 @@
 }
 
 .section {
-  padding: var(--spacing-xl) 0;
+  padding: 32px 0;
 }
 
-.section:first-child {
-  padding-top: 0;
-}
-
-.divider {
-  border: 0;
-  border-top: 1px solid var(--color-border);
-  margin: 0;
-}
-
-.hostHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--spacing-md);
+.summarySection {
+  padding: 0 0 32px 0;
 }
 
 .title {
   font-size: 22px;
   font-weight: 600;
-  margin-bottom: var(--spacing-sm);
+  margin: 0 0 8px 0;
   color: var(--color-text-primary);
 }
 
-.metaList {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
+.metaText {
+  font-size: 16px;
   color: var(--color-text-primary);
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
-}
-
-.dot {
-  font-weight: 700;
-}
-
-.hostAvatar {
-  width: 56px;
-  height: 56px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  overflow: hidden;
-  background-color: var(--color-border);
-}
-
-.avatarImage {
-  object-fit: cover;
-}
-
-.description {
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--color-text-primary);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.showMoreBtn {
-  font-weight: 600;
-  text-decoration: underline;
-  text-align: left;
-  align-self: flex-start;
-  margin-top: var(--spacing-sm);
-}
-
-.sectionTitle {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: var(--spacing-lg);
-}
-
-.sleepingCard {
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.bedTitle {
-  font-size: 16px;
-  font-weight: 600;
   margin: 0;
 }
 
-.bedDesc {
-  font-size: 14px;
-  color: var(--color-text-secondary);
-  margin: 0;
-}
-
+/* Guest Favourite Banner */
 .guestFavouriteBanner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 24px;
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-lg);
-  padding: 24px;
-  margin-top: 24px;
+  margin-bottom: 32px;
 }
 
 .gfLeft {
   display: flex;
   align-items: center;
   gap: 16px;
-  flex: 1;
 }
 
 .gfText {
@@ -129,7 +49,6 @@
 .gfTitle {
   font-size: 16px;
   font-weight: 600;
-  color: var(--color-text-primary);
 }
 
 .gfDesc {
@@ -140,7 +59,7 @@
 .gfRight {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
 }
 
 .gfStat {
@@ -150,27 +69,161 @@
 }
 
 .gfStatValue {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--color-text-primary);
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .gfStatLabel {
   font-size: 12px;
   color: var(--color-text-primary);
-  text-decoration: underline;
 }
 
 .gfDivider {
   width: 1px;
-  height: 32px;
+  height: 40px;
   background-color: var(--color-border);
 }
 
-@media (max-width: 744px) {
-  .guestFavouriteBanner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: var(--color-border);
+  margin: 0;
+}
+
+/* Host Section */
+.hostSection {
+  padding: 32px 0;
+}
+
+.hostHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatarImage {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hostTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.hostMeta {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Highlights */
+.highlightsSection {
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.highlightTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.highlightDesc {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Description */
+.translationNotice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f7f7f7;
+  padding: 16px;
+  border-radius: var(--border-radius-md);
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.showOriginalBtn {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.description p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+  color: var(--color-text-primary);
+}
+
+.showMoreBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Where you'll sleep */
+.sectionTitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+}
+
+.sleepingArrangements {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.sleepCard {
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sleepImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.bedTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.bedDesc {
+  font-size: 14px;
+  color: var(--color-text-primary);
+  margin: 0;
 }

@@ -1,0 +1,164 @@
+.container {
+  padding: 48px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.sectionTitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+}
+
+.content {
+  display: flex;
+  gap: 80px;
+}
+
+@media (max-width: 950px) {
+  .content {
+    flex-direction: column;
+    gap: 48px;
+  }
+}
+
+.hostCardContainer {
+  flex: 0 0 350px;
+}
+
+.hostCard {
+  background-color: white;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  display: flex;
+  justify-content: center;
+}
+
+.hostCardInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.hostAvatarSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.avatarWrapper {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  bottom: 0;
+  right: -4px;
+  background-color: #e51d53;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+.hostName {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.hostType {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hostStats {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.statBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.statValue {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.statLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.divider {
+  width: 1px;
+  background-color: var(--color-border);
+}
+
+.hostDetails {
+  flex: 1;
+}
+
+.cohostTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+}
+
+.cohostsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.cohost {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--color-text-primary);
+}
+
+.cohostAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.detailText {
+  font-size: 16px;
+  margin: 0 0 12px 0;
+}
+
+.messageBtn {
+  margin-top: 24px;
+  background-color: #222222;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}

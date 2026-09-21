@@ -2,8 +2,8 @@ export const listing = {
   id: '1',
   title: 'Romantic Jacuzzi 1BHK Candolim | Mirashya UG10',
   location: 'Candolim, Goa, India',
-  rating: 4.97,
-  reviewsCount: 33,
+  rating: 4.95,
+  reviewsCount: 19,
   host: {
     name: 'Mirashya Homes',
     image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150',
@@ -37,7 +37,7 @@ export const listing = {
     }
   ],
   price: {
-    perNight: 3500,
+    perNight: 28499,
     currency: '₹'
-  }
+  },
 };

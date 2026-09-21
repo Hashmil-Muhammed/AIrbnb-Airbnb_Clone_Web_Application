@@ -1,0 +1,146 @@
+.calendarContainer {
+  padding: 32px 0;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.dates {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.calendarsWrapper {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 744px) {
+  .calendarsWrapper {
+    flex-direction: column;
+  }
+}
+
+.month {
+  flex: 1;
+}
+
+.monthHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.monthTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+.navButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navButton:hover {
+  background: var(--color-hover);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  row-gap: 8px;
+  text-align: center;
+}
+
+.dayLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  padding-bottom: 8px;
+}
+
+.day, .dayDisabled {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.day:hover:not(.selected):not(.selectedStart):not(.selectedEnd) {
+  border: 1px solid var(--color-text-primary);
+}
+
+.dayDisabled {
+  color: #b0b0b0;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.selected {
+  background-color: #f7f7f7;
+  border-radius: 0;
+}
+
+.selectedStart {
+  background-color: var(--color-text-primary);
+  color: white;
+  border-radius: 50%;
+}
+
+.selectedEnd {
+  background-color: var(--color-text-primary);
+  color: white;
+  border-radius: 50%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.keyboardBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  color: var(--color-text-primary);
+}
+
+.keyboardBtn:hover {
+  background: var(--color-hover);
+}
+
+.clearBtn {
+  background: transparent;
+  border: none;
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}

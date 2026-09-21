@@ -1,0 +1,198 @@
+.container {
+  padding: 48px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1128px) {
+  .metricsGrid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.metricOverall {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--color-border);
+  padding-right: 16px;
+}
+
+.metricTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.barRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.bar {
+  flex: 1;
+  height: 4px;
+  background-color: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background-color: var(--color-text-primary);
+}
+
+.metricCard {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--color-border);
+  padding: 0 16px;
+}
+
+.metricCard:last-child {
+  border-right: none;
+}
+
+.metricName {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.metricValue {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Pills */
+.pillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.pill {
+  padding: 8px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Reviews Grid */
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 744px) {
+  .reviewsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.reviewCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarInitials {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.reviewerName {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.reviewerJoined {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.reviewMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.stars {
+  font-size: 10px;
+}
+
+.reviewText {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  margin: 0 0 12px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.showMoreBtn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.showAllBtn {
+  background: transparent;
+  border: 1px solid var(--color-text-primary);
+  padding: 13px 23px;
+  border-radius: var(--border-radius-md);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.showAllBtn:hover {
+  background: var(--color-hover);
+}
