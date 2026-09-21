@@ -1,0 +1,142 @@
+.header {
+  height: 80px;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-brand);
+  flex: 1;
+}
+
+.logoIcon {
+  transform: rotate(-45deg); /* To make it look a bit more abstract/directional */
+  fill: var(--color-brand);
+}
+
+.logoText {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Search Bar */
+.searchBar {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-full);
+  padding: 8px 8px 8px 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+  flex: 0 1 auto;
+}
+
+.searchBar:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.searchButton {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 16px;
+  color: var(--color-text-primary);
+}
+
+.addGuests {
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--color-border);
+}
+
+.searchIconWrapper {
+  background-color: var(--color-brand);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+}
+
+/* User Actions */
+.userActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex: 1;
+}
+
+.hostButton {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: var(--border-radius-full);
+  transition: background-color 0.2s ease;
+}
+
+.hostButton:hover {
+  background-color: var(--color-hover);
+}
+
+.globeButton {
+  padding: 12px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.globeButton:hover {
+  background-color: var(--color-hover);
+}
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-full);
+  padding: 5px 5px 5px 12px;
+  margin-left: 8px;
+  transition: box-shadow 0.2s ease;
+}
+
+.userMenu:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.userAvatar {
+  background-color: var(--color-text-secondary);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,147 @@
+.stickyWrapper {
+  position: sticky;
+  top: 120px;
+  padding-bottom: var(--spacing-xl);
+}
+
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--color-background);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--spacing-lg);
+}
+
+.price {
+  font-size: 22px;
+  color: var(--color-text-primary);
+}
+
+.amount {
+  font-weight: 600;
+}
+
+.night {
+  font-size: 16px;
+  color: var(--color-text-primary);
+}
+
+.reviews {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+.rating {
+  font-weight: 600;
+}
+
+.reviewsCount {
+  text-decoration: underline;
+  color: var(--color-text-secondary);
+}
+
+.inputs {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-md);
+  overflow: hidden;
+}
+
+.dates {
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.checkin, .checkout {
+  flex: 1;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkin {
+  border-right: 1px solid var(--color-border);
+}
+
+.guests {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.value {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.reserveBtn {
+  width: 100%;
+  background: var(--color-brand);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-md);
+  transition: opacity 0.2s ease;
+}
+
+.reserveBtn:hover {
+  opacity: 0.9;
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.feeBreakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.feeRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: var(--color-text-primary);
+}
+
+.feeName {
+  text-decoration: underline;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin-bottom: var(--spacing-lg);
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}

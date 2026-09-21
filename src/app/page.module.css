@@ -1,0 +1,27 @@
+.content {
+  display: flex;
+  gap: 8.3%;
+  margin-top: 48px;
+  position: relative;
+}
+
+.mainColumn {
+  flex: 1;
+  width: 58.333333333333336%;
+  max-width: 58.333333333333336%;
+}
+
+.sidebarColumn {
+  width: 33.33333333333333%;
+  position: relative;
+}
+
+@media (max-width: 1128px) {
+  .content {
+    flex-direction: column;
+  }
+  .mainColumn, .sidebarColumn {
+    width: 100%;
+    max-width: 100%;
+  }
+}

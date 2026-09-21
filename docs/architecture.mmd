@@ -1,0 +1,43 @@
+graph TD
+    Users((Users))
+    CDN[CDN / Edge]
+    Frontend[Frontend / Next.js]
+    Gateway[API Gateway]
+    
+    subgraph Service Layer
+        ListingService[Listing Service]
+        SearchService[Search Service]
+        BookingService[Booking Service]
+        UserService[User Service]
+        ReviewService[Review Service]
+        PaymentService[Payment Service]
+    end
+    
+    subgraph Data Layer
+        DB[(PostgreSQL)]
+        Cache[(Redis Cache)]
+        SearchIdx[(Search Index)]
+        Storage[(Object Storage)]
+    end
+    
+    Users -->|Requests| CDN
+    CDN -->|Static Assets & Cached pages| Users
+    CDN -->|Dynamic Requests| Frontend
+    Frontend -->|API Calls| Gateway
+    
+    Gateway --> ListingService
+    Gateway --> SearchService
+    Gateway --> BookingService
+    Gateway --> UserService
+    Gateway --> ReviewService
+    Gateway --> PaymentService
+    
+    ListingService --> DB
+    ListingService --> Cache
+    SearchService --> SearchIdx
+    BookingService --> DB
+    UserService --> DB
+    ReviewService --> DB
+    PaymentService --> DB
+    
+    Storage -->|Images & Media| CDN
