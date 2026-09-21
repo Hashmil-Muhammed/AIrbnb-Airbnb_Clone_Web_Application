@@ -6,7 +6,7 @@ import styles from './Header.module.css';
 export default function Header() {
   return (
     <header className={styles.header}>
-      <div className={`container ${styles.headerContainer}`}>
+      <div className={styles.headerContainer}>
         
         {/* Logo */}
         <div className={styles.logoWrapper}>
