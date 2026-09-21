@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px;
+  padding: 24px 32px;
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-xl);
   margin-bottom: 32px;
@@ -38,38 +38,38 @@
 .gfLeft {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 32px;
 }
 
 .gfBadge {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
 .laurel {
-  height: 44px;
-  width: 28px;
+  height: 48px;
+  width: 30px;
 }
 
 .gfTitle {
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 700;
   text-align: center;
   line-height: 1.1;
 }
 
 .gfDesc {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 500;
   color: var(--color-text-primary);
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 .gfRight {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
 }
 
 .gfStat {
@@ -86,15 +86,15 @@
 }
 
 .gfStatLabelStars {
-  font-size: 12px;
-  font-weight: 900;
+  font-size: 13px;
+  font-weight: 800;
   color: var(--color-text-primary);
   letter-spacing: 3px;
 }
 
 .gfStatLabelUnderline {
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: underline;
   cursor: pointer;
   color: var(--color-text-primary);
