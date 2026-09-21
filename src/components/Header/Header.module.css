@@ -50,6 +50,17 @@
   font-weight: 600;
   padding: 0 16px;
   color: var(--color-text-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.houseIcon {
+  width: 16px;
+  height: 16px;
 }
 
 .addGuests {
@@ -63,16 +74,18 @@
   background-color: var(--color-border);
 }
 
-.searchIconWrapper {
+.searchIconBtn {
   background-color: var(--color-brand);
   color: white;
   width: 32px;
   height: 32px;
   border-radius: 50%;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: 8px;
+  cursor: pointer;
 }
 
 /* User Actions */
@@ -90,46 +103,29 @@
   padding: 12px;
   border-radius: var(--border-radius-full);
   transition: background-color 0.2s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-primary);
 }
 
 .hostButton:hover {
   background-color: var(--color-hover);
 }
 
-.globeButton {
-  padding: 12px;
+.globeButton, .menuButton {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  transition: background-color 0.2s ease;
+  background-color: #f7f7f7;
+  border: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--color-text-primary);
 }
 
-.globeButton:hover {
-  background-color: var(--color-hover);
-}
-
-.userMenu {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-full);
-  padding: 5px 5px 5px 12px;
-  margin-left: 8px;
-  transition: box-shadow 0.2s ease;
-}
-
-.userMenu:hover {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
-}
-
-.userAvatar {
-  background-color: var(--color-text-secondary);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.globeButton:hover, .menuButton:hover {
+  background-color: #ebebeb;
 }
