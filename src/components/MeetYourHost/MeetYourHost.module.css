@@ -36,8 +36,8 @@
 
 .hostCardInner {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -45,7 +45,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 24px;
+  justify-content: center;
 }
 
 .avatarWrapper {
@@ -96,29 +96,39 @@
 }
 
 .hostName {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 600;
   letter-spacing: -0.5px;
+  line-height: 1.1;
+  margin-top: 12px;
+}
+
+.hostNameSecondary {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
 }
 
 .hostType {
   font-size: 14px;
   font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  color: var(--color-text-secondary);
+  margin-top: 8px;
 }
 
 .hostStats {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
 }
 
 .statBox {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 4px;
 }
 
 .statValue {
@@ -133,8 +143,24 @@
 }
 
 .divider {
-  width: 1px;
+  width: 100%;
+  height: 1px;
   background-color: var(--color-border);
+}
+
+.hostInfoList {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 16px;
+  color: var(--color-text-primary);
 }
 
 .hostDetails {
@@ -149,7 +175,7 @@
 
 .cohostsGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
   margin-bottom: 32px;
 }
@@ -169,6 +195,17 @@
   object-fit: cover;
 }
 
+.cohostAvatarInitials {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+
 .detailText {
   font-size: 16px;
   margin: 0 0 12px 0;
@@ -176,12 +213,22 @@
 
 .messageBtn {
   margin-top: 24px;
-  background-color: #222222;
-  color: white;
+  background-color: #f7f7f7;
+  color: #222222;
   border: none;
   padding: 14px 24px;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.paymentProtection {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 32px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
 }
