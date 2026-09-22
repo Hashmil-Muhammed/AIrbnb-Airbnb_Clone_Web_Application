@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 import styles from './ListingDetails.module.css';
@@ -7,6 +8,7 @@ import Amenities from '../Amenities/Amenities';
 import mirashyaLogo from '../../../public/mirashya-homes-logo.png';
 
 export default function ListingDetails() {
+  const [isExpanded, setIsExpanded] = useState(false);
   return (
     <div className={styles.container}>
       
@@ -98,10 +100,13 @@ export default function ListingDetails() {
           <span>Some info has been automatically translated. <button className={styles.showOriginalBtn}>Show original</button></span>
         </div>
         <div className={styles.description}>
-          <div className={styles.fullText}>
+          <div className={isExpanded ? styles.fullText : styles.truncatedText}>
             <p>🌴 Plan Your Relaxing Holiday at Amor De Goa by Mirashya Homes! ✨ Stay in this cozy 1BHK in the heart of Candolim, featuring a private jacuzzi 🛁 for the perfect unwind. Enjoy high-speed WiFi 💻, Smart TV 📺, pet-friendly comfort 🐾, and stylish interiors. Just minutes from Candolim Beach 🏖️, popular cafés, restaurants, and nightlife 🍹, it’s ideal for couples seeking romance, relaxation, and a touch of luxury in North Goa. ❤️🌴</p>
           </div>
-          <button className={styles.showMoreBtn}><span style={{textDecoration: 'underline'}}>Show less</span> <ChevronRight size={18} strokeWidth={2} /></button>
+          <button className={styles.showMoreBtn} onClick={() => setIsExpanded(!isExpanded)}>
+            <span style={{textDecoration: 'underline'}}>{isExpanded ? 'Show less' : 'Show more'}</span> 
+            <ChevronRight size={18} strokeWidth={2} style={{transform: isExpanded ? 'rotate(-90deg)' : 'none', transition: 'transform 0.2s ease'}} />
+          </button>
         </div>
       </section>
 
