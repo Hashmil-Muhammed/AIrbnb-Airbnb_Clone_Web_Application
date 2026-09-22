@@ -1,6 +1,7 @@
 .container {
   padding: 48px 0;
   border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .sectionTitle {
@@ -35,21 +36,21 @@
 .columnTitle {
   font-size: 16px;
   font-weight: 600;
-  margin: 0 0 16px 0;
-}
-
-.textItem {
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--color-text-primary);
   margin: 0 0 12px 0;
 }
 
+.textItem {
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+  margin: 0 0 10px 0;
+}
+
 .learnMoreLink {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--color-text-primary);
   text-decoration: underline;
-  margin-top: 4px;
+  margin-top: 6px;
   cursor: pointer;
 }
