@@ -175,7 +175,7 @@
 
 .stars {
   font-size: 10px;
-  font-weight: 300;
+  font-weight: bold;
 }
 
 .reviewText {
@@ -197,8 +197,8 @@
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
-  display: block;
-  margin: 8px auto 0;
+  display: inline-block;
+  margin: 4px 0 0 0;
 }
 
 .showAllBtn {
