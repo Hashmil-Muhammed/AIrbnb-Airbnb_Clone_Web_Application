@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px;
+  padding: 20px 24px;
   border: 1px solid #dddddd;
   border-radius: 12px;
   margin-bottom: 24px;
@@ -12,7 +12,7 @@
 .contentLeft {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .iconContainer {
@@ -27,7 +27,7 @@
 
 .title {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
   color: #222222;
 }
@@ -38,15 +38,16 @@
   color: #222222;
   margin: 4px 0 0 0;
   text-decoration: underline;
+  text-underline-offset: 2px;
   cursor: pointer;
 }
 
 .claimButton {
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   background-color: #f7f7f7;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: #222222;
   cursor: pointer;
