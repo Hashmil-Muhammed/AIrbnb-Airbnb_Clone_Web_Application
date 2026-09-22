@@ -101,10 +101,10 @@ export default function CalendarSection() {
             <div className={styles.day}>15</div>
             <div className={styles.day}>16</div>
             <div className={styles.day}>17</div>
-            <div className={styles.day}>18</div>
-            <div className={styles.day}>19</div>
-            <div className={styles.day}>20</div>
-            <div className={styles.day}>21</div>
+            <div className={styles.dayDisabled}>18</div>
+            <div className={styles.dayDisabled}>19</div>
+            <div className={styles.dayDisabled}>20</div>
+            <div className={styles.dayDisabled}>21</div>
             
             <div className={styles.dayDisabled}>22</div>
             <div className={styles.dayDisabled}>23</div>
