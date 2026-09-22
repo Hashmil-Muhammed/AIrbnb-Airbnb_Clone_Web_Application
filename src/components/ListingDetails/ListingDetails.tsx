@@ -95,7 +95,6 @@ export default function ListingDetails() {
       {/* Description */}
       <section className={styles.section}>
         <div className={styles.translationNotice}>
-          <svg viewBox="0 0 16 16" style={{display: 'block', height: '16px', width: '16px', fill: 'currentcolor'}}><path d="M8.5 2a6 6 0 1 1-6 6 6 6 0 0 1 6-6zm0 1.5a4.5 4.5 0 1 0 4.5 4.5 4.5 4.5 0 0 0-4.5-4.5zM8 4h1v3H8V4zm0 4h1v1.5H8V8z"></path></svg>
           <span>Some info has been automatically translated. <button className={styles.showOriginalBtn}>Show original</button></span>
         </div>
         <div className={styles.description}>
