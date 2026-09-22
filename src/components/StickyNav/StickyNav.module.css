@@ -65,6 +65,12 @@
   align-items: flex-end;
 }
 
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
 .price {
   font-weight: 600;
   font-size: 16px;
@@ -73,6 +79,7 @@
 .night {
   font-size: 14px;
   color: var(--color-text-primary);
+  font-weight: 400;
 }
 
 .rating {
@@ -84,8 +91,8 @@
   background: var(--color-brand);
   color: white;
   border: none;
-  border-radius: var(--border-radius-md);
-  padding: 14px 24px;
+  border-radius: 8px;
+  padding: 12px 24px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
