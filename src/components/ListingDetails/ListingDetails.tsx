@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { ChevronRight } from 'lucide-react';
 import styles from './ListingDetails.module.css';
 import { listing } from '@/data/listing';
 import Amenities from '../Amenities/Amenities';
@@ -44,7 +45,6 @@ export default function ListingDetails() {
         </div>
       </section>
 
-      <hr className={styles.divider} />
 
       {/* Host Section */}
       <section className={styles.hostSection}>
@@ -98,9 +98,10 @@ export default function ListingDetails() {
           <span>Some info has been automatically translated. <button className={styles.showOriginalBtn}>Show original</button></span>
         </div>
         <div className={styles.description}>
-          <p>🌴 Plan Your Relaxing Holiday at Amor De Goa by Mirashya Homes! ✨ Stay in this cozy 1BHK in the heart of Candolim, featuring a private jacuzzi 🛁 for the perfect unwind. Enjoy high-speed WiFi 💻, Smart TV 📺, pet-friendly comfort 🐾, and stylish interiors.</p>
-          <p>Just minutes from Candolim Beach 🏖️, popular cafés, restaurants, and nightlife 🍹, it's...</p>
-          <button className={styles.showMoreBtn}>Show more &gt;</button>
+          <div className={styles.truncatedText}>
+            <p>🌴 Plan Your Relaxing Holiday at Amor De Goa by Mirashya Homes! ✨ Stay in this cozy 1BHK in the heart of Candolim, featuring a private jacuzzi 🛁 for the perfect unwind. Enjoy high-speed WiFi 💻, Smart TV 📺, pet-friendly comfort 🐾, and stylish interiors.<br/>Just minutes from Candolim Beach 🏖️, popular cafés, restaurants, and nightlife 🍹, it's</p>
+          </div>
+          <button className={styles.showMoreBtn}><span style={{textDecoration: 'underline'}}>Show more</span> <ChevronRight size={18} strokeWidth={2} /></button>
         </div>
       </section>
 
