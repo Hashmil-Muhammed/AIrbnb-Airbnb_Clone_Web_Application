@@ -27,10 +27,10 @@
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: #e5e3df; /* Map background */
+  background-color: #e8eedb; /* Light green for land */
   background-image: 
-    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
   background-size: 80px 80px;
 }
 
@@ -39,39 +39,37 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 40%;
-  background-color: #aad3df;
-  transform: skewX(-20deg);
+  width: 35%;
+  background-color: #a1d0eb; /* Light blue water */
+  transform: skewX(-15deg);
   transform-origin: bottom left;
+  border-right: 1px solid rgba(0,0,0,0.03);
 }
 
 .landArea {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 60%;
-  background-color: #e5f2e5; /* Light green for land */
+  display: none;
 }
 
 .circle1 {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: rgba(162, 218, 162, 0.5);
+  width: 140px;
+  height: 140px;
+  background-color: #c2e0b5;
+  opacity: 0.8;
   border-radius: 50%;
   top: 30%;
-  left: 30%;
+  left: 25%;
 }
 
 .circle2 {
   position: absolute;
-  width: 120px;
-  height: 120px;
-  background-color: rgba(162, 218, 162, 0.5);
+  width: 180px;
+  height: 180px;
+  background-color: #c2e0b5;
+  opacity: 0.8;
   border-radius: 50%;
-  top: 50%;
-  right: 20%;
+  top: 45%;
+  right: 15%;
 }
 
 .marker {
@@ -92,15 +90,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border: 3px solid white;
 }
 
 .searchBtn {
   position: absolute;
   top: 24px;
   left: 24px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background: white;
   border: none;
   border-radius: 50%;
@@ -124,14 +123,15 @@
 }
 
 .zoomBtn {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background: transparent;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: #222222;
 }
 
 .zoomBtn:hover {
