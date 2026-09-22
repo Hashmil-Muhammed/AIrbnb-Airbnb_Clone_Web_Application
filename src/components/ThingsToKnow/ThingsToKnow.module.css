@@ -27,41 +27,29 @@
   align-items: flex-start;
 }
 
+.iconWrapper {
+  margin-bottom: 16px;
+  color: var(--color-text-primary);
+}
+
 .columnTitle {
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 16px 0;
 }
 
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 16px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.list li {
-  font-size: 16px;
-  color: var(--color-text-primary);
-}
-
-.policyText {
+.textItem {
   font-size: 16px;
   line-height: 1.5;
   color: var(--color-text-primary);
-  margin: 0 0 16px 0;
+  margin: 0 0 12px 0;
 }
 
-.showMoreBtn {
-  background: none;
-  border: none;
-  padding: 0;
+.learnMoreLink {
   font-size: 16px;
   font-weight: 600;
-  text-decoration: underline;
-  cursor: pointer;
   color: var(--color-text-primary);
-  margin-top: auto;
+  text-decoration: underline;
+  margin-top: 4px;
+  cursor: pointer;
 }
