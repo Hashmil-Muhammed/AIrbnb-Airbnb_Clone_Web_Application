@@ -162,11 +162,12 @@
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 4px 0;
+  color: #222222;
 }
 
 .highlightDesc {
   font-size: 14px;
-  color: var(--color-text-secondary);
+  color: #717171;
   margin: 0;
 }
 
