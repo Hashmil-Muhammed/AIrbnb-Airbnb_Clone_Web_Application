@@ -4,9 +4,9 @@
 }
 
 .sectionTitle {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
-  margin: 0 0 20px 0;
+  margin: 0 0 24px 0;
 }
 
 .content {
@@ -60,26 +60,10 @@
 }
 
 .avatarLogo {
-  width: 104px;
-  height: 104px;
+  width: 112px;
+  height: 112px;
   border-radius: 50%;
-  background-color: #12352F;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: serif;
-  font-size: 16px;
-  letter-spacing: 1px;
-}
-
-.logoSub {
-  font-size: 8px;
-  font-family: sans-serif;
-  letter-spacing: 2px;
-  opacity: 0.8;
-  margin-top: 2px;
+  object-fit: cover;
 }
 
 .badge {
@@ -98,15 +82,15 @@
 }
 
 .hostName {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 500;
   letter-spacing: -0.5px;
   line-height: 1.1;
-  margin-top: 8px;
+  margin-top: 12px;
 }
 
 .hostNameSecondary {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 500;
   letter-spacing: -0.5px;
   line-height: 1.1;
@@ -122,16 +106,16 @@
 .verticalDivider {
   width: 1px;
   background-color: var(--color-border);
-  margin: 0 16px;
+  margin: 0 24px;
   flex-shrink: 0;
 }
 
 .hostStats {
-  flex: 1;
+  flex: 0 0 110px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .statBox {
