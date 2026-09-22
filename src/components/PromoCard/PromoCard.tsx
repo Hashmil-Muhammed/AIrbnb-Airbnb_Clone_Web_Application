@@ -6,7 +6,7 @@ export default function PromoCard() {
     <div className={styles.card}>
       <div className={styles.contentLeft}>
         <div className={styles.iconContainer}>
-          <img src="/discount.svg" alt="Discount" style={{ display: 'block', height: '36px', width: '36px' }} />
+          <img src="/discount.svg" alt="Discount" style={{ display: 'block', height: '28px', width: '28px' }} />
         </div>
         <div className={styles.textContainer}>
           <p className={styles.title}>Get 10% off your next stay.</p>
