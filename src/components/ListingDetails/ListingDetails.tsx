@@ -102,16 +102,12 @@ export default function ListingDetails() {
         <div className={styles.description}>
           <div className={isExpanded ? styles.fullText : styles.truncatedText}>
             <p>
-              🌴 Plan Your Relaxing Holiday at Amor De Goa by Mirashya Homes! ✨ Stay in this cozy<br />
-              1BHK in the heart of Candolim, featuring a private jacuzzi 🛁 for the perfect unwind.<br />
-              Enjoy high-speed WiFi 💻, Smart TV 📺, pet-friendly comfort 🐾, and stylish interiors.<br />
-              Just minutes from Candolim Beach 🏖️, popular cafés, restaurants, and nightlife 🍹, it’s<br />
-              ideal for couples seeking romance, relaxation, and a touch of luxury in North Goa. ❤️🌴
+              🌴 Plan Your Relaxing Holiday at Amor De Goa by Mirashya Homes! ✨ Stay in this cozy 1BHK in the heart of Candolim, featuring a private jacuzzi 🛁 for the perfect unwind. Enjoy high-speed WiFi 💻, Smart TV 📺, pet-friendly comfort 🐾, and stylish interiors. Just minutes from Candolim Beach 🏖️, popular cafés, restaurants, and nightlife 🍹, it’s ideal for couples seeking romance, relaxation, and a touch of luxury in North Goa. ❤️🌴
             </p>
           </div>
           <button className={styles.showMoreBtn} onClick={() => setIsExpanded(!isExpanded)}>
             <span style={{textDecoration: 'underline'}}>{isExpanded ? 'Show less' : 'Show more'}</span> 
-            <ChevronRight size={18} strokeWidth={2} style={{transform: isExpanded ? 'rotate(-90deg)' : 'none', transition: 'transform 0.2s ease'}} />
+            <ChevronRight size={18} strokeWidth={2} />
           </button>
         </div>
       </section>
