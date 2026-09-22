@@ -142,8 +142,6 @@ export default function ListingDetails() {
         <h2 className={styles.sectionTitle}>What this place offers</h2>
         <Amenities />
       </section>
-
-      <hr className={styles.divider} />
       
     </div>
   );

@@ -1,5 +1,14 @@
 .calendarContainer {
   padding: 32px 0;
+  width: 58.333333333333336%;
+  max-width: 58.333333333333336%;
+}
+
+@media (max-width: 1128px) {
+  .calendarContainer {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .header {
@@ -79,7 +88,7 @@
 }
 
 .day, .dayDisabled {
-  height: 48px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,8 +127,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: var(--color-text-primary);
   color: white;
