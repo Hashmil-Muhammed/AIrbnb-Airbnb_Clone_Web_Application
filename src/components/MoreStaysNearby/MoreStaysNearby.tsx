@@ -43,21 +43,21 @@ const stays = [
     title: 'Kanso by Earthen Window | Jacuzzi | Terrace | Pool',
     price: '₹45,648',
     rating: '5.0',
-    image: 'https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+    image: '/assets/images/more_stays/6.png'
   },
   {
     id: 7,
     title: 'Luxury Apt | Private Pool | 6 Mins from Beach',
     price: '₹48,786',
     rating: '4.93',
-    image: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+    image: '/assets/images/more_stays/7.png'
   },
   {
     id: 8,
     title: 'Serendipity Cottage - Calm Stay in Calangute-Baga.',
     price: '₹22,824',
     rating: '4.92',
-    image: 'https://images.unsplash.com/photo-1522771731478-44eb10e5c80c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+    image: '/assets/images/more_stays/8.png'
   }
 ];
 
