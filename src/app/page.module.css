@@ -25,3 +25,8 @@
     max-width: 100%;
   }
 }
+
+.stickyWrapper {
+  position: sticky;
+  top: 120px;
+}

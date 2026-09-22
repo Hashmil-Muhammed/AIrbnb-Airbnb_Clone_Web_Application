@@ -1,7 +1,5 @@
 .calendarContainer {
   padding: 32px 0;
-  width: 58.333333333333336%;
-  max-width: 58.333333333333336%;
 }
 
 @media (max-width: 1128px) {

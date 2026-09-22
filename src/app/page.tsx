@@ -51,6 +51,12 @@ export default function Home() {
         <div className={styles.content}>
           <div className={styles.mainColumn}>
             <ListingDetails />
+            <CalendarSection />
+            <GuestFavouriteBadge />
+            <ReviewsSection />
+            <LocationSection />
+            <MeetYourHost />
+            <ThingsToKnow />
           </div>
           <div className={styles.sidebarColumn}>
             <PromoCard />
@@ -59,13 +65,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        <CalendarSection />
-        <GuestFavouriteBadge />
-        <ReviewsSection />
-        <LocationSection />
-        <MeetYourHost />
-        <ThingsToKnow />
       </main>
 
       <PhotoTour 
