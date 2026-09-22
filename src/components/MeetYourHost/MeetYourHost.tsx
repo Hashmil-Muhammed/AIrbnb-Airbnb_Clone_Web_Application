@@ -15,12 +15,9 @@ export default function MeetYourHost() {
             <div className={styles.hostCardInner}>
               <div className={styles.hostAvatarSection}>
                 <div className={styles.avatarWrapper}>
-                  <div className={styles.avatarLogo}>
-                    <span>MIRASHIYA</span>
-                    <span className={styles.logoSub}>HOMES</span>
-                  </div>
+                  <img src="/assets/images/avatars/mirashya_logo.png" className={styles.avatarLogo} alt="Mirashya Homes" />
                   <div className={styles.badge}>
-                    <svg viewBox="0 0 32 32" style={{height: 16, width: 16, fill: 'none', stroke: 'white', strokeWidth: 4}}><circle cx="16" cy="16" r="8"></circle></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{display: 'block', height: '100%', width: '100%', fill: 'currentColor'}}><path d="M16 1a15 15 0 1 1 0 30 15 15 0 0 1 0-30zm0 2a13 13 0 1 0 0 26 13 13 0 0 0 0-26zm7 7.59L24.41 12 13.5 22.91 7.59 17 9 15.59l4.5 4.5z"></path></svg>
                   </div>
                 </div>
                 <div className={styles.hostName}>Mirashya</div>
@@ -28,6 +25,8 @@ export default function MeetYourHost() {
                 <div className={styles.hostType}>Host</div>
               </div>
               
+              <div className={styles.verticalDivider}></div>
+
               <div className={styles.hostStats}>
                 <div className={styles.statBox}>
                   <span className={styles.statValue}>1,463</span>
@@ -64,35 +63,35 @@ export default function MeetYourHost() {
           <h3 className={styles.cohostTitle}>Co-Hosts</h3>
           <div className={styles.cohostsGrid}>
             <div className={styles.cohost}>
-              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=50&h=50" className={styles.cohostAvatar} />
+              <img src="/assets/images/avatars/sharath.png" className={styles.cohostAvatar} alt="Sharath" />
               <span>Sharath</span>
             </div>
             <div className={styles.cohost}>
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=50&h=50" className={styles.cohostAvatar} />
+              <img src="/assets/images/avatars/aman.png" className={styles.cohostAvatar} alt="Aman Dev Pahwa" />
               <span>Aman Dev Pahwa</span>
             </div>
             <div className={styles.cohost}>
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=50&h=50" className={styles.cohostAvatar} />
+              <img src="/assets/images/avatars/maria.png" className={styles.cohostAvatar} alt="Maria Karen Priyanka" />
               <span>Maria Karen Priyanka</span>
             </div>
             <div className={styles.cohost}>
-              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=50&h=50" className={styles.cohostAvatar} />
+              <img src="/assets/images/avatars/simran.png" className={styles.cohostAvatar} alt="Simran" />
               <span>Simran</span>
             </div>
             <div className={styles.cohost}>
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=50&h=50" className={styles.cohostAvatar} />
+              <img src="/assets/images/avatars/aheesh.png" className={styles.cohostAvatar} alt="Pallavi" />
               <span>Pallavi</span>
             </div>
             <div className={styles.cohost}>
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=50&h=50" className={styles.cohostAvatar} />
+              <img src="/assets/images/avatars/samiksha.png" className={styles.cohostAvatar} alt="Sanyukta" />
               <span>Sanyukta</span>
             </div>
             <div className={styles.cohost}>
-              <div className={styles.cohostAvatarInitials} style={{backgroundColor: '#FFE1E8', color: '#E51D53'}}>S</div>
+              <div className={styles.cohostAvatarInitials} style={{background: 'rgb(253, 231, 239)', color: 'rgb(212, 53, 110)'}}>S</div>
               <span>Shruti</span>
             </div>
             <div className={styles.cohost}>
-              <div className={styles.cohostAvatarInitials} style={{backgroundColor: '#E0F0FF', color: '#0066CC'}}>A</div>
+              <div className={styles.cohostAvatarInitials} style={{background: 'rgb(231, 240, 253)', color: 'rgb(58, 110, 204)'}}>A</div>
               <span>Amisha</span>
             </div>
           </div>
