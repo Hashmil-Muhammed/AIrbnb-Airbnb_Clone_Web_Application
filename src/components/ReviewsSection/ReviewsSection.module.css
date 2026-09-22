@@ -81,12 +81,21 @@
 /* Pills */
 .pillsList {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 12px;
   margin-bottom: 48px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.pillsList::-webkit-scrollbar {
+  display: none;
 }
 
 .pill {
+  flex-shrink: 0;
   padding: 8px 16px;
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-full);

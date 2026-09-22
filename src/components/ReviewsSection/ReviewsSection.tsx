@@ -111,11 +111,11 @@ export default function ReviewsSection() {
         <div className={styles.pill}><Image src="/assets/images/ui/hottub.png" alt="Hot tub" width={16} height={16} className={styles.pillIcon} /> Hot tub 5</div>
         <div className={styles.pill}><Image src="/assets/images/ui/condition.png" alt="Condition" width={16} height={16} className={styles.pillIcon} /> Condition 4</div>
         <div className={styles.pill}><Image src="/assets/images/ui/hospitality.png" alt="Hospitality" width={16} height={16} className={styles.pillIcon} /> Hospitality 8</div>
-        <div className={styles.pill}><SprayCan size={16} className={styles.pillIcon} /> Cleanliness 4</div>
-        <div className={styles.pill}><Grid size={16} className={styles.pillIcon} /> Amenities 2</div>
-        <div className={styles.pill}>Decor 2</div>
-        <div className={styles.pill}>Indoor spaces 2</div>
-        <div className={styles.pill}>Location 2</div>
+        <div className={styles.pill}><Image src="/assets/images/ui/cleanliness.png" alt="Cleanliness" width={16} height={16} className={styles.pillIcon} /> Cleanliness 4</div>
+        <div className={styles.pill}><Image src="/assets/images/ui/amenities.png" alt="Amenities" width={16} height={16} className={styles.pillIcon} /> Amenities 2</div>
+        <div className={styles.pill}><Image src="/assets/images/ui/decor.png" alt="Decor" width={16} height={16} className={styles.pillIcon} /> Decor 2</div>
+        <div className={styles.pill}><Image src="/assets/images/ui/indoor-spaces.png" alt="Indoor spaces" width={16} height={16} className={styles.pillIcon} /> Indoor spaces 2</div>
+        <div className={styles.pill}><Image src="/assets/images/ui/location.png" alt="Location" width={16} height={16} className={styles.pillIcon} /> Location 2</div>
       </div>
 
       {/* Reviews Grid */}
