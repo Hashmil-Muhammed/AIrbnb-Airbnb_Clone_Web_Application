@@ -29,6 +29,8 @@
 }
 
 .iconWrapper {
+  width: 24px;
+  height: 24px;
   margin-bottom: 16px;
   color: var(--color-text-primary);
 }
