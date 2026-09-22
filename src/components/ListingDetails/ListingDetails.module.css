@@ -199,7 +199,7 @@
 }
 
 .truncatedText {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 24px;
   max-height: 96px; /* 4 lines at 24px each */
   overflow: hidden;
@@ -215,7 +215,7 @@
 }
 
 .fullText {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 24px;
   margin-bottom: 16px;
   color: #222222;
