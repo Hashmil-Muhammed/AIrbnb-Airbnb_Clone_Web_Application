@@ -4,7 +4,7 @@ import styles from './GuestFavouriteBadge.module.css';
 
 export default function GuestFavouriteBadge() {
   return (
-    <div className={styles.container}>
+    <div id="reviews" className={styles.container}>
       <div className={styles.badgeWrapper}>
         <div className={styles.leftWreath}>
           <Image src="/assets/images/ui/left-wreath.png" alt="Left Wreath" width={64} height={96} />

@@ -91,9 +91,9 @@
   background: linear-gradient(to right, #E61E4D 0%, #E31C5F 50%, #D70466 100%);
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 16px;
+  border-radius: 24px;
+  padding: 10px 20px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: opacity 0.2s;

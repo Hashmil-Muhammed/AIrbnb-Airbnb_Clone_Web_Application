@@ -13,22 +13,50 @@ export default function StickyNav() {
       } else {
         setIsVisible(false);
       }
-
-      // Very rudimentary scroll spy
-      const scrollPos = window.scrollY + 100; // offset
-      if (scrollPos > 3000) {
-        setActiveSection('location');
-      } else if (scrollPos > 2200) {
-        setActiveSection('reviews');
-      } else if (scrollPos > 1200) {
-        setActiveSection('amenities');
-      } else {
-        setActiveSection('photos');
-      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = ['amenities', 'reviews', 'location'];
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '-120px 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    const handleScrollForPhotos = () => {
+      if (window.scrollY < 800) {
+        setActiveSection('photos');
+      }
+    };
+    window.addEventListener('scroll', handleScrollForPhotos);
+
+    return () => {
+      sectionIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) observer.unobserve(el);
+      });
+      window.removeEventListener('scroll', handleScrollForPhotos);
+    };
   }, []);
 
   if (!isVisible) return null;

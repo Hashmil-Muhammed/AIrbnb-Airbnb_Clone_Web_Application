@@ -5,7 +5,7 @@ import { Search, Plus, Minus, Home } from 'lucide-react';
 export default function LocationSection() {
   return (
     <div id="location" className={styles.container}>
-      <h2 className={styles.title}>Where you’ll be</h2>
+      <h2 className={styles.title}>Where you'll be</h2>
       <p className={styles.subtitle}>Candolim, Goa, India</p>
 
       <div className={styles.mapContainer}>

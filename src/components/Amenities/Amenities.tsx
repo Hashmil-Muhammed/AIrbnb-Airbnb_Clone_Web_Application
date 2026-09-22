@@ -144,7 +144,8 @@ export default function Amenities() {
 
   return (
     <>
-      <div className={styles.container}>
+      <div id="amenities" className={styles.container}>
+        {/* Amenities Grid */}
         <div className={styles.grid}>
           {HIGHLIGHTED_AMENITIES.map((item, index) => (
             <div key={index} className={`${styles.amenityItem} ${item.missing ? styles.missingItem : ''}`}>
