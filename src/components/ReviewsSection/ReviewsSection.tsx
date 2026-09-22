@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './ReviewsSection.module.css';
 
 const REVIEWS = [
@@ -105,13 +106,16 @@ export default function ReviewsSection() {
 
       {/* Review Pills */}
       <div className={styles.pillsList}>
-        <div className={styles.pill}><Sofa size={16} className={styles.pillIcon} /> Comfort 6</div>
-        <div className={styles.pill}><CheckCircle2 size={16} className={styles.pillIcon} /> Accuracy 5</div>
-        <div className={styles.pill}><Droplets size={16} className={styles.pillIcon} /> Hot tub 5</div>
-        <div className={styles.pill}><Sparkles size={16} className={styles.pillIcon} /> Condition 4</div>
-        <div className={styles.pill}><Heart size={16} className={styles.pillIcon} /> Hospitality 8</div>
+        <div className={styles.pill}><Image src="/assets/images/ui/comfort.png" alt="Comfort" width={16} height={16} className={styles.pillIcon} /> Comfort 6</div>
+        <div className={styles.pill}><Image src="/assets/images/ui/accuracy.png" alt="Accuracy" width={16} height={16} className={styles.pillIcon} /> Accuracy 5</div>
+        <div className={styles.pill}><Image src="/assets/images/ui/hottub.png" alt="Hot tub" width={16} height={16} className={styles.pillIcon} /> Hot tub 5</div>
+        <div className={styles.pill}><Image src="/assets/images/ui/condition.png" alt="Condition" width={16} height={16} className={styles.pillIcon} /> Condition 4</div>
+        <div className={styles.pill}><Image src="/assets/images/ui/hospitality.png" alt="Hospitality" width={16} height={16} className={styles.pillIcon} /> Hospitality 8</div>
         <div className={styles.pill}><SprayCan size={16} className={styles.pillIcon} /> Cleanliness 4</div>
         <div className={styles.pill}><Grid size={16} className={styles.pillIcon} /> Amenities 2</div>
+        <div className={styles.pill}>Decor 2</div>
+        <div className={styles.pill}>Indoor spaces 2</div>
+        <div className={styles.pill}>Location 2</div>
       </div>
 
       {/* Reviews Grid */}
