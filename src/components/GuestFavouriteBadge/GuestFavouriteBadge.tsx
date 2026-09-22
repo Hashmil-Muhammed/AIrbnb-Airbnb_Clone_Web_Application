@@ -7,11 +7,11 @@ export default function GuestFavouriteBadge() {
     <div className={styles.container}>
       <div className={styles.badgeWrapper}>
         <div className={styles.leftWreath}>
-          <Image src="/assets/images/ui/left-wreath.png" alt="Left Wreath" width={48} height={72} />
+          <Image src="/assets/images/ui/left-wreath.png" alt="Left Wreath" width={64} height={96} />
         </div>
         <div className={styles.ratingText}>4.95</div>
         <div className={styles.rightWreath}>
-          <Image src="/assets/images/ui/right-wreath.png" alt="Right Wreath" width={48} height={72} />
+          <Image src="/assets/images/ui/right-wreath.png" alt="Right Wreath" width={64} height={96} />
         </div>
       </div>
       <div className={styles.title}>Guest favourite</div>
