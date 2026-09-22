@@ -46,7 +46,7 @@
 .navLinks a.active::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 24px;
   left: 0;
   right: 0;
   height: 2px;
@@ -88,7 +88,7 @@
 }
 
 .reserveButton {
-  background: var(--color-brand);
+  background: linear-gradient(to right, #E61E4D 0%, #E31C5F 50%, #D70466 100%);
   color: white;
   border: none;
   border-radius: 8px;
