@@ -120,14 +120,14 @@ export default function ListingDetails() {
         <div className={styles.sleepingArrangements}>
           <div className={styles.sleepCard}>
             <div className={styles.sleepImageWrapper}>
-              <Image src="https://a0.muscache.com/im/pictures/hosting/Hosting-1599895892448055764/original/c904e1ab-a39d-4ef0-bdea-8c0bd16b9e3d.jpeg" alt="Bedroom" fill className={styles.sleepImage} style={{objectFit: 'cover'}} />
+              <Image src="/bedroom.jpg" alt="Bedroom" fill className={styles.sleepImage} style={{objectFit: 'cover'}} />
             </div>
             <h3 className={styles.bedTitle}>Bedroom</h3>
             <p className={styles.bedDesc}>1 double bed</p>
           </div>
           <div className={styles.sleepCard}>
             <div className={styles.sleepImageWrapper}>
-              <Image src="https://a0.muscache.com/im/pictures/hosting/Hosting-1599895892448055764/original/090d8b0b-b539-42c0-84f8-e1fb0cdf9a93.jpeg" alt="Living room" fill className={styles.sleepImage} style={{objectFit: 'cover'}} />
+              <Image src="/living_room.jpg" alt="Living room" fill className={styles.sleepImage} style={{objectFit: 'cover'}} />
             </div>
             <h3 className={styles.bedTitle}>Living room</h3>
             <p className={styles.bedDesc}>1 sofa</p>
