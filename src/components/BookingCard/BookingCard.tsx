@@ -41,16 +41,16 @@ export default function BookingCard() {
         </div>
 
         <div className={styles.cancellationNotice}>
-          Free cancellation before <strong>17 October</strong>
+          <span style={{color: '#717171'}}>Free cancellation before</span> <strong style={{color: '#222222'}}>17 October</strong>
         </div>
 
         <button className={styles.reserveBtn}>Reserve</button>
         <p className={styles.disclaimer}>You won't be charged yet</p>
+      </div>
 
-        <div className={styles.reportListing}>
-          <svg viewBox="0 0 32 32" style={{height: 16, width: 16, fill: 'currentcolor', marginRight: 8}}><path d="M28 6H17V4a2 2 0 0 0-2-2H3v28h2V18h10v2a2 2 0 0 0 2 2h11l1.15-8L28 6z"></path></svg>
-          <span style={{textDecoration: 'underline'}}>Report this listing</span>
-        </div>
+      <div className={styles.reportListing}>
+        <svg viewBox="0 0 32 32" style={{height: 16, width: 16, fill: '#717171', marginRight: 8}}><path d="M28 6H17V4a2 2 0 0 0-2-2H3v28h2V18h10v2a2 2 0 0 0 2 2h11l1.15-8L28 6z"></path></svg>
+        <span style={{textDecoration: 'underline', color: '#717171'}}>Report this listing</span>
       </div>
     </div>
   );
