@@ -48,7 +48,7 @@ export default function BookingCard() {
         <p className={styles.disclaimer}>You won't be charged yet</p>
 
         <div className={styles.reportListing}>
-          <svg viewBox="0 0 32 32" style={{height: 16, width: 16, fill: 'currentcolor', marginRight: 8}}><path d="M28 6H17V4a2 2 0 0 0-2-2H3v28h2V18h10v2a2 2 0 0 0 2 2h11l1.15-8L28 6zm-11 2v8H5V4h10v4h11l-.85 6H17z"></path></svg>
+          <svg viewBox="0 0 32 32" style={{height: 16, width: 16, fill: 'currentcolor', marginRight: 8}}><path d="M28 6H17V4a2 2 0 0 0-2-2H3v28h2V18h10v2a2 2 0 0 0 2 2h11l1.15-8L28 6z"></path></svg>
           <span style={{textDecoration: 'underline'}}>Report this listing</span>
         </div>
       </div>
