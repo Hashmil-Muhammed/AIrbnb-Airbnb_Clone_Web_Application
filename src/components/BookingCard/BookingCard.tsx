@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './BookingCard.module.css';
 import { listing } from '@/data/listing';
-import { Star } from 'lucide-react';
+import { Star, ChevronDown } from 'lucide-react';
 
 export default function BookingCard() {
   const cleaningFee = 500;
@@ -12,9 +12,11 @@ export default function BookingCard() {
     <div className={styles.stickyWrapper}>
       <div className={styles.card}>
         <div className={styles.header}>
-          <div className={styles.price}>
-            <span className={styles.currency}>{listing.price.currency}</span>
-            <span className={styles.amount}>{listing.price.perNight}</span>
+          <div className={styles.priceContainer}>
+            <span className={styles.price}>
+              {listing.price.currency}{listing.price.perNight.toLocaleString('en-IN')}
+            </span>
+            <span className={styles.nightText}>for 5 nights</span>
           </div>
         </div>
 
@@ -33,7 +35,7 @@ export default function BookingCard() {
             <span className={styles.label}>GUESTS</span>
             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%'}}>
               <span className={styles.value}>2 guests</span>
-              <svg viewBox="0 0 32 32" style={{height: 16, width: 16, fill: 'currentcolor'}}><path d="M28 9v5L16 26 4 14V9l12 12z"></path></svg>
+              <ChevronDown size={18} color="#222222" strokeWidth={2} />
             </div>
           </button>
         </div>

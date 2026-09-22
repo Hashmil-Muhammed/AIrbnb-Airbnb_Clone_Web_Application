@@ -14,23 +14,27 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.priceContainer {
+  display: flex;
   align-items: baseline;
-  margin-bottom: var(--spacing-lg);
+  gap: 6px;
 }
 
 .price {
   font-size: 22px;
-  color: var(--color-text-primary);
-}
-
-.amount {
   font-weight: 600;
+  color: #222222;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
 }
 
-.night {
+.nightText {
   font-size: 16px;
-  color: var(--color-text-primary);
+  color: #222222;
 }
 
 .reviews {
@@ -51,15 +55,15 @@
 }
 
 .inputs {
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-md);
-  margin-bottom: var(--spacing-md);
+  border: 1px solid #b0b0b0;
+  border-radius: 8px;
+  margin-bottom: 16px;
   overflow: hidden;
 }
 
 .dates {
   display: flex;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid #b0b0b0;
 }
 
 .checkin, .checkout {
@@ -70,7 +74,7 @@
 }
 
 .checkin {
-  border-right: 1px solid var(--color-border);
+  border-right: 1px solid #b0b0b0;
 }
 
 .guests {
@@ -81,24 +85,28 @@
 
 .label {
   font-size: 10px;
-  font-weight: 700;
-  color: var(--color-text-primary);
+  font-weight: 800;
+  color: #222222;
   margin-bottom: 2px;
+  text-transform: uppercase;
+  text-align: left;
 }
 
 .value {
   font-size: 14px;
-  color: var(--color-text-secondary);
+  color: #222222;
+  text-align: left;
 }
 
 .reserveBtn {
   width: 100%;
-  background: linear-gradient(to right, #E61E4D 0%, #E31C5F 50%, #D70466 100%);
+  background: #de1361; /* Solid pink to match SS closely */
   color: white;
   padding: 14px 24px;
-  border-radius: var(--border-radius-md);
+  border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
+  border: none;
   cursor: pointer;
   margin-bottom: 16px;
   transition: opacity 0.2s ease;
@@ -111,17 +119,18 @@
 .disclaimer {
   text-align: center;
   font-size: 14px;
-  color: var(--color-text-primary);
+  color: #717171;
   margin: 0 0 24px 0;
 }
 
 .cancellationNotice {
   background-color: #f7f7f7;
-  border-radius: var(--border-radius-md);
+  border-radius: 8px;
   padding: 12px;
   margin-bottom: 16px;
   text-align: center;
   font-size: 14px;
+  color: #222222;
 }
 
 .feeBreakdown {
