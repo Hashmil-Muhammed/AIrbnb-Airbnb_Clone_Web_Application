@@ -4,19 +4,22 @@ import styles from './Amenities.module.css';
 import { 
   Wifi, Tv, Car, Wind, Waves, Coffee, 
   Utensils, Monitor, PawPrint, BellOff, Bath, Camera, X,
-  Check, Bath as BathIcon, Home, Zap, Shield, Key
+  Check, Home, Shield, Key, Droplet, Thermometer,
+  Shirt, Bed, Archive, Baby, Snowflake, Fan, Laptop,
+  Flame, DoorOpen, Sun, Tent, Dumbbell, Sparkles, Calendar,
+  Wine, Droplets, UtensilsCrossed, SprayCan, Video, CarFront, ShieldOff, ShieldAlert
 } from 'lucide-react';
 
 const HIGHLIGHTED_AMENITIES = [
-  { icon: <Utensils size={24} strokeWidth={1.5} />, name: 'Kitchen', missing: false },
+  { icon: <UtensilsCrossed size={24} strokeWidth={1.5} />, name: 'Kitchen', missing: false },
   { icon: <Wifi size={24} strokeWidth={1.5} />, name: 'Wifi', missing: false },
   { icon: <Monitor size={24} strokeWidth={1.5} />, name: 'Dedicated workspace', missing: false },
-  { icon: <Car size={24} strokeWidth={1.5} />, name: 'Free parking on premises', missing: false },
+  { icon: <CarFront size={24} strokeWidth={1.5} />, name: 'Free parking on premises', missing: false },
   { icon: <Waves size={24} strokeWidth={1.5} />, name: 'Pool', missing: false },
   { icon: <Bath size={24} strokeWidth={1.5} />, name: 'Hot tub', missing: false },
   { icon: <PawPrint size={24} strokeWidth={1.5} />, name: 'Pets allowed', missing: false },
-  { icon: <Camera size={24} strokeWidth={1.5} />, name: 'Exterior security cameras on property', missing: false },
-  { icon: <BellOff size={24} strokeWidth={1.5} />, name: 'Carbon monoxide alarm', missing: true },
+  { icon: <Video size={24} strokeWidth={1.5} />, name: 'Exterior security cameras on property', missing: false },
+  { icon: <ShieldOff size={24} strokeWidth={1.5} />, name: 'Carbon monoxide alarm', missing: true },
   { icon: <BellOff size={24} strokeWidth={1.5} />, name: 'Smoke alarm', missing: true }
 ];
 
@@ -71,19 +74,58 @@ const ALL_AMENITIES = [
   }
 ];
 
-const getIconForCategory = (category: string) => {
-  switch(category) {
-    case 'Bathroom': return <BathIcon size={24} strokeWidth={1.5} />;
-    case 'Bedroom and laundry': return <Home size={24} strokeWidth={1.5} />;
-    case 'Entertainment': return <Tv size={24} strokeWidth={1.5} />;
-    case 'Heating and cooling': return <Wind size={24} strokeWidth={1.5} />;
-    case 'Home safety': return <Shield size={24} strokeWidth={1.5} />;
-    case 'Internet and office': return <Wifi size={24} strokeWidth={1.5} />;
-    case 'Kitchen and dining': return <Utensils size={24} strokeWidth={1.5} />;
-    case 'Parking and facilities': return <Car size={24} strokeWidth={1.5} />;
-    case 'Services': return <Key size={24} strokeWidth={1.5} />;
-    default: return <Check size={24} strokeWidth={1.5} />;
-  }
+const getIconForItem = (itemName: string) => {
+  const name = itemName.toLowerCase();
+  
+  if (name.includes('hairdryer')) return <Wind size={24} strokeWidth={1.5} />;
+  if (name.includes('cleaning products')) return <SprayCan size={24} strokeWidth={1.5} />;
+  if (name.includes('shampoo')) return <Droplet size={24} strokeWidth={1.5} />;
+  if (name.includes('hot water')) return <Thermometer size={24} strokeWidth={1.5} />;
+  if (name.includes('shower gel')) return <Droplets size={24} strokeWidth={1.5} />;
+  
+  if (name.includes('washing machine')) return <Archive size={24} strokeWidth={1.5} />;
+  if (name.includes('hanger')) return <Shirt size={24} strokeWidth={1.5} />;
+  if (name.includes('linen')) return <Bed size={24} strokeWidth={1.5} />;
+  if (name.includes('blinds')) return <Home size={24} strokeWidth={1.5} />;
+  if (name.includes('iron')) return <Shirt size={24} strokeWidth={1.5} />;
+  if (name.includes('storage')) return <Archive size={24} strokeWidth={1.5} />;
+  if (name.includes('cot')) return <Baby size={24} strokeWidth={1.5} />;
+  
+  if (name.includes('tv')) return <Tv size={24} strokeWidth={1.5} />;
+  
+  if (name.includes('air conditioning')) return <Snowflake size={24} strokeWidth={1.5} />;
+  if (name.includes('fan')) return <Fan size={24} strokeWidth={1.5} />;
+  
+  if (name.includes('camera')) return <Video size={24} strokeWidth={1.5} />;
+  if (name.includes('carbon monoxide')) return <ShieldAlert size={24} strokeWidth={1.5} />;
+  if (name.includes('smoke alarm')) return <BellOff size={24} strokeWidth={1.5} />;
+  
+  if (name.includes('wifi')) return <Wifi size={24} strokeWidth={1.5} />;
+  if (name.includes('workspace')) return <Laptop size={24} strokeWidth={1.5} />;
+  
+  if (name.includes('kitchen')) return <Utensils size={24} strokeWidth={1.5} />;
+  if (name.includes('fridge') || name.includes('freezer')) return <Snowflake size={24} strokeWidth={1.5} />;
+  if (name.includes('microwave') || name.includes('toaster') || name.includes('cooker')) return <Utensils size={24} strokeWidth={1.5} />;
+  if (name.includes('cooking basics') || name.includes('cutlery')) return <UtensilsCrossed size={24} strokeWidth={1.5} />;
+  if (name.includes('kettle') || name.includes('coffee') || name.includes('blender')) return <Coffee size={24} strokeWidth={1.5} />;
+  if (name.includes('wine')) return <Wine size={24} strokeWidth={1.5} />;
+  
+  if (name.includes('entrance')) return <DoorOpen size={24} strokeWidth={1.5} />;
+  
+  if (name.includes('patio') || name.includes('outdoor')) return <Sun size={24} strokeWidth={1.5} />;
+  if (name.includes('dining area')) return <Tent size={24} strokeWidth={1.5} />;
+  
+  if (name.includes('parking')) return <CarFront size={24} strokeWidth={1.5} />;
+  if (name.includes('pool')) return <Waves size={24} strokeWidth={1.5} />;
+  if (name.includes('hot tub')) return <Bath size={24} strokeWidth={1.5} />;
+  if (name.includes('gym')) return <Dumbbell size={24} strokeWidth={1.5} />;
+  
+  if (name.includes('pet')) return <PawPrint size={24} strokeWidth={1.5} />;
+  if (name.includes('cleaning available')) return <Sparkles size={24} strokeWidth={1.5} />;
+  if (name.includes('long-term')) return <Calendar size={24} strokeWidth={1.5} />;
+  if (name.includes('check-in')) return <Key size={24} strokeWidth={1.5} />;
+
+  return <Check size={24} strokeWidth={1.5} />;
 };
 
 export default function Amenities() {
@@ -134,7 +176,7 @@ export default function Amenities() {
                   <div className={styles.categoryList}>
                     {categoryGroup.items.map((item, itemIndex) => (
                       <div key={itemIndex} className={styles.categoryItem}>
-                        <div className={styles.icon}>{getIconForCategory(categoryGroup.category)}</div>
+                        <div className={styles.icon}>{getIconForItem(item)}</div>
                         <span>{item}</span>
                       </div>
                     ))}
