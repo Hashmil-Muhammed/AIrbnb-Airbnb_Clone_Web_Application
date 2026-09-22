@@ -51,6 +51,7 @@ export default function Home() {
         <div className={styles.content}>
           <div className={styles.mainColumn}>
             <ListingDetails />
+            <CalendarSection />
           </div>
           <div className={styles.sidebarColumn}>
             <PromoCard />
@@ -60,7 +61,6 @@ export default function Home() {
           </div>
         </div>
 
-        <CalendarSection />
         <GuestFavouriteBadge />
         <ReviewsSection />
         <LocationSection />
