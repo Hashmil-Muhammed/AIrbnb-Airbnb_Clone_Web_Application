@@ -6,7 +6,7 @@ export const listing = {
   reviewsCount: 19,
   host: {
     name: 'Mirashya Homes',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150',
+    image: '/mirashya-homes-logo.png',
     joined: '2021',
     superhost: true
   },

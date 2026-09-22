@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from './ListingDetails.module.css';
 import { listing } from '@/data/listing';
 import Amenities from '../Amenities/Amenities';
+import mirashyaLogo from '../../../public/mirashya-homes-logo.png';
 
 export default function ListingDetails() {
   return (
@@ -49,7 +50,7 @@ export default function ListingDetails() {
       <section className={styles.hostSection}>
         <div className={styles.hostHeader}>
           <Image 
-            src="/mirashya-homes-logo.png" 
+            src={mirashyaLogo} 
             alt="Mirashya Homes Logo" 
             width={40} 
             height={40} 
