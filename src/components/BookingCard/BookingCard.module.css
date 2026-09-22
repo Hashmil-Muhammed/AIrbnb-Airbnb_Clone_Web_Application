@@ -5,6 +5,7 @@
 }
 
 .card {
+  font-family: 'Circular', -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-xl);
   padding: var(--spacing-lg);
@@ -26,14 +27,16 @@
 
 .price {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   color: #222222;
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
+  text-underline-offset: 2px;
 }
 
 .nightText {
   font-size: 16px;
+  font-weight: 400;
   color: #222222;
 }
 

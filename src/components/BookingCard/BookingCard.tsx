@@ -35,7 +35,7 @@ export default function BookingCard() {
             <span className={styles.label}>GUESTS</span>
             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%'}}>
               <span className={styles.value}>2 guests</span>
-              <ChevronDown size={18} color="#222222" strokeWidth={2} />
+              <ChevronDown size={20} color="#222222" strokeWidth={1.25} />
             </div>
           </button>
         </div>
