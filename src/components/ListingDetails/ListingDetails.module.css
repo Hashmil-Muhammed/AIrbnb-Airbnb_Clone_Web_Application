@@ -198,18 +198,14 @@
   align-items: flex-start;
 }
 
-.truncatedText {
+.fullText {
   font-size: 16px;
   line-height: 24px;
-  max-height: 96px; /* 4 lines at 24px each */
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   color: #222222;
 }
 
-.truncatedText p {
+.fullText p {
   margin: 0;
   display: inline;
 }
