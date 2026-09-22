@@ -49,8 +49,8 @@ export default function ListingDetails() {
       <section className={styles.hostSection}>
         <div className={styles.hostHeader}>
           <Image 
-            src={listing.host.image} 
-            alt={listing.host.name} 
+            src="/mirashya-homes-logo.png" 
+            alt="Mirashya Homes Logo" 
             width={40} 
             height={40} 
             className={styles.avatarImage} 
