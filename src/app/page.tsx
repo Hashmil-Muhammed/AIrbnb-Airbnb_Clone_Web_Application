@@ -16,6 +16,7 @@ import ThingsToKnow from "@/components/ThingsToKnow/ThingsToKnow";
 import GuestFavouriteBadge from "@/components/GuestFavouriteBadge/GuestFavouriteBadge";
 import PhotoTour from "@/components/PhotoTour/PhotoTour";
 import Lightbox from "@/components/Lightbox/Lightbox";
+import MoreStaysNearby from "@/components/MoreStaysNearby/MoreStaysNearby";
 import styles from "./page.module.css"; 
 
 export default function Home() {
@@ -66,6 +67,7 @@ export default function Home() {
         <LocationSection />
         <MeetYourHost />
         <ThingsToKnow />
+        <MoreStaysNearby />
       </main>
 
       <PhotoTour 
