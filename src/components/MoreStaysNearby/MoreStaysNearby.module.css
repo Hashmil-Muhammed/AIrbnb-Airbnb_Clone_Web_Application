@@ -120,7 +120,7 @@
 }
 
 .cardTitle {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--color-text-primary);
   display: -webkit-box;
@@ -135,7 +135,7 @@
 .priceRating {
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-text-primary);
   margin-top: 2px;
   gap: 8px;
