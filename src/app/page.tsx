@@ -52,19 +52,20 @@ export default function Home() {
           <div className={styles.mainColumn}>
             <ListingDetails />
             <CalendarSection />
-            <GuestFavouriteBadge />
-            <ReviewsSection />
-            <LocationSection />
-            <MeetYourHost />
-            <ThingsToKnow />
           </div>
           <div className={styles.sidebarColumn}>
-            <PromoCard />
             <div className={styles.stickyWrapper}>
+              <PromoCard />
               <BookingCard />
             </div>
           </div>
         </div>
+
+        <GuestFavouriteBadge />
+        <ReviewsSection />
+        <LocationSection />
+        <MeetYourHost />
+        <ThingsToKnow />
       </main>
 
       <PhotoTour 
