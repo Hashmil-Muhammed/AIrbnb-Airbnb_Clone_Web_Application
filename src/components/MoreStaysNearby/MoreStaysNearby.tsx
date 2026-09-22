@@ -87,11 +87,21 @@ export default function MoreStaysNearby() {
         <div className={styles.controls}>
           <span className={styles.pageCount}>{currentPage} / {totalPages}</span>
           <div className={styles.arrows}>
-            <button className={styles.arrowBtn} onClick={scrollLeft} aria-label="Previous">
-              <ChevronLeft size={18} strokeWidth={2} />
+            <button 
+              className={`${styles.arrowBtn} ${currentPage === 1 ? styles.arrowBtnDisabled : ''}`} 
+              onClick={scrollLeft} 
+              aria-label="Previous"
+              disabled={currentPage === 1}
+            >
+              <ChevronLeft size={16} strokeWidth={1.5} />
             </button>
-            <button className={styles.arrowBtn} onClick={scrollRight} aria-label="Next">
-              <ChevronRight size={18} strokeWidth={2} />
+            <button 
+              className={`${styles.arrowBtn} ${currentPage === totalPages ? styles.arrowBtnDisabled : ''}`} 
+              onClick={scrollRight} 
+              aria-label="Next"
+              disabled={currentPage === totalPages}
+            >
+              <ChevronRight size={16} strokeWidth={1.5} />
             </button>
           </div>
         </div>
