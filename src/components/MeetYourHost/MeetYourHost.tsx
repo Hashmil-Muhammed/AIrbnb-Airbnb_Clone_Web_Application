@@ -15,11 +15,11 @@ export default function MeetYourHost() {
               <div className={styles.hostAvatarSection}>
                 <div className={styles.avatarWrapper}>
                   <div className={styles.avatarLogo}>
-                    <span>MIRASHYA</span>
+                    <span>MIRASHIYA</span>
                     <span className={styles.logoSub}>HOMES</span>
                   </div>
                   <div className={styles.badge}>
-                    <svg viewBox="0 0 32 32" style={{height: 16, width: 16, fill: 'white'}}><path d="M16 31a15 15 0 1 1 15-15 15.02 15.02 0 0 1-15 15zm8.42-19.5L13.5 22.41l-5.91-5.91 1.41-1.42 4.5 4.5 9.5-9.5z"></path></svg>
+                    <svg viewBox="0 0 32 32" style={{height: 16, width: 16, fill: 'none', stroke: 'white', strokeWidth: 4}}><circle cx="16" cy="16" r="8"></circle></svg>
                   </div>
                 </div>
                 <div className={styles.hostName}>Mirashya</div>
@@ -30,12 +30,10 @@ export default function MeetYourHost() {
                   <span className={styles.statValue}>1,463</span>
                   <span className={styles.statLabel}>Reviews</span>
                 </div>
-                <div className={styles.divider}></div>
                 <div className={styles.statBox}>
-                  <span className={styles.statValue}>4.68<span style={{fontSize: 12}}>★</span></span>
+                  <span className={styles.statValue}>4.68<span style={{fontSize: 14}}>★</span></span>
                   <span className={styles.statLabel}>Rating</span>
                 </div>
-                <div className={styles.divider}></div>
                 <div className={styles.statBox}>
                   <span className={styles.statValue}>2</span>
                   <span className={styles.statLabel}>Years hosting</span>
