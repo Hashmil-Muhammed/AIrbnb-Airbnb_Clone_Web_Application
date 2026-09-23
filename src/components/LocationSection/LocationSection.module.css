@@ -49,11 +49,9 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 35%;
+  width: 100%;
   background-color: #a1d0eb; /* Light blue water */
-  transform: skewX(-15deg);
-  transform-origin: bottom left;
-  border-right: 1px solid rgba(0,0,0,0.03);
+  clip-path: polygon(0 0, 42% 0, 26% 100%, 0 100%);
 }
 
 .landArea {
@@ -62,24 +60,26 @@
 
 .circle1 {
   position: absolute;
+  width: 110px;
+  height: 110px;
+  background-color: #c2e0b5;
+  opacity: 0.8;
+  border-radius: 50%;
+  top: 35%;
+  left: 26%;
+  transform: translate(-50%, -50%);
+}
+
+.circle2 {
+  position: absolute;
   width: 140px;
   height: 140px;
   background-color: #c2e0b5;
   opacity: 0.8;
   border-radius: 50%;
-  top: 30%;
-  left: 25%;
-}
-
-.circle2 {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  background-color: #c2e0b5;
-  opacity: 0.8;
-  border-radius: 50%;
-  top: 45%;
-  right: 15%;
+  top: 60%;
+  right: 25%;
+  transform: translate(50%, -50%);
 }
 
 .marker {
@@ -94,8 +94,8 @@
 
 .markerIcon {
   background-color: #222222;
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -105,19 +105,19 @@
 }
 
 .markerIcon svg {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
 }
 
 .searchBtn {
   position: absolute;
   top: 24px;
   left: 24px;
-  width: 44px;
-  height: 44px;
+  width: 34px;
+  height: 34px;
   background: white;
   border: none;
-  border-radius: 50%;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,7 +130,7 @@
   top: 24px;
   right: 24px;
   background: white;
-  border-radius: var(--border-radius-md);
+  border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
@@ -138,8 +138,8 @@
 }
 
 .zoomBtn {
-  width: 44px;
-  height: 44px;
+  width: 34px;
+  height: 34px;
   background: transparent;
   border: none;
   display: flex;
