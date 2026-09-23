@@ -37,6 +37,8 @@ const bed_1 = { url: '/images/custom-4.jpg', alt: 'Bedroom view 1' };
 const bed_2 = { url: '/images/tour-bedroom-2.jpg', alt: 'Bedroom view 2' };
 const bed_3 = { url: '/images/tour-bedroom-3.jpg', alt: 'Bedroom view 3' };
 const bed_4 = { url: '/images/tour-bedroom-4.jpg', alt: 'Bedroom view 4' };
+const bed_5 = { url: '/images/tour-bedroom-5.jpg', alt: 'Bedroom view 5' };
+const bed_6 = { url: '/images/tour-bedroom-6.jpg', alt: 'Bedroom view 6' };
 
 export const photoTourSections: PhotoTourSection[] = [
   {
@@ -55,13 +57,13 @@ export const photoTourSections: PhotoTourSection[] = [
     id: "full-kitchen",
     title: "Full kitchen",
     description: "Freezer · Fridge · Blender · Cooker · Cooking basics · Kettle ·\nMicrowave · Toaster · Wine glasses · Coffee · Crockery and\ncutlery",
-    images: [kit_1, kit_2]
+    images: [kit_2, kit_1 ]
   },
   {
     id: "bedroom",
     title: "Bedroom",
     description: "Double bed · Air conditioning · Bed linen · Ceiling fan · Clothes\nstorage · Cot · Hangers · Iron · Room-darkening blinds ·\nCleaning available during stay · Cleaning products · Long-term\nstays allowed · Private entrance · Wifi",
-    images: [bed_1, bed_2, bed_3, bed_4]
+    images: [bed_1, bed_2, bed_3, bed_4, bed_5, bed_6]
   },
   {
     id: "full-bathroom",

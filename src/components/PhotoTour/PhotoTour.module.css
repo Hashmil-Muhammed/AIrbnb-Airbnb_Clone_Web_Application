@@ -214,6 +214,15 @@
   aspect-ratio: 3 / 2;
 }
 
+.full-kitchen, .bedroom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.full-kitchen .imageWrapper, .bedroom .imageWrapper {
+  aspect-ratio: 3 / 2;
+}
+
 .defaultGallery {
   display: flex;
   flex-direction: column;
