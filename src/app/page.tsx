@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { listing } from "@/data/listing";
 import Header from "@/components/Header/Header";
 import ListingHeader from "@/components/ListingHeader/ListingHeader";
 import HeroGallery from "@/components/HeroGallery/HeroGallery";
@@ -22,12 +23,14 @@ import styles from "./page.module.css";
 export default function Home() {
   const [isPhotoTourOpen, setIsPhotoTourOpen] = useState(false);
   const [activePhotoIndex, setActivePhotoIndex] = useState<number | null>(null);
+  const [lightboxImages, setLightboxImages] = useState(listing.images);
 
   const handleShowAllPhotos = () => {
     setIsPhotoTourOpen(true);
   };
 
-  const handleImageClick = (index: number) => {
+  const handleImageClick = (index: number, imagesArray = listing.images) => {
+    setLightboxImages(imagesArray);
     setActivePhotoIndex(index);
   };
 
@@ -47,7 +50,7 @@ export default function Home() {
         <ListingHeader />
         <HeroGallery 
           onShowAllPhotos={handleShowAllPhotos} 
-          onImageClick={handleImageClick} 
+          onImageClick={(idx) => handleImageClick(idx)} 
         />
         <div className={styles.content}>
           <div className={styles.mainColumn}>
@@ -73,11 +76,12 @@ export default function Home() {
       <PhotoTour 
         isOpen={isPhotoTourOpen} 
         onClose={closePhotoTour}
-        onImageClick={handleImageClick}
+        onImageClick={(idx, images) => handleImageClick(idx, images)}
       />
 
       <Lightbox 
         activeIndex={activePhotoIndex}
+        images={lightboxImages}
         onClose={closeLightbox}
         onNavigate={setActivePhotoIndex}
       />

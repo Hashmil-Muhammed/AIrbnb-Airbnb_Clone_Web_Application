@@ -1,4 +1,4 @@
-.overlay {
+.container {
   position: fixed;
   top: 0;
   left: 0;
@@ -6,25 +6,39 @@
   height: 100vh;
   background-color: var(--color-background);
   z-index: 1000;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+}
+
+.stickyTop {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 72px;
-  background-color: var(--color-background);
+  height: 64px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 24px;
-  z-index: 10;
 }
 
-.backBtn {
+.headerTitle {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.headerActions {
+  display: flex;
+  gap: 8px;
+}
+
+.actionBtn, .backBtn {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -32,23 +46,92 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.backBtn:hover {
+.actionBtn:hover, .backBtn:hover {
   background-color: var(--color-hover);
 }
 
-.content {
-  max-width: 732px;
-  margin: 0 auto;
-  padding: 24px;
-  width: 100%;
+.categoryNav {
+  display: flex;
+  gap: 12px;
+  padding: 16px 24px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+}
+.categoryNav::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
-.grid {
+.categoryBtn {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  min-width: 100px;
+}
+.categoryBtn:hover {
+  background-color: var(--color-hover);
+}
+
+.categoryThumbnail {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.thumbnailImage {
+  object-fit: cover;
+}
+
+.contentWrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 48px 24px;
+}
+
+.section {
+  display: flex;
+  gap: 8%;
+  margin-bottom: 64px;
+  scroll-margin-top: 180px; /* Ensures scrolling to this section accounts for sticky header */
+}
+
+.sectionInfo {
+  flex: 0 0 25%;
+  position: sticky;
+  top: 180px;
+  align-self: flex-start;
+}
+
+.sectionInfo h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.sectionInfo p {
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.gallery {
+  flex: 1;
 }
 
 .imageWrapper {
@@ -56,14 +139,7 @@
   width: 100%;
   cursor: pointer;
   overflow: hidden;
-}
-
-.largeImage {
-  aspect-ratio: 3/2;
-}
-
-.smallImage {
-  aspect-ratio: 3/2;
+  border-radius: 12px;
 }
 
 .image {
@@ -86,12 +162,57 @@
   opacity: 0.15;
 }
 
-@media (min-width: 744px) {
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+/* Specific Grid Layouts */
+.living-room-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.living-room-1 .imageWrapper:nth-child(1) {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 10;
+}
+.living-room-1 .imageWrapper:nth-child(2),
+.living-room-1 .imageWrapper:nth-child(3) {
+  aspect-ratio: 1 / 1;
+}
+
+.living-room-2, .pool {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.living-room-2 .imageWrapper:nth-child(1),
+.pool .imageWrapper:nth-child(1) {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 10;
+}
+.living-room-2 .imageWrapper:nth-child(2),
+.pool .imageWrapper:nth-child(2),
+.living-room-2 .imageWrapper:nth-child(3),
+.pool .imageWrapper:nth-child(3) {
+  aspect-ratio: 1 / 1;
+}
+.living-room-2 .imageWrapper:nth-child(4) {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 10;
+}
+
+.defaultGallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.defaultGallery .imageWrapper {
+  aspect-ratio: 16 / 10;
+}
+
+@media (max-width: 744px) {
+  .section {
+    flex-direction: column;
+    gap: 24px;
   }
-  .largeImage {
-    grid-column: span 2;
+  .sectionInfo {
+    position: static;
   }
 }

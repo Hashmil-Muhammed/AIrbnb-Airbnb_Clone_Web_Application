@@ -2,18 +2,23 @@ import React, { useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import styles from './Lightbox.module.css';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { listing } from '@/data/listing';
 import { motion, AnimatePresence } from 'framer-motion';
+
+export interface LightboxImage {
+  url: string;
+  alt: string;
+}
 
 interface LightboxProps {
   activeIndex: number | null;
+  images: LightboxImage[];
   onClose: () => void;
   onNavigate: (newIndex: number) => void;
 }
 
-export default function Lightbox({ activeIndex, onClose, onNavigate }: LightboxProps) {
+export default function Lightbox({ activeIndex, images, onClose, onNavigate }: LightboxProps) {
   const isOpen = activeIndex !== null;
-  const total = listing.images.length;
+  const total = images.length;
 
   const handlePrev = useCallback(() => {
     if (activeIndex !== null && activeIndex > 0) {
@@ -48,7 +53,7 @@ export default function Lightbox({ activeIndex, onClose, onNavigate }: LightboxP
 
   if (!isOpen) return null;
 
-  const currentImage = listing.images[activeIndex];
+  const currentImage = images[activeIndex];
 
   return (
     <AnimatePresence>
@@ -90,8 +95,8 @@ export default function Lightbox({ activeIndex, onClose, onNavigate }: LightboxP
               className={styles.imageWrapper}
             >
               <Image
-                src={currentImage.url}
-                alt={currentImage.alt}
+                src={currentImage?.url}
+                alt={currentImage?.alt || 'Gallery image'}
                 fill
                 sizes="100vw"
                 className={styles.image}
