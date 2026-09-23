@@ -20,6 +20,10 @@ export const listing = {
       alt: 'Outdoor patio lounge area'
     },
     {
+      url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1599895892448055764/original/f6de1663-4e9c-4414-b63b-29a154a92ee1.jpeg',
+      alt: 'Courtyard patio'
+    },
+    {
       url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1599895892448055764/original/9be71047-fc52-438a-9270-75cb470f6752.jpeg',
       alt: 'Private Jacuzzi'
     },
@@ -30,10 +34,6 @@ export const listing = {
     {
       url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1599895892448055764/original/c904e1ab-a39d-4ef0-bdea-8c0bd16b9e3d.jpeg',
       alt: 'Bedroom'
-    },
-    {
-      url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1599895892448055764/original/f6de1663-4e9c-4414-b63b-29a154a92ee1.jpeg',
-      alt: 'Courtyard patio'
     }
   ],
   price: {
