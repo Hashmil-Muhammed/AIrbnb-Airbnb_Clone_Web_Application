@@ -16,24 +16,24 @@ export const listing = {
   baths: 1,
   images: [
     {
-      url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1599895892448055764/original/f6de1663-4e9c-4414-b63b-29a154a92ee1.jpeg',
-      alt: 'Courtyard patio'
+      url: '/images/custom-1.jpg',
+      alt: 'Property view 1'
     },
     {
-      url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1599895892448055764/original/090d8b0b-b539-42c0-84f8-e1fb0cdf9a93.jpeg',
-      alt: 'Outdoor patio lounge area'
+      url: '/images/custom-2.jpg',
+      alt: 'Property view 2'
     },
     {
-      url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1599895892448055764/original/c904e1ab-a39d-4ef0-bdea-8c0bd16b9e3d.jpeg',
-      alt: 'Bedroom'
+      url: '/images/custom-3.jpg',
+      alt: 'Property view 3'
     },
     {
-      url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1599895892448055764/original/9be71047-fc52-438a-9270-75cb470f6752.jpeg',
-      alt: 'Private Jacuzzi'
+      url: '/images/custom-4.jpg',
+      alt: 'Property view 4'
     },
     {
-      url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1599895892448055764/original/67c61c6f-6260-4809-9510-0360e58a345d.jpeg',
-      alt: 'Apartment complex exterior'
+      url: '/images/custom-5.jpg',
+      alt: 'Property view 5'
     }
   ],
   price: {
