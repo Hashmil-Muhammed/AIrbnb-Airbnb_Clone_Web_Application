@@ -11,7 +11,7 @@
 
 .content {
   display: flex;
-  gap: 80px;
+  gap: 60px;
 }
 
 @media (max-width: 950px) {
@@ -28,7 +28,7 @@
 .hostCard {
   background-color: white;
   border-radius: 24px;
-  padding: 24px 32px;
+  padding: 36px 32px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.12);
   display: flex;
   justify-content: center;
