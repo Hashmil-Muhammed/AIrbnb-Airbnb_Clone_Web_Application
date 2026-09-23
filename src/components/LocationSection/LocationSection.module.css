@@ -100,8 +100,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  border: 3px solid white;
+}
+
+.markerIcon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .searchBtn {
@@ -142,6 +147,11 @@
   justify-content: center;
   cursor: pointer;
   color: #222222;
+}
+
+.ico {
+  width: 14px;
+  height: 14px;
 }
 
 .zoomBtn:hover {
