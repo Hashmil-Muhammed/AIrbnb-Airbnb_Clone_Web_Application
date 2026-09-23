@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './BookingCard.module.css';
 import { listing } from '@/data/listing';
 import { Star, ChevronDown } from 'lucide-react';
@@ -7,6 +7,14 @@ export default function BookingCard() {
   const cleaningFee = 500;
   const serviceFee = 700;
   const total = listing.price.perNight * 5 + cleaningFee + serviceFee;
+  const [toastMessage, setToastMessage] = useState('');
+
+  const handleReserveClick = () => {
+    setToastMessage("You won't be charged yet");
+    setTimeout(() => {
+      setToastMessage('');
+    }, 3000);
+  };
 
   return (
     <div className={styles.stickyWrapper}>
@@ -44,7 +52,7 @@ export default function BookingCard() {
           <span style={{color: '#717171'}}>Free cancellation before</span> <strong style={{color: '#222222'}}>17 October</strong>
         </div>
 
-        <button className={styles.reserveBtn}>Reserve</button>
+        <button className={styles.reserveBtn} onClick={handleReserveClick}>Reserve</button>
         <p className={styles.disclaimer}>You won't be charged yet</p>
       </div>
 
@@ -52,6 +60,11 @@ export default function BookingCard() {
         <svg viewBox="0 0 32 32" style={{height: 16, width: 16, fill: '#717171', marginRight: 8}}><path d="M28 6H17V4a2 2 0 0 0-2-2H3v28h2V18h10v2a2 2 0 0 0 2 2h11l1.15-8L28 6z"></path></svg>
         <span style={{textDecoration: 'underline', color: '#717171'}}>Report this listing</span>
       </div>
+      {toastMessage && (
+        <div className={styles.toast}>
+          {toastMessage}
+        </div>
+      )}
     </div>
   );
 }
