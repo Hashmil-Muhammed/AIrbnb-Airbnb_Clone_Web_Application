@@ -1,6 +1,7 @@
 export interface TourImage {
   url: string;
   alt: string;
+  title?: string;
 }
 
 export interface PhotoTourSection {
@@ -10,7 +11,6 @@ export interface PhotoTourSection {
   images: TourImage[];
 }
 
-// Reusing the 5 local images we have to mock the layout
 const img1 = { url: '/images/custom-1.jpg', alt: 'Living room 1' };
 const img2 = { url: '/images/custom-2.jpg', alt: 'Living room 2' };
 const img3 = { url: '/images/custom-3.png', alt: 'Full kitchen' };
@@ -20,9 +20,11 @@ const img6 = { url: '/images/tour-6.jpg', alt: 'Gym' };
 const img7 = { url: '/images/tour-7.jpg', alt: 'Exterior' };
 const img8 = { url: '/images/tour-8.jpg', alt: 'Pool' };
 const img9 = { url: '/images/tour-9.jpg', alt: 'Additional photos' };
+
 const lr1_1 = { url: '/images/tour-lr1-1.jpg', alt: 'Living room 1 view 1' };
 const lr1_2 = { url: '/images/tour-lr1-2.jpg', alt: 'Living room 1 view 2' };
 const lr1_3 = { url: '/images/tour-lr1-3.jpg', alt: 'Living room 1 view 3' };
+
 const lr2_1 = { url: '/images/listing-2.jpg', alt: 'Living room 2 view 1' };
 const lr2_2 = { url: '/images/listing-3.jpg', alt: 'Living room 2 view 2' };
 const lr2_3 = { url: '/images/tour-lr2-3.jpg', alt: 'Living room 2 view 3' };
@@ -33,6 +35,7 @@ const lr2_7 = { url: '/images/tour-lr2-7.jpg', alt: 'Living room 2 view 7' };
 
 const kit_1 = { url: '/images/custom-3.jpg', alt: 'Full kitchen view 1' };
 const kit_2 = { url: '/images/tour-kitchen-2.jpg', alt: 'Full kitchen view 2' };
+
 const bed_1 = { url: '/images/custom-4.jpg', alt: 'Bedroom view 1' };
 const bed_2 = { url: '/images/tour-bedroom-2.jpg', alt: 'Bedroom view 2' };
 const bed_3 = { url: '/images/tour-bedroom-3.jpg', alt: 'Bedroom view 3' };
@@ -73,7 +76,7 @@ export const photoTourSections: PhotoTourSection[] = [
     id: "living-room-1",
     title: "Living room 1",
     description: "Sofa · Air conditioning · Ceiling fan · TV",
-    images: [lr1_1, lr1_2, lr1_3] // 1 large, 2 side-by-side
+    images: [lr1_1, lr1_2, lr1_3] 
   },
   {
     id: "living-room-2",
@@ -126,4 +129,6 @@ export const photoTourSections: PhotoTourSection[] = [
 ];
 
 // Flat array for the Lightbox global index navigation
-export const flattenedTourImages: TourImage[] = photoTourSections.flatMap(section => section.images);
+export const flattenedTourImages: TourImage[] = photoTourSections.flatMap(section => 
+  section.images.map(img => ({ ...img, title: section.title }))
+);

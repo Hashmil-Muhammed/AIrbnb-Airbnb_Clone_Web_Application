@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export interface LightboxImage {
   url: string;
   alt: string;
+  title?: string;
 }
 
 interface LightboxProps {
@@ -69,10 +70,22 @@ export default function Lightbox({ activeIndex, images, onClose, onNavigate }: L
       >
         <div className={styles.header}>
           <button className={styles.closeBtn} onClick={onClose} aria-label="Close">
-            <X size={20} />
+            <ChevronLeft size={20} />
           </button>
-          <div className={styles.counter}>
-            {activeIndex + 1} / {total}
+          
+          {currentImage?.title && (
+            <div className={styles.title}>
+              {currentImage.title}
+            </div>
+          )}
+
+          <div className={styles.rightHeader}>
+            <div className={styles.counter}>
+              {activeIndex + 1} of {total}
+            </div>
+            <button className={styles.closeBtn} onClick={onClose} aria-label="Close">
+              <X size={20} />
+            </button>
           </div>
         </div>
 
