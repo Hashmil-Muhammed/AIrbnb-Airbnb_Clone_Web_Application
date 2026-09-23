@@ -185,41 +185,48 @@
   aspect-ratio: 3 / 2;
 }
 
-.living-room-2, .pool {
+.living-room-2, .pool, .bedroom {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
 .living-room-2 .imageWrapper:nth-child(1),
-.pool .imageWrapper:nth-child(1) {
+.pool .imageWrapper:nth-child(1),
+.bedroom .imageWrapper:nth-child(1) {
   grid-column: 1 / -1;
   aspect-ratio: 3 / 2;
 }
 .living-room-2 .imageWrapper:nth-child(2),
 .pool .imageWrapper:nth-child(2),
+.bedroom .imageWrapper:nth-child(2),
 .living-room-2 .imageWrapper:nth-child(3),
-.pool .imageWrapper:nth-child(3) {
+.pool .imageWrapper:nth-child(3),
+.bedroom .imageWrapper:nth-child(3) {
   aspect-ratio: 3 / 2;
 }
-.living-room-2 .imageWrapper:nth-child(4) {
+.living-room-2 .imageWrapper:nth-child(4),
+.bedroom .imageWrapper:nth-child(4) {
   grid-column: 1 / -1;
   aspect-ratio: 3 / 2;
 }
 .living-room-2 .imageWrapper:nth-child(5),
-.living-room-2 .imageWrapper:nth-child(6) {
+.bedroom .imageWrapper:nth-child(5),
+.living-room-2 .imageWrapper:nth-child(6),
+.bedroom .imageWrapper:nth-child(6) {
   aspect-ratio: 3 / 2;
 }
-.living-room-2 .imageWrapper:nth-child(7) {
+.living-room-2 .imageWrapper:nth-child(7),
+.bedroom .imageWrapper:nth-child(7) {
   grid-column: 1 / -1;
   aspect-ratio: 3 / 2;
 }
 
-.full-kitchen, .bedroom {
+.full-kitchen {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
-.full-kitchen .imageWrapper, .bedroom .imageWrapper {
+.full-kitchen .imageWrapper {
   aspect-ratio: 3 / 2;
 }
 
