@@ -58,7 +58,8 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
   return (
     <AnimatePresence>
       <motion.div
-        className={styles.outerContainer}
+        ref={containerRef}
+        className={styles.container}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
