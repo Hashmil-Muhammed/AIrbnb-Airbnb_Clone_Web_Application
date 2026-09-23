@@ -65,6 +65,7 @@ export default function PhotoTour({ isOpen, onClose, onImageClick }: PhotoTourPr
         aria-modal="true"
         aria-label="Photo tour"
       >
+        <br />
         <div className={styles.stickyTop}>
           <header className={styles.header}>
             <button className={styles.backBtn} onClick={onClose} aria-label="Close photo tour">

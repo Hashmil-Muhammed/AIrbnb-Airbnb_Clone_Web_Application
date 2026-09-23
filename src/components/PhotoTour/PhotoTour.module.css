@@ -113,7 +113,7 @@
   display: flex;
   justify-content: space-between;
   gap: 60px;
-  margin-bottom: 64px;
+  margin-bottom: 24px;
   scroll-margin-top: 180px;
 }
 
@@ -174,7 +174,7 @@
 .living-room-1, .gym {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 8px;
 }
 .living-room-1 .imageWrapper:nth-child(1),
 .gym .imageWrapper:nth-child(1) {
@@ -188,7 +188,7 @@
 .living-room-2, .pool, .bedroom, .exterior, .additional-photos {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 8px;
 }
 
 .living-room-2 .imageWrapper,
@@ -219,7 +219,7 @@
 .full-kitchen {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 8px;
 }
 .full-kitchen .imageWrapper {
   aspect-ratio: 3 / 2;
@@ -228,7 +228,7 @@
 .defaultGallery {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 .defaultGallery .imageWrapper {
   aspect-ratio: 3 / 2;

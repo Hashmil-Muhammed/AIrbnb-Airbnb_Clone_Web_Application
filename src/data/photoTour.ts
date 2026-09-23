@@ -65,6 +65,8 @@ const add_5 = { url: '/images/tour-add-5.jpg', alt: 'Additional view 5' };
 const add_6 = { url: '/images/tour-add-6.jpg', alt: 'Additional view 6' };
 const add_7 = { url: '/images/tour-add-7.png', alt: 'Additional view 7' };
 const add_8 = { url: '/images/tour-add-8.jpg', alt: 'Additional view 8' };
+const add_9 = { url: '/images/tour-add-9.jpg', alt: 'Additional view 9' };
+const add_10 = { url: '/images/tour-add-10.jpg', alt: 'Additional view 10' };
 
 export const photoTourSections: PhotoTourSection[] = [
   {
@@ -119,7 +121,7 @@ export const photoTourSections: PhotoTourSection[] = [
     id: "additional-photos",
     title: "Additional photos",
     description: "",
-    images: [add_1, add_2, add_3, add_4, add_5, add_6, add_7, add_8, img9, img9]
+    images: [add_1, add_2, add_3, add_4, add_5, add_6, add_7, add_8, add_9, add_10]
   }
 ];
 
