@@ -135,6 +135,7 @@
   color: var(--color-text-secondary, #717171);
   font-size: 16px;
   line-height: 1.5;
+  white-space: pre-line;
 }
 
 .gallery {
@@ -177,11 +178,11 @@
 }
 .living-room-1 .imageWrapper:nth-child(1) {
   grid-column: 1 / -1;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
 }
 .living-room-1 .imageWrapper:nth-child(2),
 .living-room-1 .imageWrapper:nth-child(3) {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
 }
 
 .living-room-2, .pool {
@@ -192,25 +193,25 @@
 .living-room-2 .imageWrapper:nth-child(1),
 .pool .imageWrapper:nth-child(1) {
   grid-column: 1 / -1;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
 }
 .living-room-2 .imageWrapper:nth-child(2),
 .pool .imageWrapper:nth-child(2),
 .living-room-2 .imageWrapper:nth-child(3),
 .pool .imageWrapper:nth-child(3) {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
 }
 .living-room-2 .imageWrapper:nth-child(4) {
   grid-column: 1 / -1;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
 }
 .living-room-2 .imageWrapper:nth-child(5),
 .living-room-2 .imageWrapper:nth-child(6) {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
 }
 .living-room-2 .imageWrapper:nth-child(7) {
   grid-column: 1 / -1;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
 }
 
 .defaultGallery {
@@ -219,7 +220,7 @@
   gap: 16px;
 }
 .defaultGallery .imageWrapper {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
 }
 
 @media (max-width: 744px) {
