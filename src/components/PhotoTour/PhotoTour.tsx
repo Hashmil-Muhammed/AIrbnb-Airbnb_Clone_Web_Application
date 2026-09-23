@@ -13,7 +13,7 @@ interface PhotoTourProps {
 }
 
 export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpen }: PhotoTourProps) {
-  const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Lock body scroll and handle Escape key
   useEffect(() => {
@@ -36,8 +36,18 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
 
   const handleScrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const container = containerRef.current;
+    
+    if (element && container) {
+       // Offset for the sticky header + category nav (approx 160px)
+       const headerOffset = 160; 
+       const elementPosition = element.getBoundingClientRect().top;
+       const containerPosition = container.getBoundingClientRect().top;
+       
+       container.scrollTo({
+         top: container.scrollTop + (elementPosition - containerPosition) - headerOffset,
+         behavior: 'smooth'
+       });
     }
   };
 
@@ -48,7 +58,9 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
   return (
     <AnimatePresence>
       <motion.div 
+        ref={containerRef}
         className={styles.container}
+        style={{ overflowY: isLightboxOpen ? 'hidden' : 'auto' }}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
@@ -73,35 +85,30 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
               </button>
             </div>
           </header>
-        
-          <nav className={styles.categoryNav}>
-            {photoTourSections.map(section => (
-              <button 
-                key={section.id} 
-                className={styles.categoryBtn} 
-                onClick={() => handleScrollToSection(section.id)}
-              >
-                <div className={styles.categoryThumbnail}>
-                  <Image 
-                    src={section.images[0].url} 
-                    alt={section.title} 
-                    fill 
-                    className={styles.thumbnailImage} 
-                    sizes="120px"
-                  />
-                </div>
-                <span>{section.title}</span>
-              </button>
-            ))}
-          </nav>
         </div>
         
-        <div 
-          className={styles.scrollArea} 
-          ref={scrollAreaRef}
-          style={{ overflowY: isLightboxOpen ? 'hidden' : 'auto' }}
-        >
-          <div className={styles.contentWrapper}>
+        <nav className={styles.categoryNav}>
+          {photoTourSections.map(section => (
+            <button 
+              key={section.id} 
+              className={styles.categoryBtn} 
+              onClick={() => handleScrollToSection(section.id)}
+            >
+              <div className={styles.categoryThumbnail}>
+                <Image 
+                  src={section.images[0].url} 
+                  alt={section.title} 
+                  fill 
+                  className={styles.thumbnailImage} 
+                  sizes="120px"
+                />
+              </div>
+              <span>{section.title}</span>
+            </button>
+          ))}
+        </nav>
+        
+        <div className={styles.contentWrapper}>
           <div className={styles.content}>
             {photoTourSections.map(section => {
               const sectionStartIndex = globalImageIndex;
@@ -139,7 +146,6 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
               );
             })}
           </div>
-        </div>
         </div>
       </motion.div>
     </AnimatePresence>
