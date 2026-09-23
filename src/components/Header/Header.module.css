@@ -1,9 +1,7 @@
 .header {
   border-bottom: 1px solid var(--color-border);
   background-color: var(--color-surface);
-  position: fixed;
-  top: 0;
-  width: 100%;
+  position: relative;
   z-index: 100;
 }
 
@@ -11,7 +9,7 @@
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  height: 70px;
+  height: 80px;
   padding: 0 40px;
 }
 
