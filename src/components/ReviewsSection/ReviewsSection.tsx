@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './ReviewsSection.module.css';
 
@@ -35,7 +35,7 @@ const REVIEWS = [
     joined: '4 years on Airbnb',
     date: 'May 2026',
     rating: 5,
-    text: 'We had an amazing stay at this property in Goa! The entire home was spotless and exceptionally well-maintained, making us feel comfortable from the moment we arrived. The cleanliness standards were truly impressive, with every corner of the house looking fresh and pristine....',
+    text: 'We had an amazing stay at this property in Goa! The entire home was spotless and exceptionally well-maintained, making us feel comfortable from the moment we arrived. The cleanliness standards were truly impressive, with every corner of the house looking fresh and pristine.The highlight of our stay was definitely the jacuzzi. It was clean, well-kept, and the perfect place to relax after a day of exploring Goa. It added a luxurious touch to our vacation and made our experience even more memorable.The property was exactly as described, well-equipped, and offered a peaceful atmosphere. We would highly recommend this place to anyone looking for a comfortable, clean, and relaxing stay in Goa. Looking forward to visiting again!',
     avatar: 'V',
     avatarBg: 'rgb(239, 234, 247)',
     avatarColor: 'rgb(139, 111, 196)',
@@ -60,6 +60,45 @@ const REVIEWS = [
 ];
 
 import { SprayCan, CheckCircle, Key, MessageCircle, Map, Tag, Sofa, CheckCircle2, Droplets, Sparkles, Heart, Grid } from 'lucide-react';
+
+const ReviewCard = ({ review }: { review: typeof REVIEWS[0] }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div className={styles.reviewCard}>
+      <div className={styles.reviewHeader}>
+        {review.avatarImage ? (
+          <img src={review.avatarImage} alt={review.name} className={styles.avatar} />
+        ) : (
+          <div 
+            className={styles.avatarInitials}
+            style={review.avatarBg ? { backgroundColor: review.avatarBg, color: review.avatarColor } : undefined}
+          >
+            {review.avatar}
+          </div>
+        )}
+        <div>
+          <div className={styles.reviewerName}>{review.name}</div>
+          <div className={styles.reviewerJoined}>{review.joined}</div>
+        </div>
+      </div>
+      <div className={styles.reviewMeta}>
+        <span className={styles.stars}>★★★★★</span>
+        <span className={styles.dot}>·</span>
+        <span>{review.date}</span>
+      </div>
+      <p className={`${styles.reviewText} ${isExpanded ? styles.expanded : ''}`}>{review.text}</p>
+      {review.hasMore && (
+        <button 
+          className={styles.showMoreBtn} 
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          {isExpanded ? 'Show less' : 'Show more'}
+        </button>
+      )}
+    </div>
+  );
+};
 
 export default function ReviewsSection() {
   return (
@@ -127,28 +166,7 @@ export default function ReviewsSection() {
       {/* Reviews Grid */}
       <div className={styles.reviewsGrid}>
         {REVIEWS.map((review, i) => (
-          <div key={i} className={styles.reviewCard}>
-            <div className={styles.reviewHeader}>
-              {review.avatarImage ? (
-                <img src={review.avatarImage} alt={review.name} className={styles.avatar} />
-              ) : (
-                <div className={styles.avatarInitials}>{review.avatar}</div>
-              )}
-              <div>
-                <div className={styles.reviewerName}>{review.name}</div>
-                <div className={styles.reviewerJoined}>{review.joined}</div>
-              </div>
-            </div>
-            <div className={styles.reviewMeta}>
-              <span className={styles.stars}><b>★★★★★</b></span>
-              <span className={styles.dot}>·</span>
-              <span>{review.date}</span>
-            </div>
-            <p className={styles.reviewText}>{review.text}</p>
-            {review.hasMore && (
-              <button className={styles.showMoreBtn}>Show more</button>
-            )}
-          </div>
+          <ReviewCard key={i} review={review} />
         ))}
       </div>
 
