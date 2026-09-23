@@ -40,6 +40,12 @@ const bed_4 = { url: '/images/tour-bedroom-4.jpg', alt: 'Bedroom view 4' };
 const bed_5 = { url: '/images/tour-bedroom-5.jpg', alt: 'Bedroom view 5' };
 const bed_6 = { url: '/images/tour-bedroom-6.jpg', alt: 'Bedroom view 6' };
 
+const gym_1 = { url: '/images/tour-6.jpg', alt: 'Gym view 1' };
+const gym_2 = { url: '/images/tour-gym-2.png', alt: 'Gym view 2' };
+const gym_3 = { url: '/images/tour-gym-3.jpg', alt: 'Gym view 3' };
+const gym_4 = { url: '/images/tour-gym-4.jpg', alt: 'Gym view 4' };
+const gym_5 = { url: '/images/tour-gym-5.jpg', alt: 'Gym view 5' };
+
 export const photoTourSections: PhotoTourSection[] = [
   {
     id: "living-room-1",
@@ -67,20 +73,20 @@ export const photoTourSections: PhotoTourSection[] = [
   },
   {
     id: "full-bathroom",
-    title: "Full bathroom",
+    title: "Hairdryer · Hot water · Shampoo · Shower gel",
     description: "Shower · Toilet",
-    images: [img5, img5]
+    images: [img5]
   },
   {
     id: "gym",
     title: "Gym",
     description: "Air conditioning · Gym · Exercise equipment · Ceiling fan",
-    images: [img6, img6, img6]
+    images: [gym_1, gym_2, gym_3, gym_4, gym_5]
   },
   {
     id: "exterior",
     title: "Exterior",
-    description: "Outdoor space",
+    description: "",
     images: [img7, img7, img7]
   },
   {

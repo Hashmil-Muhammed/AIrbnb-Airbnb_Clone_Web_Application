@@ -171,17 +171,17 @@
 }
 
 /* Specific Grid Layouts */
-.living-room-1 {
+.living-room-1, .gym {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
-.living-room-1 .imageWrapper:nth-child(1) {
+.living-room-1 .imageWrapper:nth-child(1),
+.gym .imageWrapper:nth-child(1) {
   grid-column: 1 / -1;
-  aspect-ratio: 3 / 2;
 }
-.living-room-1 .imageWrapper:nth-child(2),
-.living-room-1 .imageWrapper:nth-child(3) {
+.living-room-1 .imageWrapper,
+.gym .imageWrapper {
   aspect-ratio: 3 / 2;
 }
 
