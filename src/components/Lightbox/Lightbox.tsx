@@ -84,7 +84,9 @@ export default function Lightbox({ activeIndex, images, onClose, onNavigate }: L
       >
         <div className={styles.header}>
           <button className={styles.closeBtn} onClick={onClose} aria-label="Show all photos">
-            <GridIcon />
+            <svg viewBox="0 0 16 16" fill="currentColor" style={{ display: 'block', height: '16px', width: '16px' }}>
+              <path fillRule="evenodd" d="M3 11.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-10-5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-10-5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"></path>
+            </svg>
           </button>
           
           {currentImage?.title && (
