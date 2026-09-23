@@ -61,7 +61,7 @@
   gap: 24px 12px;
   padding: 16px 24px;
   justify-content: flex-start;
-  max-width: 900px; /* Matches contentWrapper max-width */
+  max-width: 732px; /* Matches contentWrapper max-width */
   margin: 0 auto;
 }
 .categoryNav::-webkit-scrollbar {
@@ -104,7 +104,7 @@
 }
 
 .contentWrapper {
-  max-width: 900px;
+  max-width: 732px;
   margin: 0 auto;
   width: 100%;
   padding: 48px 24px;

@@ -24,7 +24,7 @@ export const listing = {
       alt: 'Property view 2'
     },
     {
-      url: '/images/custom-3.jpg',
+      url: '/images/custom-3.png',
       alt: 'Property view 3'
     },
     {
