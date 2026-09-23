@@ -17,7 +17,6 @@
   top: 0;
   z-index: 100;
   background-color: var(--color-background);
-  border-bottom: 1px solid var(--color-border);
 }
 
 .header {
@@ -61,7 +60,7 @@
   gap: 24px 12px;
   padding: 16px 24px;
   justify-content: flex-start;
-  max-width: 732px; /* Matches contentWrapper max-width */
+  max-width: 852px; /* Fits exactly 8 items per row */
   margin: 0 auto;
 }
 .categoryNav::-webkit-scrollbar {

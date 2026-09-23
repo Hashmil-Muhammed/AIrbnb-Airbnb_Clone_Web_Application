@@ -16,23 +16,23 @@ export const listing = {
   baths: 1,
   images: [
     {
-      url: '/images/custom-1.jpg',
+      url: '/images/listing-1.jpg',
       alt: 'Property view 1'
     },
     {
-      url: '/images/custom-2.jpg',
+      url: '/images/listing-2.jpg',
       alt: 'Property view 2'
     },
     {
-      url: '/images/custom-3.png',
+      url: '/images/listing-3.jpg',
       alt: 'Property view 3'
     },
     {
-      url: '/images/custom-4.jpg',
+      url: '/images/listing-4.jpg',
       alt: 'Property view 4'
     },
     {
-      url: '/images/custom-5.jpg',
+      url: '/images/listing-5.jpg',
       alt: 'Property view 5'
     }
   ],

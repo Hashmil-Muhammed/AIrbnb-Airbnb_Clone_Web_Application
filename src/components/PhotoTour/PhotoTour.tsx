@@ -80,28 +80,28 @@ export default function PhotoTour({ isOpen, onClose, onImageClick }: PhotoTourPr
               </button>
             </div>
           </header>
-          
-          <nav className={styles.categoryNav}>
-            {photoTourSections.map(section => (
-              <button 
-                key={section.id} 
-                className={styles.categoryBtn} 
-                onClick={() => handleScrollToSection(section.id)}
-              >
-                <div className={styles.categoryThumbnail}>
-                  <Image 
-                    src={section.images[0].url} 
-                    alt={section.title} 
-                    fill 
-                    className={styles.thumbnailImage} 
-                    sizes="120px"
-                  />
-                </div>
-                <span>{section.title}</span>
-              </button>
-            ))}
-          </nav>
         </div>
+        
+        <nav className={styles.categoryNav}>
+          {photoTourSections.map(section => (
+            <button 
+              key={section.id} 
+              className={styles.categoryBtn} 
+              onClick={() => handleScrollToSection(section.id)}
+            >
+              <div className={styles.categoryThumbnail}>
+                <Image 
+                  src={section.images[0].url} 
+                  alt={section.title} 
+                  fill 
+                  className={styles.thumbnailImage} 
+                  sizes="120px"
+                />
+              </div>
+              <span>{section.title}</span>
+            </button>
+          ))}
+        </nav>
         
         <div className={styles.contentWrapper}>
           <div className={styles.content}>
