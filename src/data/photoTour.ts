@@ -23,6 +23,13 @@ const img9 = { url: '/images/tour-9.jpg', alt: 'Additional photos' };
 const lr1_1 = { url: '/images/tour-lr1-1.jpg', alt: 'Living room 1 view 1' };
 const lr1_2 = { url: '/images/tour-lr1-2.jpg', alt: 'Living room 1 view 2' };
 const lr1_3 = { url: '/images/tour-lr1-3.jpg', alt: 'Living room 1 view 3' };
+const lr2_1 = { url: '/images/listing-2.jpg', alt: 'Living room 2 view 1' };
+const lr2_2 = { url: '/images/listing-3.jpg', alt: 'Living room 2 view 2' };
+const lr2_3 = { url: '/images/tour-lr2-3.jpg', alt: 'Living room 2 view 3' };
+const lr2_4 = { url: '/images/listing-1.jpg', alt: 'Living room 2 view 4' };
+const lr2_5 = { url: '/images/tour-lr2-5.jpg', alt: 'Living room 2 view 5' };
+const lr2_6 = { url: '/images/tour-lr2-6.jpg', alt: 'Living room 2 view 6' };
+const lr2_7 = { url: '/images/tour-lr2-7.jpg', alt: 'Living room 2 view 7' };
 
 export const photoTourSections: PhotoTourSection[] = [
   {
@@ -35,7 +42,7 @@ export const photoTourSections: PhotoTourSection[] = [
     id: "living-room-2",
     title: "Living room 2",
     description: "Ceiling fan · Hot tub",
-    images: [img2, img2, img2, img2] // large main, smaller underneath, additional large
+    images: [lr2_1, lr2_2, lr2_3, lr2_4, lr2_5, lr2_6, lr2_7]
   },
   {
     id: "full-kitchen",

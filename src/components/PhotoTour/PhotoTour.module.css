@@ -60,7 +60,7 @@
   gap: 24px 12px;
   padding: 16px 24px;
   justify-content: flex-start;
-  max-width: 1092px; /* Fits exactly 8 items (120px + 12px gap) + padding */
+  max-width: 1188px; /* Fits exactly 8 items (132px + 12px gap) + padding */
   margin: 0 auto;
 }
 .categoryNav::-webkit-scrollbar {
@@ -83,7 +83,7 @@
   font-size: 14px;
   color: var(--color-text-secondary, #717171);
   transition: opacity 0.2s;
-  width: 120px;
+  width: 132px;
 }
 .categoryBtn:hover {
   opacity: 0.8;
@@ -92,8 +92,8 @@
 
 .categoryThumbnail {
   position: relative;
-  width: 120px;
-  height: 80px;
+  width: 132px;
+  height: 88px;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -103,7 +103,7 @@
 }
 
 .contentWrapper {
-  max-width: 1092px; /* Match categoryNav max-width to align left edges */
+  max-width: 1188px; /* Match categoryNav max-width to align left edges */
   margin: 0 auto;
   width: 100%;
   padding: 48px 24px;
@@ -118,7 +118,7 @@
 }
 
 .sectionInfo {
-  flex: 0 0 240px;
+  flex: 0 0 300px;
   position: sticky;
   top: 180px;
   align-self: flex-start;
@@ -138,7 +138,7 @@
 }
 
 .gallery {
-  flex: 0 0 540px; /* Restrict width to make images narrower */
+  flex: 0 0 480px; /* Restrict width to make images narrower */
 }
 
 .imageWrapper {
@@ -201,6 +201,14 @@
   aspect-ratio: 4 / 3;
 }
 .living-room-2 .imageWrapper:nth-child(4) {
+  grid-column: 1 / -1;
+  aspect-ratio: 4 / 3;
+}
+.living-room-2 .imageWrapper:nth-child(5),
+.living-room-2 .imageWrapper:nth-child(6) {
+  aspect-ratio: 4 / 3;
+}
+.living-room-2 .imageWrapper:nth-child(7) {
   grid-column: 1 / -1;
   aspect-ratio: 4 / 3;
 }
