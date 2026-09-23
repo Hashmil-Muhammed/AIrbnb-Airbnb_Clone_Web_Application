@@ -21,6 +21,7 @@ export default function ListingDetails() {
       {/* Guest Favourite Banner */}
       <section className={styles.guestFavouriteBanner}>
         <div className={styles.gfLeft}>
+          <div className={styles.gfBadge}>
             <div className={styles.laurel}>
               <svg style={{ display: 'block', height: '100%', width: 'auto' }} viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" clipRule="evenodd" d="M15.4895 25.417L14.8276 24.4547L16.5303 23.6492L17.1923 24.6116L16.3409 25.0143L17.1923 24.6116C18.6638 26.751 17.9509 29.3868 15.5999 30.4989C14.8548 30.8513 14.0005 31.0196 13.1221 30.987L12.8044 30.9752L12.7297 29.2305L13.0474 29.2423C13.5744 29.2618 14.0871 29.1608 14.5341 28.9494C15.9447 28.2821 16.3725 26.7007 15.4895 25.417Z" fill="#222222"></path>
