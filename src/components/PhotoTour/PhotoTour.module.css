@@ -57,14 +57,15 @@
 
 .categoryNav {
   display: flex;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 24px 12px;
   padding: 16px 24px;
-  overflow-x: auto;
-  scrollbar-width: none; /* Firefox */
-  justify-content: center; /* Center the nav items if possible, but they scroll */
+  justify-content: flex-start;
+  max-width: 900px; /* Matches contentWrapper max-width */
+  margin: 0 auto;
 }
 .categoryNav::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  display: none;
 }
 
 .categoryBtn {
@@ -75,22 +76,25 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px 0;
+  padding: 0;
   border-radius: 8px;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
   font-weight: 400;
-  color: var(--color-text, #222222); /* Match the dark text in SS1 */
+  font-size: 14px;
+  color: var(--color-text-secondary, #717171);
   transition: opacity 0.2s;
-  min-width: 100px;
+  width: 96px;
 }
 .categoryBtn:hover {
   opacity: 0.8;
+  color: var(--color-text, #222222);
 }
 
 .categoryThumbnail {
   position: relative;
-  width: 120px;
-  height: 80px;
+  width: 96px;
+  height: 64px;
   border-radius: 8px;
   overflow: hidden;
 }
