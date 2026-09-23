@@ -22,10 +22,17 @@ import styles from "./page.module.css";
 
 export default function Home() {
   const [isPhotoTourOpen, setIsPhotoTourOpen] = useState(false);
+  const [photoTourTarget, setPhotoTourTarget] = useState<string | null>(null);
   const [activePhotoIndex, setActivePhotoIndex] = useState<number | null>(null);
   const [lightboxImages, setLightboxImages] = useState(listing.images);
 
   const handleShowAllPhotos = () => {
+    setPhotoTourTarget(null);
+    setIsPhotoTourOpen(true);
+  };
+
+  const handleHeroImageClick = (index: number) => {
+    setPhotoTourTarget('living-room-2');
     setIsPhotoTourOpen(true);
   };
 
@@ -50,7 +57,7 @@ export default function Home() {
         <ListingHeader />
         <HeroGallery 
           onShowAllPhotos={handleShowAllPhotos} 
-          onImageClick={(idx) => handleImageClick(idx)} 
+          onImageClick={(idx) => handleHeroImageClick(idx)} 
         />
         <div className={styles.content}>
           <div className={styles.mainColumn}>
@@ -78,6 +85,7 @@ export default function Home() {
         onClose={closePhotoTour}
         onImageClick={(idx, images) => handleImageClick(idx, images)}
         isLightboxOpen={activePhotoIndex !== null}
+        targetId={photoTourTarget}
       />
 
       <Lightbox 

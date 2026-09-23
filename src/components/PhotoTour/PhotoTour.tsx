@@ -10,9 +10,10 @@ interface PhotoTourProps {
   onClose: () => void;
   onImageClick: (index: number, images?: TourImage[]) => void;
   isLightboxOpen?: boolean;
+  targetId?: string | null;
 }
 
-export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpen }: PhotoTourProps) {
+export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpen, targetId }: PhotoTourProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Lock body scroll and handle Escape key
@@ -33,6 +34,14 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, onClose]);
+
+  useEffect(() => {
+    if (isOpen && targetId) {
+      setTimeout(() => {
+        handleScrollToSection(targetId);
+      }, 100);
+    }
+  }, [isOpen, targetId]);
 
   const handleScrollToSection = (id: string) => {
     const element = document.getElementById(id);
