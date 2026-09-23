@@ -20,13 +20,16 @@ const img6 = { url: '/images/tour-6.jpg', alt: 'Gym' };
 const img7 = { url: '/images/tour-7.jpg', alt: 'Exterior' };
 const img8 = { url: '/images/tour-8.jpg', alt: 'Pool' };
 const img9 = { url: '/images/tour-9.jpg', alt: 'Additional photos' };
+const lr1_1 = { url: '/images/tour-lr1-1.jpg', alt: 'Living room 1 view 1' };
+const lr1_2 = { url: '/images/tour-lr1-2.jpg', alt: 'Living room 1 view 2' };
+const lr1_3 = { url: '/images/tour-lr1-3.jpg', alt: 'Living room 1 view 3' };
 
 export const photoTourSections: PhotoTourSection[] = [
   {
     id: "living-room-1",
     title: "Living room 1",
     description: "Sofa · Air conditioning · Ceiling fan · TV",
-    images: [img1, img1, img1] // 1 large, 2 side-by-side
+    images: [lr1_1, lr1_2, lr1_3] // 1 large, 2 side-by-side
   },
   {
     id: "living-room-2",

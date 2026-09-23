@@ -111,6 +111,7 @@
 
 .section {
   display: flex;
+  justify-content: space-between;
   gap: 60px;
   margin-bottom: 64px;
   scroll-margin-top: 180px;
