@@ -187,7 +187,7 @@
 }
 .living-room-1 .imageWrapper,
 .gym .imageWrapper {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 2;
 }
 
 .living-room-2, .pool, .bedroom, .exterior, .additional-photos {
@@ -201,7 +201,7 @@
 .bedroom .imageWrapper,
 .exterior .imageWrapper,
 .additional-photos .imageWrapper {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 2;
 }
 
 .living-room-2 .imageWrapper:nth-child(1),
@@ -227,7 +227,7 @@
   gap: 8px;
 }
 .full-kitchen .imageWrapper {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 2;
 }
 
 .defaultGallery {
@@ -236,7 +236,7 @@
   gap: 8px;
 }
 .defaultGallery .imageWrapper {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 2;
 }
 
 @media (max-width: 744px) {
