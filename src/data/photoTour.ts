@@ -46,6 +46,13 @@ const gym_3 = { url: '/images/tour-gym-3.jpg', alt: 'Gym view 3' };
 const gym_4 = { url: '/images/tour-gym-4.jpg', alt: 'Gym view 4' };
 const gym_5 = { url: '/images/tour-gym-5.jpg', alt: 'Gym view 5' };
 
+const ext_1 = { url: '/images/tour-exterior-1.jpg', alt: 'Exterior view 1' };
+const ext_2 = { url: '/images/tour-exterior-2.jpg', alt: 'Exterior view 2' };
+const ext_3 = { url: '/images/tour-exterior-3.jpg', alt: 'Exterior view 3' };
+const ext_4 = { url: '/images/listing-5.jpg', alt: 'Exterior view 4' };
+const ext_5 = { url: '/images/tour-exterior-5.jpg', alt: 'Exterior view 5' };
+const ext_6 = { url: '/images/tour-exterior-6.jpg', alt: 'Exterior view 6' };
+
 export const photoTourSections: PhotoTourSection[] = [
   {
     id: "living-room-1",
@@ -73,8 +80,8 @@ export const photoTourSections: PhotoTourSection[] = [
   },
   {
     id: "full-bathroom",
-    title: "Hairdryer · Hot water · Shampoo · Shower gel",
-    description: "Shower · Toilet",
+    title: "Full bathroom",
+    description: "Hairdryer · Hot water · Shampoo · Shower gel",
     images: [img5]
   },
   {
@@ -87,7 +94,7 @@ export const photoTourSections: PhotoTourSection[] = [
     id: "exterior",
     title: "Exterior",
     description: "",
-    images: [img7, img7, img7]
+    images: [ext_1, ext_2, ext_3, ext_4, ext_5, ext_6]
   },
   {
     id: "pool",
