@@ -6,17 +6,15 @@
   height: 100vh;
   background-color: var(--color-background);
   z-index: 1000;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
 .stickyTop {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  flex-shrink: 0;
   background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .header {
@@ -102,6 +100,11 @@
   object-fit: cover;
 }
 
+.scrollArea {
+  flex: 1;
+  width: 100%;
+}
+
 .contentWrapper {
   max-width: 1188px; /* Match categoryNav max-width to align left edges */
   margin: 0 auto;
@@ -114,13 +117,13 @@
   justify-content: space-between;
   gap: 60px;
   margin-bottom: 24px;
-  scroll-margin-top: 180px;
+  scroll-margin-top: 48px;
 }
 
 .sectionInfo {
   flex: 1;
   position: sticky;
-  top: 180px;
+  top: 48px;
   align-self: flex-start;
 }
 
