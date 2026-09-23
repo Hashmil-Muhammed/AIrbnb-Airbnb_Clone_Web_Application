@@ -18,18 +18,18 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
   // Lock body scroll and handle Escape key
   useEffect(() => {
     if (!isOpen) return;
-
+    
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
-
+    
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handleKeyDown);
 
-    return () => {
-      document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
+    return () => { 
+      document.body.style.overflow = ''; 
+      document.documentElement.style.overflow = ''; 
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, onClose]);
@@ -37,17 +37,17 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
   const handleScrollToSection = (id: string) => {
     const element = document.getElementById(id);
     const container = containerRef.current;
-
+    
     if (element && container) {
-      // Offset for the sticky header + category nav (approx 160px)
-      const headerOffset = 160;
-      const elementPosition = element.getBoundingClientRect().top;
-      const containerPosition = container.getBoundingClientRect().top;
-
-      container.scrollTo({
-        top: container.scrollTop + (elementPosition - containerPosition) - headerOffset,
-        behavior: 'smooth'
-      });
+       // Offset for the sticky header + category nav (approx 160px)
+       const headerOffset = 160; 
+       const elementPosition = element.getBoundingClientRect().top;
+       const containerPosition = container.getBoundingClientRect().top;
+       
+       container.scrollTo({
+         top: container.scrollTop + (elementPosition - containerPosition) - headerOffset,
+         behavior: 'smooth'
+       });
     }
   };
 
@@ -57,9 +57,10 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
 
   return (
     <AnimatePresence>
-      <motion.div
+      <motion.div 
         ref={containerRef}
         className={styles.container}
+        style={{ overflowY: isLightboxOpen ? 'hidden' : 'auto' }}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
@@ -85,26 +86,20 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
             </div>
           </header>
         </div>
-
-        <div
-          ref={containerRef}
-          className={styles.container}
-          style={{ overflowY: isLightboxOpen ? 'hidden' : 'auto' }}
-        >
-
+        
         <nav className={styles.categoryNav}>
           {photoTourSections.map(section => (
-            <button
-              key={section.id}
-              className={styles.categoryBtn}
+            <button 
+              key={section.id} 
+              className={styles.categoryBtn} 
               onClick={() => handleScrollToSection(section.id)}
             >
               <div className={styles.categoryThumbnail}>
-                <Image
-                  src={section.images[0].url}
-                  alt={section.title}
-                  fill
-                  className={styles.thumbnailImage}
+                <Image 
+                  src={section.images[0].url} 
+                  alt={section.title} 
+                  fill 
+                  className={styles.thumbnailImage} 
                   sizes="120px"
                 />
               </div>
@@ -112,13 +107,13 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
             </button>
           ))}
         </nav>
-
+        
         <div className={styles.contentWrapper}>
           <div className={styles.content}>
             {photoTourSections.map(section => {
               const sectionStartIndex = globalImageIndex;
               globalImageIndex += section.images.length;
-
+              
               // Normalize id for css class (camelCase equivalent if needed, but we'll use exact id strings)
               const sectionClass = styles[section.id] || styles.defaultGallery;
 
@@ -128,11 +123,11 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
                     <h3>{section.title}</h3>
                     {section.description && <p>{section.description}</p>}
                   </div>
-
+                  
                   <div className={`${styles.gallery} ${sectionClass}`}>
                     {section.images.map((img, idx) => (
-                      <div
-                        key={idx}
+                      <div 
+                        key={idx} 
                         className={styles.imageWrapper}
                         onClick={() => onImageClick(sectionStartIndex + idx, flattenedTourImages)}
                       >
@@ -151,7 +146,6 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
               );
             })}
           </div>
-        </div>
         </div>
       </motion.div>
     </AnimatePresence>
