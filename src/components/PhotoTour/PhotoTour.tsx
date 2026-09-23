@@ -73,7 +73,7 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
             <button className={styles.backBtn} onClick={onClose} aria-label="Close photo tour">
               <ChevronLeft size={24} />
             </button>
-            <div className={styles.headerTitle}></div>
+            <div className={styles.headerTitle}>Photo tour</div>
             <div className={styles.headerActions}>
               <button className={styles.actionBtn} aria-label="Share">
                 <Share size={16} />
