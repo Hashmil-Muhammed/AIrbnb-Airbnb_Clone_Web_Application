@@ -1,8 +1,20 @@
 import React, { useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import styles from './Lightbox.module.css';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const GridIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" role="presentation" focusable="false" style={{display: 'block', height: '20px', width: '20px', fill: 'currentColor'}}>
+    <path fillRule="evenodd" d="M3 11.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-10-5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-10-5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"></path>
+  </svg>
+);
+
+const ArrowIcon = ({ left = false }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{display: 'block', height: '16px', width: '16px', fill: 'none', stroke: 'currentColor', strokeWidth: 4, overflow: 'visible', transform: left ? 'rotate(180deg)' : 'none'}}>
+    <path fill="none" d="m12 4 11.3 11.3a1 1 0 0 1 0 1.4L12 28"></path>
+  </svg>
+);
 
 export interface LightboxImage {
   url: string;
@@ -69,8 +81,8 @@ export default function Lightbox({ activeIndex, images, onClose, onNavigate }: L
         aria-label="Image gallery"
       >
         <div className={styles.header}>
-          <button className={styles.closeBtn} onClick={onClose} aria-label="Close">
-            <ChevronLeft size={20} />
+          <button className={styles.closeBtn} onClick={onClose} aria-label="Show all photos">
+            <GridIcon />
           </button>
           
           {currentImage?.title && (
@@ -96,7 +108,7 @@ export default function Lightbox({ activeIndex, images, onClose, onNavigate }: L
             disabled={activeIndex === 0}
             aria-label="Previous image"
           >
-            <ChevronLeft size={24} />
+            <ArrowIcon left />
           </button>
 
           <div className={styles.imageContainer}>
@@ -124,7 +136,7 @@ export default function Lightbox({ activeIndex, images, onClose, onNavigate }: L
             disabled={activeIndex === total - 1}
             aria-label="Next image"
           >
-            <ChevronRight size={24} />
+            <ArrowIcon />
           </button>
         </div>
       </motion.div>

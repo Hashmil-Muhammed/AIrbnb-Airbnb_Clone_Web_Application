@@ -9,9 +9,10 @@ interface PhotoTourProps {
   isOpen: boolean;
   onClose: () => void;
   onImageClick: (index: number, images?: TourImage[]) => void;
+  isLightboxOpen?: boolean;
 }
 
-export default function PhotoTour({ isOpen, onClose, onImageClick }: PhotoTourProps) {
+export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpen }: PhotoTourProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Lock body scroll and handle Escape key
@@ -57,6 +58,7 @@ export default function PhotoTour({ isOpen, onClose, onImageClick }: PhotoTourPr
       <motion.div 
         ref={containerRef}
         className={styles.container}
+        style={{ overflowY: isLightboxOpen ? 'hidden' : 'auto' }}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}

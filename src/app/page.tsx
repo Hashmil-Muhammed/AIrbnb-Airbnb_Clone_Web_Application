@@ -77,6 +77,7 @@ export default function Home() {
         isOpen={isPhotoTourOpen} 
         onClose={closePhotoTour}
         onImageClick={(idx, images) => handleImageClick(idx, images)}
+        isLightboxOpen={activePhotoIndex !== null}
       />
 
       <Lightbox 
