@@ -20,6 +20,7 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
     if (!isOpen) return;
     
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
     
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -28,6 +29,7 @@ export default function PhotoTour({ isOpen, onClose, onImageClick, isLightboxOpe
 
     return () => { 
       document.body.style.overflow = ''; 
+      document.documentElement.style.overflow = ''; 
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, onClose]);

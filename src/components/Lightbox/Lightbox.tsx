@@ -57,10 +57,12 @@ export default function Lightbox({ activeIndex, images, onClose, onNavigate }: L
 
     window.addEventListener('keydown', handleKeyDown);
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
     
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     };
   }, [isOpen, onClose, handlePrev, handleNext]);
 
