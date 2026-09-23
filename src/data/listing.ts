@@ -28,12 +28,12 @@ export const listing = {
       alt: 'Private Jacuzzi'
     },
     {
-      url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1599895892448055764/original/67c61c6f-6260-4809-9510-0360e58a345d.jpeg',
-      alt: 'Apartment complex exterior'
-    },
-    {
       url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1599895892448055764/original/c904e1ab-a39d-4ef0-bdea-8c0bd16b9e3d.jpeg',
       alt: 'Bedroom'
+    },
+    {
+      url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1599895892448055764/original/67c61c6f-6260-4809-9510-0360e58a345d.jpeg',
+      alt: 'Apartment complex exterior'
     }
   ],
   price: {
