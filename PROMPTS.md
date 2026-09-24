@@ -44,7 +44,4 @@ This document outlines the sequence of prompts used during the AI-assisted devel
 
 ## Phase 5: Pixel-Perfect Refinement
 **Prompt 13:**
-> "Let's refine the UI. In the `StickyNav`, ensure all star rating icons are bold (`<b>★</b>`). Reduce the gap between list items in the Amenities modal to 16px. Remove underlines from buttons that shouldn't have them, and ensure all SVGs match the reference perfectly."
-
-**Prompt 14:**
 > "Final review of animations and accessibility. Ensure the Photo Tour scroll lock works so the background doesn't scroll when the modal is open. Confirm the sticky headers have the correct z-index and box-shadows."
