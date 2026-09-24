@@ -20,7 +20,7 @@ export default function StickyNav() {
   }, []);
 
   useEffect(() => {
-    const sectionIds = ['amenities', 'reviews', 'location'];
+    const sectionIds = ['photos', 'amenities', 'reviews', 'location'];
     
     const observerOptions = {
       root: null,

@@ -14,7 +14,7 @@ export default function HeroGallery({ onShowAllPhotos, onImageClick }: HeroGalle
   const smallImages = listing.images.slice(1, 5);
 
   return (
-    <section className={styles.gallery}>
+    <section id="photos" className={styles.gallery}>
       <div className={styles.mainImageWrapper} onClick={() => onImageClick(0)}>
         <Image
           src={mainImage.url}
