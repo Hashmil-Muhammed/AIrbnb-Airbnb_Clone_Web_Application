@@ -21,39 +21,72 @@
         <p class="instructions">Use your browser's Print feature (Ctrl+P / Cmd+P) to save this diagram as a PDF.</p>
         <div class="mermaid">
             graph TD
-                Users((USERS)) --> CDN[CDN / Edge]
-                CDN --> Frontend[Next.js Frontend]
-                Frontend --> Gateway[API Gateway]
+                %% Users & Edge
+                User((User)) --> CDN["CDN / Vercel<br/>(Frontend Scaling)"]
                 
-                subgraph Microservices
+                %% Frontend
+                CDN --> Frontend["Frontend / Next.js<br/>(Vercel Deployment)"]
+                
+                %% API Gateway
+                Frontend --> Gateway["API Gateway<br/>(Load Balancer)"]
+                
+                %% Backend Services
+                subgraph "Backend Services (Kubernetes Deployment - Auto Scaling)"
                     Listing[Listing Service]
                     Booking[Booking Service]
                     UserSvc[User Service]
+                    Review[Review Service]
+                    SearchSvc[Search Service]
                 end
                 
                 Gateway --> Listing
                 Gateway --> Booking
                 Gateway --> UserSvc
+                Gateway --> Review
+                Gateway --> SearchSvc
                 
-                Listing --> DB[(PostgreSQL)]
+                %% Search
+                SearchSvc --> SearchIndex[("Search Index<br/>(Elasticsearch)")]
+                
+                %% Data Storage
+                subgraph "Data Storage & Caching Layer (Storage Scaling)"
+                    DB[("Database<br/>(PostgreSQL)")]
+                    ObjectStorage[("Object Storage<br/>(AWS S3)") ]
+                    Cache[("Cache<br/>(Redis)")]
+                end
+                
+                %% Backend to DB/Storage
+                Listing --> DB
                 Booking --> DB
                 UserSvc --> DB
+                Review --> DB
                 
-                DB --> Redis[(Redis Cache)]
-                DB --> Elasticsearch[(Elasticsearch Search)]
-                DB --> S3[(S3 Images)]
+                Listing --> ObjectStorage
+                UserSvc --> ObjectStorage
                 
-                S3 --> CDN_Out[CDN]
+                Listing --> Cache
+                Booking --> Cache
+                
+                %% Monitoring
+                subgraph Observability
+                    Monitor["Monitoring / Logging<br/>(Datadog/CloudWatch)"]
+                end
+                
+                Gateway -.-> Monitor
+                Listing -.-> Monitor
+                Booking -.-> Monitor
                 
                 classDef aws fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:white;
                 classDef db fill:#336791,stroke:#fff,stroke-width:2px,color:white;
                 classDef svc fill:#FF385C,stroke:#fff,stroke-width:2px,color:white;
                 classDef cache fill:#DC382D,stroke:#fff,stroke-width:2px,color:white;
+                classDef obs fill:#1C1C1C,stroke:#fff,stroke-width:2px,color:white;
                 
-                class S3 aws;
-                class DB,Elasticsearch db;
-                class Listing,Booking,UserSvc svc;
-                class Redis cache;
+                class ObjectStorage aws;
+                class DB,SearchIndex db;
+                class Listing,Booking,UserSvc,Review,SearchSvc svc;
+                class Cache cache;
+                class Monitor obs;
         </div>
     </div>
 </body>
