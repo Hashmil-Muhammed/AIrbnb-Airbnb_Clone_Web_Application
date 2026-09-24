@@ -90,6 +90,7 @@ export default function StickyNav() {
           </div>
           <button className={styles.reserveButton} onClick={handleReserveClick}>Reserve</button>
         </div>
+        </div>
       </div>
       {toastMessage && (
         <div className={styles.toast}>
