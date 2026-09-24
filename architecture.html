@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Clone Architecture</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 40px; background: #f7f7f7; }
+        .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 1200px; margin: 0 auto; }
+        h1 { color: #FF385C; text-align: center; margin-bottom: 40px; }
+        .instructions { text-align: center; color: #717171; margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Production-Scale Airbnb Architecture</h1>
+        <p class="instructions">Use your browser's Print feature (Ctrl+P / Cmd+P) to save this diagram as a PDF.</p>
+        <div class="mermaid">
+            graph TD
+                %% Users & Edge
+                Users((Users))
+                CDN[Cloudflare CDN / Edge]
+                DNS[Route 53]
+
+                Users --> DNS
+                DNS --> CDN
+                
+                %% Frontend
+                subgraph "Frontend Layer (Vercel / Next.js)"
+                    Web[Next.js Web App]
+                    Mobile[Mobile API Gateway]
+                end
+                CDN --> Web
+                CDN --> Mobile
+
+                %% API Gateway
+                subgraph "API Gateway Layer"
+                    APIG[API Gateway / GraphQL Federation]
+                end
+                Web --> APIG
+                Mobile --> APIG
+
+                %% Microservices
+                subgraph "Microservices Layer (EKS / Kubernetes)"
+                    ListingSvc[Listing Service]
+                    BookingSvc[Booking Service]
+                    UserSvc[User & Auth Service]
+                    SearchSvc[Search & Discovery Service]
+                    ReviewSvc[Review Service]
+                end
+
+                APIG --> ListingSvc
+                APIG --> BookingSvc
+                APIG --> UserSvc
+                APIG --> SearchSvc
+                APIG --> ReviewSvc
+
+                %% Caching & Queues
+                subgraph "Caching & Event Bus"
+                    Redis[(Redis Cache)]
+                    Kafka{{Apache Kafka}}
+                end
+
+                ListingSvc -.-> Redis
+                BookingSvc --> Kafka
+                SearchSvc -.-> Redis
+
+                %% Data Storage
+                subgraph "Data Storage Layer"
+                    PG_Listings[(PostgreSQL - Listings)]
+                    PG_Bookings[(PostgreSQL - Bookings)]
+                    PG_Users[(PostgreSQL - Users)]
+                    ES[(ElasticSearch - Search)]
+                    S3[(AWS S3 - Images/Media)]
+                end
+
+                ListingSvc --> PG_Listings
+                BookingSvc --> PG_Bookings
+                UserSvc --> PG_Users
+                SearchSvc --> ES
+                ListingSvc --> S3
+
+                %% Analytics & Async Processing
+                subgraph "Async Processing & Analytics"
+                    Worker[Background Workers]
+                    DataLake[(Data Lake)]
+                end
+
+                Kafka --> Worker
+                Kafka --> DataLake
+
+                classDef aws fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:white;
+                classDef db fill:#336791,stroke:#fff,stroke-width:2px,color:white;
+                classDef svc fill:#FF385C,stroke:#fff,stroke-width:2px,color:white;
+                classDef cache fill:#DC382D,stroke:#fff,stroke-width:2px,color:white;
+                
+                class S3,DNS aws;
+                class PG_Listings,PG_Bookings,PG_Users,ES db;
+                class ListingSvc,BookingSvc,UserSvc,SearchSvc,ReviewSvc svc;
+                class Redis cache;
+        </div>
+    </div>
+</body>
+</html>

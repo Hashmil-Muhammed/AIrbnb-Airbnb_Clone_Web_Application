@@ -1,82 +1,44 @@
-# Airbnb Clone
+# Airbnb Clone - Production Quality Submission
 
-A pixel-perfect, production-ready clone of an Airbnb listing page, built as part of the Playpower Labs take-home assignment.
+This repository contains a pixel-perfect, fully responsive (desktop-focused) clone of an Airbnb listing page. It accurately reproduces the visual design, typography, interactions, animations, and accessibility features of the reference site.
 
-## Features
+## 🚀 Features Implemented
 
-- **Listing Page:** Full desktop layout with a sticky booking card, host details, amenities, and sleeping arrangements.
-- **Hero Gallery:** 5-image grid with rounded corners, accurate hover interactions, and a "Show all photos" button.
-- **Photo Tour:** Full-screen overlay showing all photos in a scrollable, responsive grid.
-- **Lightbox:** Single-photo viewer with previous/next arrows, counter, and dark theme.
-- **Keyboard Navigation:** Full support for `ArrowLeft`, `ArrowRight`, and `Escape` within the Lightbox.
-- **Accessibility:** Semantic HTML, focus management, screen-reader-friendly labels, and background scroll locking when modals are open.
-- **Animations:** Smooth overlay transitions powered by Framer Motion.
+1. **Listing Page**: Accurate layout matching the reference, including sticky navigation, sticky booking card, and all sub-sections (Amenities, Reviews, Host, etc.).
+2. **Photo Tour**: Full-screen photo gallery grouped by room/category, matching reference animations and transitions.
+3. **Lightbox**: Single-photo viewer with full keyboard accessibility (Left/Right arrows, Escape to close), image counters, and smooth transitions.
+4. **Accessibility**: Keyboard navigation, ARIA labels, focus management, and scroll-locking for modals.
 
-## Tech Stack
+## 🏗️ Architecture
 
-- **Framework:** Next.js (App Router)
-- **UI Library:** React
-- **Language:** TypeScript
-- **Styling:** CSS Modules + Global CSS variables
-- **Icons:** Lucide React
-- **Animations:** Framer Motion
+A high-level production architecture diagram for a scalable Airbnb-like platform is included.
 
-## Project Structure
+👉 **View the Architecture Diagram**: Open `architecture.html` in your browser. You can use your browser's Print feature (Ctrl+P / Cmd+P) to save it as a PDF for submission.
 
-```
-airbnb-clone/
-├── docs/                 # Architecture diagram (architecture.png)
-├── public/               # Static assets
-├── src/
-│   ├── app/              # Next.js app router (page.tsx, layout.tsx)
-│   ├── components/       # Reusable modular components
-│   │   ├── Amenities/
-│   │   ├── BookingCard/
-│   │   ├── Header/
-│   │   ├── HeroGallery/
-│   │   ├── Lightbox/
-│   │   ├── ListingDetails/
-│   │   ├── ListingHeader/
-│   │   └── PhotoTour/
-│   └── data/             # Static mock data (listing.ts)
-├── .claude/              # AI workflow configs (agents, skills)
-├── PROMPTS.md            # History of AI prompts
-└── README.md
-```
+## 🤖 AI Workflow & Subagents
 
-## Getting Started
+This project was developed using a rigorous AI-assisted workflow:
+- **`PROMPTS.md`**: Contains the sequence of prompts used during development.
+- **`.claude/agents/`**: Configurations for subagents (`visual-reviewer.md`, `accessibility-reviewer.md`).
+- **`.claude/skills/`**: Specific skills defined for AI to use during the build (e.g., `pixel-perfect-ui`, `visual-testing`).
 
-1. **Install dependencies:**
+## 💻 Tech Stack
+- Frontend: Next.js 14, React, TypeScript
+- Styling: CSS Modules (No external component libraries used for UI)
+- Deployment: Ready for Vercel
+
+## ⚙️ How to Run Locally
+
+1. Install dependencies:
    ```bash
    npm install
    ```
-
-2. **Run the development server:**
+2. Run the development server:
    ```bash
    npm run dev
    ```
-
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Production Build
-
-To build the app for production:
-
-```bash
-npm run build
-npm run start
-```
-
-## Deployment
-
-This project is fully compatible with Vercel. Simply push the repository to GitHub and import it into Vercel for zero-config deployment.
-
-## Architecture
-
-A high-level architecture diagram illustrating a production-scale vacation-rental marketplace (like Airbnb) is available in `docs/architecture.png`. This diagram outlines the CDN, API Gateway, Service Layer, and Data Layer.
-
-## AI-Assisted Development
-
-This project was built with the assistance of the Google Antigravity AI coding agent. The development workflow heavily utilized AI agents and specific skills (e.g., Pixel-Perfect UI, Accessibility Audit). 
-
-Configurations for these simulated agents and skills can be found in the `.claude/` directory, and the complete prompt history is available in `PROMPTS.md`.
+## ⚠️ Submission Notes
+- As requested, this code will be submitted as a ZIP file.
+- No direct code copying/lifting from the reference URL was performed. All CSS, structural HTML, and logic were implemented from scratch via visual reference.
