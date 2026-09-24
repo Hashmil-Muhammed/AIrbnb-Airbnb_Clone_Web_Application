@@ -22,13 +22,13 @@
         <div class="mermaid">
             graph TD
                 %% Users & Edge
-                User((User)) --> CDN["CDN / Vercel<br/>(Frontend Scaling)"]
+                User((User)) --> CDN[CDN / Vercel - Frontend Scaling]
                 
                 %% Frontend
-                CDN --> Frontend["Frontend / Next.js<br/>(Vercel Deployment)"]
+                CDN --> Frontend[Frontend / Next.js - Vercel Deployment]
                 
                 %% API Gateway
-                Frontend --> Gateway["API Gateway<br/>(Load Balancer)"]
+                Frontend --> Gateway[API Gateway - Load Balancer]
                 
                 %% Backend Services
                 subgraph "Backend Services (Kubernetes Deployment - Auto Scaling)"
@@ -46,13 +46,13 @@
                 Gateway --> SearchSvc
                 
                 %% Search
-                SearchSvc --> SearchIndex[("Search Index<br/>(Elasticsearch)")]
+                SearchSvc --> SearchIndex[(Search Index - Elasticsearch)]
                 
                 %% Data Storage
                 subgraph "Data Storage & Caching Layer (Storage Scaling)"
-                    DB[("Database<br/>(PostgreSQL)")]
-                    ObjectStorage[("Object Storage<br/>(AWS S3)") ]
-                    Cache[("Cache<br/>(Redis)")]
+                    DB[(Database - PostgreSQL)]
+                    ObjectStorage[(Object Storage - AWS S3)]
+                    Cache[(Cache - Redis)]
                 end
                 
                 %% Backend to DB/Storage
@@ -69,7 +69,7 @@
                 
                 %% Monitoring
                 subgraph Observability
-                    Monitor["Monitoring / Logging<br/>(Datadog/CloudWatch)"]
+                    Monitor[Monitoring / Logging - Datadog/CloudWatch]
                 end
                 
                 Gateway -.-> Monitor
