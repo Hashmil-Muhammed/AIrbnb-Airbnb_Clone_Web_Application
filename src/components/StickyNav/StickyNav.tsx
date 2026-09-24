@@ -59,7 +59,16 @@ export default function StickyNav() {
     };
   }, []);
 
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+
   if (!isVisible) return null;
+
+  const handleReserveClick = () => {
+    setToastMessage("You won't be charged yet");
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 3000);
+  };
 
   return (
     <div className={styles.stickyNavContainer}>
@@ -78,9 +87,14 @@ export default function StickyNav() {
             </div>
             <div className={styles.rating}><span style={{fontSize: 10}}>★</span> 4.95 · 19 reviews</div>
           </div>
-          <button className={styles.reserveButton}>Reserve</button>
+          <button className={styles.reserveButton} onClick={handleReserveClick}>Reserve</button>
         </div>
       </div>
+      {toastMessage && (
+        <div className={styles.toast}>
+          {toastMessage}
+        </div>
+      )}
     </div>
   );
 }
