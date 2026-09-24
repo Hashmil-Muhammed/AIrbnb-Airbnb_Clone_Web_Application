@@ -1,43 +1,69 @@
-graph TD
-    Users((Users))
-    CDN[CDN / Edge]
-    Frontend[Frontend / Next.js]
-    Gateway[API Gateway]
-    
-    subgraph Service Layer
-        ListingService[Listing Service]
-        SearchService[Search Service]
-        BookingService[Booking Service]
-        UserService[User Service]
-        ReviewService[Review Service]
-        PaymentService[Payment Service]
+flowchart TD
+    %% CI/CD Pipeline
+    subgraph CICD[Deployment Pipeline]
+        Git[Git Repository] --> Pipeline[CI / CD]
+        Pipeline --> DeployVercel[Vercel]
+        Pipeline --> DeployK8s[Kubernetes]
     end
     
-    subgraph Data Layer
-        DB[(PostgreSQL)]
+    %% Users & Edge
+    User((User)) --> CDN[CDN / Edge Network]
+    
+    %% Frontend
+    CDN --> Frontend[Next.js Frontend - Vercel Deployment]
+    
+    %% API Gateway & Load Balancer
+    Frontend --> Gateway[API Gateway]
+    Gateway --> LB[Load Balancer]
+    
+    %% CI/CD Connections
+    DeployVercel -.-> Frontend
+    DeployK8s -.-> K8sCluster
+    
+    %% Backend Services
+    subgraph K8sCluster[Kubernetes / Auto Scaling]
+        Listing[Listing Service]
+        UserSvc[User Service]
+        Review[Review Service]
+        Booking[Booking Service]
+        SearchSvc[Search Service]
+    end
+    
+    LB --> K8sCluster
+    
+    %% Data Storage
+    subgraph StorageCluster[Data, Storage & Search Layer]
+        S3[(AWS S3 Images)]
+        DB[(PostgreSQL Database)]
         Cache[(Redis Cache)]
-        SearchIdx[(Search Index)]
-        Storage[(Object Storage)]
+        SearchIndex[(Elasticsearch)]
     end
     
-    Users -->|Requests| CDN
-    CDN -->|Static Assets & Cached pages| Users
-    CDN -->|Dynamic Requests| Frontend
-    Frontend -->|API Calls| Gateway
+    %% Clean Storage Connections (Zero Crossing)
+    Listing --> S3
+    Listing --> DB
+    UserSvc --> DB
+    Review --> DB
+    Booking --> DB
+    Booking --> Cache
+    SearchSvc --> SearchIndex
     
-    Gateway --> ListingService
-    Gateway --> SearchService
-    Gateway --> BookingService
-    Gateway --> UserService
-    Gateway --> ReviewService
-    Gateway --> PaymentService
+    %% Monitoring
+    Monitor[Monitoring / Logging - Datadog / CloudWatch]
     
-    ListingService --> DB
-    ListingService --> Cache
-    SearchService --> SearchIdx
-    BookingService --> DB
-    UserService --> DB
-    ReviewService --> DB
-    PaymentService --> DB
+    K8sCluster -.-> Monitor
+    StorageCluster -.-> Monitor
     
-    Storage -->|Images & Media| CDN
+    classDef aws fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:white;
+    classDef db fill:#336791,stroke:#fff,stroke-width:2px,color:white;
+    classDef svc fill:#FF385C,stroke:#fff,stroke-width:2px,color:white;
+    classDef cache fill:#DC382D,stroke:#fff,stroke-width:2px,color:white;
+    classDef obs fill:#1C1C1C,stroke:#fff,stroke-width:2px,color:white;
+    classDef pipe fill:#4CAF50,stroke:#fff,stroke-width:2px,color:white;
+    
+    class S3 aws;
+    class DB,SearchIndex db;
+    class UserSvc,Review,Listing,Booking,SearchSvc svc;
+    class Cache cache;
+    class Monitor obs;
+    class Git,Pipeline pipe;
