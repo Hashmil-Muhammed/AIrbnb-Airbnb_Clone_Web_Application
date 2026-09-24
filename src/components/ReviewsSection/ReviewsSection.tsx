@@ -83,7 +83,7 @@ const ReviewCard = ({ review }: { review: typeof REVIEWS[0] }) => {
         </div>
       </div>
       <div className={styles.reviewMeta}>
-        <span className={styles.stars}>★★★★★</span>
+        <span className={styles.stars}><b>★★★★★</b></span>
         <span className={styles.dot}>·</span>
         <span>{review.date}</span>
       </div>

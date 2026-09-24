@@ -34,7 +34,7 @@ export default function MeetYourHost() {
                 </div>
                 <div className={styles.divider}></div>
                 <div className={styles.statBox}>
-                  <span className={styles.statValue}>4.68<span style={{fontSize: 14}}>★</span></span>
+                  <span className={styles.statValue}>4.68<span style={{fontSize: 14}}><b>★</b></span></span>
                   <span className={styles.statLabel}>Rating</span>
                 </div>
                 <div className={styles.divider}></div>

@@ -118,7 +118,7 @@ export default function MoreStaysNearby() {
                 <h3 className={styles.cardTitle}>{stay.title}</h3>
                 <div className={styles.priceRating}>
                   <span className={styles.price}>{stay.price}</span>
-                  <span className={styles.rating}><span style={{fontSize: 10}}>★</span> {stay.rating}</span>
+                  <span className={styles.rating}><span style={{fontSize: 10}}><b>★</b></span> {stay.rating}</span>
                 </div>
               </div>
             </div>

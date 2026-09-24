@@ -86,7 +86,7 @@ export default function StickyNav() {
               <span className={styles.price}>₹28,499</span>
               <span className={styles.night}>for 5 nights</span>
             </div>
-            <div className={styles.rating}><span style={{fontSize: 10}}>★</span> 4.95 · 19 reviews</div>
+            <div className={styles.rating}><span style={{fontSize: 10}}><b>★</b></span> 4.95 · 19 reviews</div>
           </div>
           <button className={styles.reserveButton} onClick={handleReserveClick}>Reserve</button>
         </div>
