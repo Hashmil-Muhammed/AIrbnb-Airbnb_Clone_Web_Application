@@ -25,6 +25,8 @@
                 %% CI/CD Pipeline
                 subgraph CICD[Deployment Pipeline]
                     Git[Git Repository] --> Pipeline[CI / CD]
+                    Pipeline --> DeployVercel[Vercel]
+                    Pipeline --> DeployK8s[Kubernetes]
                 end
                 
                 %% Users & Edge
@@ -38,8 +40,8 @@
                 Gateway --> LB[Load Balancer]
                 
                 %% CI/CD Connections
-                Pipeline -.-> Frontend
-                Pipeline -.-> K8sCluster
+                DeployVercel -.-> Frontend
+                DeployK8s -.-> K8sCluster
                 
                 %% Backend Services
                 subgraph K8sCluster[Kubernetes / Auto Scaling]
@@ -53,7 +55,7 @@
                 LB --> K8sCluster
                 
                 %% Data Storage
-                subgraph StorageCluster[Data Storage & Cache]
+                subgraph StorageCluster[Data, Storage & Search Layer]
                     S3[(AWS S3 Images)]
                     DB[(PostgreSQL Database)]
                     Cache[(Redis Cache)]
