@@ -1,0 +1,5266 @@
+
+## Phase 6: Full Reference Reconstruction & Final Polish
+
+**Prompt 16 — Master Development Prompt**
+> # MASTER DEVELOPMENT PROMPT
+> # Airbnb Clone — Playpower Labs Take-Home Assignment
+> 
+> You are acting as a senior frontend engineer, UI/UX engineer, accessibility engineer, QA engineer, and AI-native coding agent.
+> 
+> Your task is to build a production-quality, original implementation of the Airbnb listing-page clone required by the Playpower Labs take-home assignment.
+> 
+> ============================================================
+> 1. PRIMARY OBJECTIVE
+> ============================================================
+> 
+> Build a desktop-only Airbnb listing-page clone based on the reference website:
+> 
+> https://airbnb-clone-umber-two.vercel.app/
+> 
+> The reference website is the SINGLE SOURCE OF TRUTH for:
+> 
+> - Visual appearance
+> - Layout
+> - Spacing
+> - Typography
+> - Colors
+> - Images/assets
+> - Icons
+> - Component proportions
+> - Hover states
+> - Scroll behavior
+> - Animations
+> - Transitions
+> - Modal/overlay behavior
+> - Keyboard interaction
+> - Focus behavior
+> - Accessibility
+> - Gallery behavior
+> 
+> The final implementation must reproduce the reference as closely as reasonably possible.
+> 
+> IMPORTANT:
+> 
+> This is NOT a request to copy, scrape, lift, or directly reproduce the source code of the reference website.
+> 
+> Do NOT copy its source code, component structure, CSS, JavaScript, proprietary implementation, or hidden application logic.
+> 
+> Instead:
+> 
+> 1. Inspect the reference visually and behaviorally.
+> 2. Understand what the UI does.
+> 3. Reimplement the observed behavior using ORIGINAL code and ORIGINAL component architecture.
+> 4. Use the reference only as the visual/behavioral specification.
+> 
+> The assignment explicitly warns that direct lift-and-shift can result in a lower score or disqualification.
+> 
+> ============================================================
+> 2. ASSIGNMENT REQUIREMENTS
+> ============================================================
+> 
+> The application must contain exactly these major experiences:
+> 
+> A. LISTING PAGE
+> B. PHOTO TOUR
+> C. LIGHTBOX
+> 
+> Desktop only.
+> 
+> Mobile implementation is NOT required.
+> 
+> Do not spend development time building a mobile version unless it is necessary to prevent desktop layout problems.
+> 
+> ============================================================
+> 3. MANDATORY TECH STACK
+> ============================================================
+> 
+> Use the following stack:
+> 
+> Frontend:
+> - Next.js
+> - React
+> - TypeScript
+> 
+> Styling:
+> - CSS Modules
+> - Global CSS where necessary
+> 
+> Animations:
+> - Framer Motion where appropriate
+> 
+> Icons:
+> - Lucide React
+> 
+> Data:
+> - Static TypeScript/JSON data
+> 
+> Backend:
+> - No backend required
+> 
+> Database:
+> - No database required
+> 
+> Authentication:
+> - Not required
+> 
+> Deployment:
+> - Vercel-compatible Next.js application
+> 
+> AI development:
+> - Antigravity
+> 
+> Do NOT introduce unnecessary technologies.
+> 
+> Do NOT add a backend, database, authentication, payment system, admin dashboard, CMS, or external API unless the reference behavior absolutely requires it.
+> 
+> The goal is a focused, complete implementation rather than an over-engineered application.
+> 
+> ============================================================
+> 4. FIRST STEP — ANALYZE THE REFERENCE
+> ============================================================
+> 
+> Before writing substantial code, inspect the reference:
+> 
+> https://airbnb-clone-umber-two.vercel.app/
+> 
+> Use the browser/visual inspection capabilities available to you.
+> 
+> Do NOT immediately start coding from assumptions.
+> 
+> First analyze the reference carefully.
+> 
+> Create a temporary internal/reference analysis containing:
+> 
+> - Overall page dimensions
+> - Header structure
+> - Header height
+> - Main content max-width
+> - Main page margins
+> - Typography hierarchy
+> - Font family/closest available font
+> - Font sizes
+> - Font weights
+> - Line heights
+> - Colors
+> - Border colors
+> - Border radii
+> - Shadows
+> - Button sizes
+> - Icon sizes
+> - Image dimensions
+> - Image aspect ratios
+> - Gallery layout
+> - Content spacing
+> - Section spacing
+> - Sticky/fixed elements
+> - Scroll behavior
+> - Hover behavior
+> - Modal behavior
+> - Overlay behavior
+> - Animation timing/easing where observable
+> - Keyboard behavior
+> - Focus behavior
+> 
+> Inspect the reference at a normal desktop viewport and also at reasonable desktop widths.
+> 
+> Do not assume the screenshot dimensions are the actual CSS dimensions.
+> 
+> Measure and reason from the rendered UI.
+> 
+> ============================================================
+> 5. REFERENCE INTERACTION AUDIT
+> ============================================================
+> 
+> Before finalizing implementation, manually test the reference interactions.
+> 
+> Identify:
+> 
+> - What happens when hovering buttons?
+> - What happens when hovering gallery images?
+> - What happens when clicking the main hero image?
+> - What happens when clicking other gallery images?
+> - What happens when clicking "Show all photos"?
+> - How does the Photo Tour open?
+> - How does the Photo Tour close?
+> - How does the Lightbox open?
+> - How does the Lightbox close?
+> - Does ESC close it?
+> - Does LEFT ARROW navigate backward?
+> - Does RIGHT ARROW navigate forward?
+> - What happens at the first image?
+> - What happens at the last image?
+> - Does background scrolling stop when overlays are open?
+> - Where does keyboard focus move?
+> - Can the overlay be operated entirely using the keyboard?
+> - What transitions/animations occur?
+> - How does the page behave while scrolling?
+> 
+> Implement observed behavior rather than inventing behavior.
+> 
+> ============================================================
+> 6. LISTING PAGE
+> ============================================================
+> 
+> Recreate the complete listing page visible in the reference.
+> 
+> Do not omit visible sections simply because they are static.
+> 
+> Reproduce:
+> 
+> - Header/navigation
+> - Logo area if present
+> - Search/navigation elements if present
+> - User/action controls if present
+> - Property title
+> - Property metadata
+> - Location
+> - Rating/review information
+> - Share/favorite controls if present
+> - Main image gallery
+> - Show all photos action
+> - Description
+> - Amenities
+> - Sleeping arrangements
+> - Booking/reservation card if present
+> - Calendar/availability UI if present
+> - Reviews section
+> - Location/map section
+> - Host section
+> - Other visible listing-related sections
+> - Footer or final visible content if present
+> 
+> Only implement elements that are actually present in the reference.
+> 
+> Do NOT invent extra features.
+> 
+> ============================================================
+> 7. HERO IMAGE GALLERY
+> ============================================================
+> 
+> The hero gallery must visually match the reference.
+> 
+> Pay special attention to:
+> 
+> - Number of images visible
+> - Image arrangement
+> - Image dimensions
+> - Grid structure
+> - Gaps
+> - Border radius
+> - Cropping
+> - object-fit behavior
+> - Hover state
+> - Overlay labels/buttons
+> - Image ordering
+> - Show all photos button placement
+> 
+> Use the correct/reference images where legitimately available.
+> 
+> Do not use random placeholder images if the actual reference assets can be legitimately reproduced or referenced.
+> 
+> If exact image assets cannot be legally or technically reused, create the closest original implementation possible while preserving layout and behavior.
+> 
+> ============================================================
+> 8. PHOTO TOUR
+> ============================================================
+> 
+> Implement a full-screen Photo Tour opened from:
+> 
+> - "Show all photos"
+> - Hero images, where applicable according to the reference
+> 
+> The Photo Tour must match the reference's:
+> 
+> - Full-screen layout
+> - Header
+> - Close/back controls
+> - Image arrangement
+> - Image thumbnails
+> - Section/room grouping
+> - Typography
+> - Spacing
+> - Background
+> - Scroll behavior
+> - Hover states
+> - Transitions
+> 
+> The Photo Tour must allow the user to select gallery images.
+> 
+> Clicking a gallery image must open the corresponding Lightbox image.
+> 
+> ============================================================
+> 9. LIGHTBOX
+> ============================================================
+> 
+> Implement a full-screen single-image Lightbox.
+> 
+> Required:
+> 
+> - Large image display
+> - Previous button
+> - Next button
+> - Close button
+> - Image counter if present in reference
+> - Keyboard LEFT arrow
+> - Keyboard RIGHT arrow
+> - ESC to close
+> - Focus management
+> - Background scroll locking
+> - Smooth transitions
+> - Correct image ordering
+> 
+> Keyboard behavior:
+> 
+> LEFT ARROW:
+> - Navigate to previous image
+> 
+> RIGHT ARROW:
+> - Navigate to next image
+> 
+> ESC:
+> - Close Lightbox
+> 
+> TAB:
+> - Keyboard focus must remain logically managed inside the active modal/dialog.
+> 
+> When the Lightbox closes:
+> - Restore focus to the element that opened it whenever practical.
+> 
+> Use proper semantic dialog behavior.
+> 
+> ============================================================
+> 10. ACCESSIBILITY
+> ============================================================
+> 
+> Accessibility is part of the evaluation.
+> 
+> Implement:
+> 
+> - Semantic HTML
+> - Real buttons for actions
+> - Proper links
+> - Keyboard navigation
+> - Visible focus states
+> - aria-labels where needed
+> - aria-expanded where applicable
+> - aria-modal for modal dialogs
+> - Appropriate dialog semantics
+> - Logical tab order
+> - Focus trapping/containment for Lightbox where appropriate
+> - Focus restoration
+> - ESC support
+> - Screen-reader-friendly labels
+> - Decorative images marked appropriately
+> - Meaningful image alt text
+> - No keyboard traps outside intended modal behavior
+> 
+> Do not sacrifice accessibility for visual fidelity.
+> 
+> ============================================================
+> 11. ANIMATIONS AND MOTION
+> ============================================================
+> 
+> Reproduce the reference animations rather than adding arbitrary animations.
+> 
+> Use Framer Motion only where it helps reproduce observed behavior.
+> 
+> Match:
+> 
+> - Duration
+> - Easing
+> - Opacity transitions
+> - Scale transitions
+> - Slide transitions
+> - Modal transitions
+> - Gallery transitions
+> - Hover transitions
+> - Scroll-related behavior
+> 
+> Avoid excessive animation.
+> 
+> Respect:
+> 
+> prefers-reduced-motion
+> 
+> When reduced motion is enabled, reduce or disable non-essential animations.
+> 
+> ============================================================
+> 12. RESPONSIVE SCOPE
+> ============================================================
+> 
+> The assignment explicitly says:
+> 
+> DESKTOP ONLY.
+> 
+> Therefore prioritize desktop pixel accuracy.
+> 
+> The implementation should still avoid breaking at nearby desktop widths, but mobile-specific UI is not required.
+> 
+> Do not waste significant time building mobile navigation or mobile gallery layouts.
+> 
+> ============================================================
+> 13. PROJECT ARCHITECTURE
+> ============================================================
+> 
+> Use a clean component-based architecture.
+> 
+> Recommended structure:
+> 
+> app/
+>   layout.tsx
+>   page.tsx
+>   globals.css
+> 
+> components/
+>   Header/
+>   ListingHeader/
+>   HeroGallery/
+>   ListingDetails/
+>   Amenities/
+>   BookingCard/
+>   Calendar/
+>   Reviews/
+>   Location/
+>   Host/
+>   PhotoTour/
+>   Lightbox/
+> 
+> data/
+>   listing.ts
+> 
+> lib/
+>   utilities where necessary
+> 
+> public/
+>   images/
+> 
+> styles/
+>   global styles if needed
+> 
+> docs/
+>   architecture diagram
+> 
+> .claude/
+>   agents/
+>   skills/
+> 
+> PROMPTS.md
+> 
+> README.md
+> 
+> Do not blindly follow this structure if a better clean structure is required, but maintain clear separation of concerns.
+> 
+> ============================================================
+> 14. COMPONENT DESIGN
+> ============================================================
+> 
+> Create reusable components.
+> 
+> Avoid:
+> 
+> - One giant page component
+> - Duplicated gallery logic
+> - Duplicated modal logic
+> - Inline style overload
+> - Hard-coded repeated values throughout JSX
+> 
+> Prefer:
+> 
+> - Data-driven components
+> - Reusable buttons
+> - Reusable image components
+> - Reusable modal primitives
+> - Centralized listing data
+> - Centralized gallery data
+> - Clear state management
+> 
+> Keep components understandable and maintainable.
+> 
+> ============================================================
+> 15. DATA ARCHITECTURE
+> ============================================================
+> 
+> Since no backend is required, use local static data.
+> 
+> Create structured data such as:
+> 
+> listing information
+> gallery images
+> rooms/categories
+> amenities
+> reviews
+> host information
+> location information
+> booking information
+> 
+> Example concept:
+> 
+> listing.ts
+> 
+> export const listing = {
+>   title: "...",
+>   location: "...",
+>   rating: ...,
+>   reviews: ...,
+>   guests: ...,
+>   bedrooms: ...,
+>   beds: ...,
+>   baths: ...,
+>   images: [...],
+>   amenities: [...],
+>   rooms: [...],
+>   reviews: [...],
+>   host: {...},
+> };
+> 
+> Do not scatter this information across components.
+> 
+> ============================================================
+> 16. VISUAL FIDELITY
+> ============================================================
+> 
+> Pixel accuracy is one of the most important requirements.
+> 
+> Do not settle for:
+> 
+> "Looks similar."
+> 
+> The goal is:
+> 
+> "Looks and behaves like the reference."
+> 
+> Pay particular attention to:
+> 
+> 1. Header height
+> 2. Content max-width
+> 3. Left/right page margins
+> 4. Typography
+> 5. Image dimensions
+> 6. Gallery grid
+> 7. Section spacing
+> 8. Card dimensions
+> 9. Border radii
+> 10. Button dimensions
+> 11. Icon alignment
+> 12. Colors
+> 13. Shadows
+> 14. Sticky positioning
+> 15. Modal dimensions
+> 16. Overlay opacity
+> 17. Scrollbar behavior
+> 18. Hover transitions
+> 
+> Use CSS variables for repeated design values where useful.
+> 
+> ============================================================
+> 17. VISUAL QA LOOP
+> ============================================================
+> 
+> Do NOT consider the project complete immediately after the first implementation.
+> 
+> Use this loop:
+> 
+> REFERENCE
+>    ↓
+> IMPLEMENT
+>    ↓
+> RUN LOCALLY
+>    ↓
+> SCREENSHOT
+>    ↓
+> COMPARE
+>    ↓
+> IDENTIFY DIFFERENCES
+>    ↓
+> FIX
+>    ↓
+> SCREENSHOT AGAIN
+>    ↓
+> REPEAT
+> 
+> Perform multiple visual QA passes.
+> 
+> For each major section compare:
+> 
+> - Position
+> - Size
+> - Spacing
+> - Typography
+> - Color
+> - Image crop
+> - Alignment
+> - Border radius
+> - Interaction
+> 
+> If browser screenshot tooling is available, use it.
+> 
+> If screenshot comparison tooling is available, use it.
+> 
+> ============================================================
+> 18. FUNCTIONAL QA
+> ============================================================
+> 
+> Before completion test all major flows.
+> 
+> TEST 1:
+> Open listing page.
+> 
+> TEST 2:
+> Hover interactive elements.
+> 
+> TEST 3:
+> Click hero image.
+> 
+> TEST 4:
+> Click "Show all photos".
+> 
+> TEST 5:
+> Open Photo Tour.
+> 
+> TEST 6:
+> Click a gallery image.
+> 
+> TEST 7:
+> Open Lightbox.
+> 
+> TEST 8:
+> Click Previous.
+> 
+> TEST 9:
+> Click Next.
+> 
+> TEST 10:
+> Press LEFT ARROW.
+> 
+> TEST 11:
+> Press RIGHT ARROW.
+> 
+> TEST 12:
+> Press ESC.
+> 
+> TEST 13:
+> Reopen Lightbox.
+> 
+> TEST 14:
+> Use TAB navigation.
+> 
+> TEST 15:
+> Verify focus restoration.
+> 
+> TEST 16:
+> Verify background scrolling is disabled when required.
+> 
+> TEST 17:
+> Verify overlays close correctly.
+> 
+> TEST 18:
+> Verify there are no console errors.
+> 
+> ============================================================
+> 19. PERFORMANCE
+> ============================================================
+> 
+> Keep the implementation lightweight.
+> 
+> Use:
+> 
+> - Next.js image optimization where practical
+> - Lazy loading for non-critical images
+> - Proper image dimensions
+> - Avoid unnecessary JavaScript
+> - Avoid unnecessary dependencies
+> - Avoid unnecessary re-renders
+> 
+> Do not optimize at the expense of visual fidelity.
+> 
+> ============================================================
+> 20. ERROR AND EDGE CASE HANDLING
+> ============================================================
+> 
+> Handle:
+> 
+> - First gallery image
+> - Last gallery image
+> - Missing optional data
+> - Modal reopening
+> - Rapid next/previous navigation
+> - Keyboard navigation
+> - Browser back behavior if applicable
+> - Image loading failures where practical
+> 
+> No uncaught React errors.
+> 
+> No console warnings where reasonably avoidable.
+> 
+> ============================================================
+> 21. AI-NATIVE DEVELOPMENT WORKFLOW
+> ============================================================
+> 
+> This project must demonstrate an intentional AI-assisted workflow.
+> 
+> Create:
+> 
+> .claude/
+>   agents/
+>   skills/
+> 
+> and document the workflow.
+> 
+> Suggested agents:
+> 
+> 1. visual-reviewer
+>    Responsibility:
+>    - Compare implementation with reference
+>    - Identify visual differences
+>    - Suggest precise fixes
+> 
+> 2. accessibility-reviewer
+>    Responsibility:
+>    - Review keyboard navigation
+>    - Focus management
+>    - ARIA
+>    - Semantic HTML
+> 
+> 3. code-reviewer
+>    Responsibility:
+>    - Review architecture
+>    - Detect duplicated code
+>    - Detect poor component design
+>    - Detect unnecessary dependencies
+> 
+> 4. qa-reviewer
+>    Responsibility:
+>    - Test required flows
+>    - Identify broken interactions
+>    - Verify edge cases
+> 
+> Suggested skills:
+> 
+> 1. pixel-perfect-ui
+> 2. visual-regression-review
+> 3. accessibility-audit
+> 4. frontend-code-review
+> 
+> Create useful markdown configuration files for these agents/skills.
+> 
+> Do not create meaningless placeholder configs.
+> 
+> ============================================================
+> 22. PROMPT HISTORY
+> ============================================================
+> 
+> Create:
+> 
+> PROMPTS.md
+> 
+> Document the actual AI-assisted development prompts used during the project.
+> 
+> Organize them chronologically.
+> 
+> Example:
+> 
+> # Prompt 01 — Project Analysis
+> ...
+> 
+> # Prompt 02 — Project Setup
+> ...
+> 
+> # Prompt 03 — Header
+> ...
+> 
+> # Prompt 04 — Hero Gallery
+> ...
+> 
+> # Prompt 05 — Listing Content
+> ...
+> 
+> # Prompt 06 — Photo Tour
+> ...
+> 
+> # Prompt 07 — Lightbox
+> ...
+> 
+> # Prompt 08 — Accessibility
+> ...
+> 
+> # Prompt 09 — Animation
+> ...
+> 
+> # Prompt 10 — Visual QA
+> ...
+> 
+> # Prompt 11 — Final Code Review
+> ...
+> 
+> IMPORTANT:
+> 
+> Keep this file updated during development.
+> 
+> Do not fabricate a prompt history at the end.
+> 
+> ============================================================
+> 23. ARCHITECTURE DIAGRAM
+> ============================================================
+> 
+> Create a production-scale architecture diagram for a vacation-rental marketplace similar in scale to Airbnb.
+> 
+> The assignment asks for a high-level architecture illustrating:
+> 
+> - Frontend
+> - Backend
+> - Storage
+> - Search
+> - Deployment
+> - Scaling strategy
+> 
+> The current clone itself does NOT need all these backend services.
+> 
+> The architecture diagram is a separate production-system design deliverable.
+> 
+> Create:
+> 
+> docs/architecture.png
+> 
+> or
+> 
+> docs/architecture.pdf
+> 
+> The diagram should communicate something similar to:
+> 
+> Users
+>   ↓
+> CDN / Edge
+>   ↓
+> Frontend / Next.js
+>   ↓
+> API Gateway
+>   ↓
+> Service Layer
+>   ├── Listing Service
+>   ├── Search Service
+>   ├── Booking Service
+>   ├── User Service
+>   ├── Review Service
+>   └── Payment Service
+>        ↓
+> Data Layer
+>   ├── PostgreSQL
+>   ├── Redis
+>   ├── Search Index
+>   └── Object Storage
+>        ↓
+> CDN / Image Delivery
+> 
+> Also show:
+> 
+> - Horizontal scaling
+> - Caching
+> - Search indexing
+> - Image storage
+> - CDN
+> - Load balancing
+> - Observability where useful
+> - Deployment pipeline
+> 
+> Keep the architecture diagram clean and readable.
+> 
+> Do not over-engineer it with dozens of microservices.
+> 
+> ============================================================
+> 24. README
+> ============================================================
+> 
+> Create a professional README.md containing:
+> 
+> # Project title
+> 
+> ## Overview
+> 
+> Explain the assignment and purpose.
+> 
+> ## Features
+> 
+> - Listing page
+> - Photo Tour
+> - Lightbox
+> - Keyboard navigation
+> - Accessibility
+> - Animations
+> 
+> ## Tech Stack
+> 
+> List the actual technologies used.
+> 
+> ## Project Structure
+> 
+> Explain the important folders.
+> 
+> ## Getting Started
+> 
+> Provide:
+> 
+> npm install
+> 
+> npm run dev
+> 
+> and other necessary commands.
+> 
+> ## Production Build
+> 
+> npm run build
+> 
+> npm start
+> 
+> ## Deployment
+> 
+> Explain Vercel deployment.
+> 
+> ## AI-Assisted Development
+> 
+> Explain that Antigravity was used for AI-assisted implementation and review.
+> 
+> Reference the agent/skill configuration.
+> 
+> ## Architecture
+> 
+> Link to:
+> 
+> docs/architecture.png
+> 
+> ## Prompt History
+> 
+> Link to:
+> 
+> PROMPTS.md
+> 
+> ## Accessibility
+> 
+> Briefly document accessibility support.
+> 
+> ## Testing / QA
+> 
+> Document the manual QA process.
+> 
+> ============================================================
+> 25. SECURITY / ORIGINALITY
+> ============================================================
+> 
+> Do NOT:
+> 
+> - Copy source code from the reference website
+> - Copy hidden implementation
+> - Copy proprietary source files
+> - Use obfuscated copied code
+> - Claim original work for copied code
+> - Include unnecessary third-party code
+> 
+> The implementation must be independently written.
+> 
+> Using standard open-source libraries such as React, Next.js, Framer Motion, and Lucide React is allowed.
+> 
+> ============================================================
+> 26. DO NOT ADD UNREQUESTED FEATURES
+> ============================================================
+> 
+> Do NOT add:
+> 
+> - Login
+> - Signup
+> - Real booking
+> - Payment
+> - Chat
+> - Admin panel
+> - User dashboard
+> - Database
+> - Backend API
+> - Authentication
+> - Search engine
+> - Extra pages
+> 
+> unless the reference page visibly/functionally requires a corresponding behavior.
+> 
+> This is a focused cloning assignment.
+> 
+> ============================================================
+> 27. FINAL ACCEPTANCE CRITERIA
+> ============================================================
+> 
+> The project is complete ONLY when all of the following are true:
+> 
+> [ ] Next.js application runs successfully
+> [ ] TypeScript has no blocking errors
+> [ ] Production build succeeds
+> [ ] Listing page is implemented
+> [ ] Listing page visually matches reference
+> [ ] Hero gallery matches reference
+> [ ] Show all photos works
+> [ ] Photo Tour works
+> [ ] Lightbox works
+> [ ] Previous works
+> [ ] Next works
+> [ ] LEFT ARROW works
+> [ ] RIGHT ARROW works
+> [ ] ESC closes Lightbox
+> [ ] Keyboard navigation works
+> [ ] Focus management works
+> [ ] Background scroll behavior works
+> [ ] Animations/transitions match reference
+> [ ] Hover states match reference
+> [ ] No major console errors
+> [ ] Desktop layout is polished
+> [ ] Accessibility has been audited
+> [ ] Visual QA has been performed
+> [ ] AI agents/configs exist
+> [ ] AI skills/configs exist
+> [ ] PROMPTS.md exists
+> [ ] README.md exists
+> [ ] Architecture diagram exists
+> [ ] Project structure is clean
+> [ ] No unnecessary backend/database exists
+> [ ] No reference source code was copied
+> 
+> ============================================================
+> 28. DEVELOPMENT ORDER
+> ============================================================
+> 
+> Follow this implementation order:
+> 
+> PHASE 1 — Reference Analysis
+> PHASE 2 — Project Initialization
+> PHASE 3 — Global Design System
+> PHASE 4 — Header
+> PHASE 5 — Listing Header
+> PHASE 6 — Hero Gallery
+> PHASE 7 — Listing Content
+> PHASE 8 — Booking/Sticky UI
+> PHASE 9 — Photo Tour
+> PHASE 10 — Lightbox
+> PHASE 11 — Keyboard Accessibility
+> PHASE 12 — Animations and Transitions
+> PHASE 13 — Visual QA
+> PHASE 14 — Accessibility QA
+> PHASE 15 — Code Quality Review
+> PHASE 16 — AI Agent/Skill Configuration
+> PHASE 17 — Architecture Diagram
+> PHASE 18 — README + PROMPTS.md
+> PHASE 19 — Production Build
+> PHASE 20 — Final Submission Audit
+> 
+> Do not skip directly from initialization to "final".
+> 
+> ============================================================
+> 29. IMPORTANT WORKING RULE
+> ============================================================
+> 
+> Work incrementally.
+> 
+> After each major phase:
+> 
+> 1. Implement.
+> 2. Run.
+> 3. Test.
+> 4. Inspect.
+> 5. Fix.
+> 6. Continue.
+> 
+> Do not generate a huge amount of code without testing it.
+> 
+> Do not assume a component works merely because it compiles.
+> 
+> ============================================================
+> 30. FINAL OUTPUT
+> ============================================================
+> 
+> At the end, the project should be ready to submit as a ZIP.
+> 
+> Expected structure:
+> 
+> airbnb-clone/
+> │
+> ├── app/
+> ├── components/
+> ├── data/
+> ├── lib/
+> ├── public/
+> ├── styles/
+> │
+> ├── .claude/
+> │   ├── agents/
+> │   └── skills/
+> │
+> ├── docs/
+> │   └── architecture.png
+> │
+> ├── PROMPTS.md
+> ├── README.md
+> ├── package.json
+> ├── tsconfig.json
+> └── other required config files
+> 
+> The final application must be a clean, original, production-quality implementation focused on matching the supplied reference.
+> 
+> ============================================================
+> 31. START NOW
+> ============================================================
+> 
+> Do NOT ask me to provide the requirements again.
+> 
+> The requirements are already defined in this prompt.
+> 
+> Start with:
+> 
+> STEP 1:
+> Inspect the reference website.
+> 
+> STEP 2:
+> Create a concise reference-analysis checklist internally.
+> 
+> STEP 3:
+> Initialize the Next.js + TypeScript project.
+> 
+> STEP 4:
+> Create the initial project structure.
+> 
+> STEP 5:
+> Create the AI agent/skill configuration structure.
+> 
+> STEP 6:
+> Begin implementing the reference from the outside inward.
+> 
+> Do not stop after planning.
+> 
+> Begin implementation now.
+
+**Prompt 17 — Visual Reconstruction Pass**
+> IMPORTANT: The project is NOT submission-ready yet.
+> 
+> I have now manually compared:
+> 
+> SS1 = ORIGINAL REFERENCE
+> https://airbnb-clone-umber-two.vercel.app/
+> 
+> SS2 = OUR CURRENT CLONE
+> http://localhost:3000/
+> 
+> The current implementation passes the technical/functional checks, but it does NOT visually match the reference closely enough.
+> 
+> Your previous verification incorrectly treated "standard Airbnb design" as sufficient.
+> 
+> For this assignment, the specific reference page is the single source of truth.
+> 
+> We now need a dedicated REFERENCE MATCHING / VISUAL RECONSTRUCTION PASS.
+> 
+> ==================================================
+> CRITICAL INSTRUCTION
+> ==================================================
+> 
+> Do NOT add new unrelated features.
+> 
+> Do NOT redesign the page.
+> 
+> Do NOT make it "more Airbnb-like".
+> 
+> Instead, modify the existing implementation so that it reproduces the SPECIFIC REFERENCE shown in SS1.
+> 
+> ==================================================
+> REFERENCE
+> ==================================================
+> 
+> Original reference:
+> 
+> https://airbnb-clone-umber-two.vercel.app/
+> 
+> Our current clone:
+> 
+> http://localhost:3000/
+> 
+> The original screenshot I provided should be treated as the visual target.
+> 
+> ==================================================
+> PROBLEMS ALREADY IDENTIFIED
+> ==================================================
+> 
+> 1. HERO IMAGES ARE WRONG
+> 
+> The current clone uses completely different images from the reference.
+> 
+> Replace the current gallery images with the correct reference property images.
+> 
+> The reference property is:
+> 
+> "Romantic Jacuzzi 1BHK Candolim | Mirashya UG10"
+> 
+> The hero gallery must visually match the reference.
+> 
+> Do NOT use generic Airbnb/Unsplash images.
+> 
+> Inspect the available reference screenshot and existing project assets carefully.
+> 
+> If direct automated access to the reference remains blocked, do not pretend it is accessible.
+> 
+> Use the provided reference screenshot as the source for visual reconstruction and inspect any legitimately available assets.
+> 
+> ==================================================
+> 2. HERO GALLERY LAYOUT
+> 
+> Match the reference exactly:
+> 
+> - Number of visible images
+> - Image order
+> - Image proportions
+> - Grid dimensions
+> - Gaps
+> - Border radius
+> - Image cropping
+> - Button placement
+> - Gallery height
+> - Gallery width
+> 
+> Do not use a generic 5-image Airbnb gallery.
+> 
+> The specific reference gallery is the target.
+> 
+> ==================================================
+> 3. HEADER
+> 
+> Compare the current header against the reference.
+> 
+> Fix:
+> 
+> - Logo position
+> - Logo size
+> - Header height
+> - Search bar dimensions
+> - Search bar position
+> - User controls
+> - Icon sizes
+> - Typography
+> - Spacing
+> - Border
+> - Alignment
+> 
+> ==================================================
+> 4. LISTING TITLE AREA
+> 
+> Match:
+> 
+> "Romantic Jacuzzi 1BHK Candolim | Mirashya UG10"
+> 
+> Match the exact:
+> 
+> - Position
+> - Font
+> - Font size
+> - Weight
+> - Spacing
+> - Share button
+> - Save button
+> - Metadata
+> - Icons
+> 
+> ==================================================
+> 5. MAIN CONTENT WIDTH
+> 
+> The current clone has noticeably different page proportions.
+> 
+> Reconstruct the exact content container used by the reference.
+> 
+> Match:
+> 
+> - Left/right margins
+> - Main column width
+> - Booking card width
+> - Gap between content and booking card
+> - Vertical alignment
+> - Section widths
+> 
+> ==================================================
+> 6. BOOKING CARD
+> 
+> Match the reference booking card precisely.
+> 
+> Check:
+> 
+> - Card width
+> - Card position
+> - Price
+> - Rating
+> - Review count
+> - Date fields
+> - Guest field
+> - Reserve button
+> - Fees
+> - Total
+> - Border radius
+> - Shadow
+> - Typography
+> - Spacing
+> 
+> Do not invent values.
+> 
+> Use values from the reference screenshot/data where visible.
+> 
+> ==================================================
+> 7. LISTING CONTENT
+> 
+> The current clone is missing or visually mismatching content visible in the reference.
+> 
+> Reconstruct the actual sections visible in SS1.
+> 
+> At minimum verify:
+> 
+> - Host section
+> - Description
+> - Where you'll sleep
+> - What this place offers
+> - Amenities
+> - Calendar / availability
+> - Reviews
+> - Rating summary
+> - Review categories
+> - Individual reviews
+> - Other visible sections
+> 
+> The reference screenshot shows significantly more content than the current clone.
+> 
+> Do not leave large unexplained blank areas.
+> 
+> ==================================================
+> 8. EXACT PROPERTY DATA
+> 
+> Where values are visible in the reference, reproduce those values.
+> 
+> Do not replace them with arbitrary generic Airbnb data.
+> 
+> Preserve the reference property identity:
+> 
+> Romantic Jacuzzi 1BHK Candolim | Mirashya UG10
+> 
+> Use consistent:
+> 
+> - Guest count
+> - Bedroom count
+> - Bed count
+> - Bathroom count
+> - Rating
+> - Review count
+> - Price
+> - Fees
+> - Amenities
+> - Host information
+> - Location
+> - Calendar information
+> 
+> ==================================================
+> 9. TYPOGRAPHY
+> 
+> Do a dedicated typography pass.
+> 
+> Match:
+> 
+> - Font family / closest available font
+> - Font size
+> - Weight
+> - Line height
+> - Letter spacing
+> - Heading hierarchy
+> - Body text
+> - Metadata
+> - Buttons
+> - Price
+> 
+> Do not simply use generic Airbnb styling.
+> 
+> ==================================================
+> 10. SPACING
+> 
+> Create a spacing audit.
+> 
+> Compare reference vs current implementation for:
+> 
+> - Header → title
+> - Title → gallery
+> - Gallery → property info
+> - Property info → description
+> - Description → sleeping section
+> - Sleeping → amenities
+> - Amenities → calendar
+> - Calendar → reviews
+> - Section-to-section spacing
+> 
+> Fix all major discrepancies.
+> 
+> ==================================================
+> 11. COLORS AND BORDERS
+> 
+> Match reference:
+> 
+> - Text colors
+> - Secondary text
+> - Border colors
+> - Background colors
+> - Button colors
+> - Booking card colors
+> - Overlay colors
+> - Hover colors
+> 
+> ==================================================
+> 12. PHOTO TOUR
+> 
+> Do not only verify that Photo Tour opens.
+> 
+> Make Photo Tour visually match the reference.
+> 
+> Compare:
+> 
+> - Header
+> - Close button
+> - Photo layout
+> - Image sizes
+> - Image ordering
+> - Room/category labels
+> - Spacing
+> - Background
+> - Scroll behavior
+> - Typography
+> 
+> ==================================================
+> 13. LIGHTBOX
+> 
+> Make Lightbox visually match the reference.
+> 
+> Compare:
+> 
+> - Background
+> - Image size
+> - Image position
+> - Previous arrow
+> - Next arrow
+> - Close button
+> - Counter
+> - Spacing
+> - Animation
+> - Transition
+> 
+> Keep the existing keyboard functionality:
+> 
+> LEFT ARROW
+> RIGHT ARROW
+> ESC
+> 
+> ==================================================
+> 14. VISUAL QA LOOP
+> 
+> After making changes:
+> 
+> 1. Start localhost.
+> 2. Capture screenshot of the full top section.
+> 3. Capture screenshot of the middle section.
+> 4. Capture screenshot of lower sections.
+> 5. Capture Photo Tour.
+> 6. Capture Lightbox.
+> 
+> Compare each screenshot against SS1/reference.
+> 
+> Do NOT claim pixel-perfect unless you have actually compared the rendered output.
+> 
+> ==================================================
+> 15. IMPORTANT — DO NOT FABRICATE VERIFICATION
+> 
+> If the reference URL is still blocked by Kasada/bot protection:
+> 
+> Report:
+> 
+> Reference URL: BLOCKED
+> 
+> Do not say pixel accuracy is verified.
+> 
+> Instead use:
+> 
+> "Visual fidelity verified against the supplied reference screenshot and available reference evidence."
+> 
+> Only claim direct live-site comparison if it was actually possible.
+> 
+> ==================================================
+> 16. DO NOT BREAK EXISTING FUNCTIONALITY
+> 
+> While fixing visuals, preserve:
+> 
+> - Photo Tour
+> - Lightbox
+> - Previous
+> - Next
+> - ArrowLeft
+> - ArrowRight
+> - Escape
+> - Focus management
+> - Scroll lock
+> - Accessibility
+> - Animations
+> 
+> ==================================================
+> 17. FINAL REPORT
+> 
+> After completing the visual reconstruction pass, report:
+> 
+> 1. What visual differences were found
+> 2. What was changed
+> 3. Which reference elements are now matched
+> 4. Which elements remain unverifiable because the live reference is blocked
+> 5. Screenshots generated for comparison
+> 6. Production build result
+> 
+> Do NOT mark the project "submission-ready" unless the actual implementation has been reviewed carefully.
+> 
+> The priority is:
+> 
+> REFERENCE FIDELITY > GENERIC AIRBNB DESIGN.
+> 
+> Begin the visual reconstruction pass now.
+
+**Prompt 18 — Final Pixel-Perfect Reconstruction Pass**
+> # AIRBNB CLONE — FINAL PIXEL-PERFECT RECONSTRUCTION PASS
+> 
+> You are now working on the final visual and functional reconstruction of my Airbnb Clone assignment.
+> 
+> IMPORTANT:
+> 
+> I have provided two sets of screenshots.
+> 
+> CURRENT PROJECT:
+> - SS1
+> - SS2
+> 
+> These show the current implementation of my project.
+> 
+> ORIGINAL REFERENCE WEBSITE:
+> - SS3
+> - SS4
+> - SS5
+> - SS6
+> - SS7
+> - SS8
+> 
+> These screenshots show the actual original website provided by the assignment.
+> 
+> ============================================================
+> # 1. SOURCE OF TRUTH
+> ============================================================
+> 
+> The ORIGINAL REFERENCE screenshots SS3–SS8 are the PRIMARY SOURCE OF TRUTH.
+> 
+> Do NOT use the current implementation (SS1–SS2) as the visual reference.
+> 
+> Do NOT create a generic Airbnb page.
+> 
+> Do NOT use your own interpretation of how Airbnb normally looks.
+> 
+> Reconstruct the UI shown in SS3–SS8 as accurately as possible.
+> 
+> Every visible element matters:
+> 
+> - layout
+> - spacing
+> - widths
+> - heights
+> - typography
+> - font weights
+> - font sizes
+> - colors
+> - borders
+> - border radius
+> - shadows
+> - icons
+> - images
+> - image cropping
+> - gallery proportions
+> - section ordering
+> - sticky elements
+> - buttons
+> - cards
+> - dividers
+> - navigation
+> - content alignment
+> - scrolling behavior
+> - hover states
+> - transitions
+> - modals
+> - photo viewer
+> - calendar
+> - booking card
+> 
+> The screenshots are the visual specification.
+> 
+> ============================================================
+> # 2. DO NOT STOP AT THE CURRENT TOP SECTION
+> ============================================================
+> 
+> The current project only partially resembles the reference.
+> 
+> You MUST rebuild the ENTIRE desktop listing page shown across SS3–SS8.
+> 
+> Do not stop after fixing the hero/gallery.
+> 
+> The page must continue down through all sections visible in the reference screenshots.
+> 
+> Audit the complete page from top to bottom.
+> 
+> ============================================================
+> # 3. EXACT DESKTOP LAYOUT
+> ============================================================
+> 
+> The reference is a DESKTOP layout.
+> 
+> Optimize primarily for the same desktop viewport shown in SS3–SS8.
+> 
+> Preserve:
+> 
+> - centered content container
+> - exact left/right margins
+> - main content width
+> - booking sidebar width
+> - two-column content structure
+> - vertical spacing
+> - section separators
+> - sticky booking card behavior
+> - sticky top section navigation behavior
+> 
+> Do NOT redesign the layout.
+> 
+> Do NOT make it look like a modern custom Airbnb-inspired website.
+> 
+> Match the screenshots.
+> 
+> ============================================================
+> # 4. HEADER — REBUILD ACCURATELY
+> ============================================================
+> 
+> Recreate the header from SS3.
+> 
+> Match:
+> 
+> - Airbnb logo appearance
+> - logo position
+> - logo size
+> - search pill
+> - search pill dimensions
+> - "Anywhere"
+> - "Anytime"
+> - "Add guests"
+> - search icon
+> - "Become a host"
+> - globe icon
+> - menu/profile control
+> - header height
+> - borders
+> - spacing
+> - typography
+> 
+> The current header in SS1 is NOT accurate.
+> 
+> Fix it to visually match SS3.
+> 
+> Do not substitute the Airbnb logo with an unrelated icon or emoji.
+> 
+> Use a clean legitimate visual implementation of the logo.
+> 
+> ============================================================
+> # 5. LISTING TITLE + ACTIONS
+> ============================================================
+> 
+> Match the title area shown in SS3.
+> 
+> Title:
+> 
+> "Romantic Jacuzzi 1BHK Candolim | Mirashya UG10"
+> 
+> Match:
+> 
+> - exact title size
+> - font weight
+> - vertical spacing
+> - Share icon/button
+> - Save icon/button
+> - alignment
+> 
+> ============================================================
+> # 6. HERO IMAGE GALLERY
+> ============================================================
+> 
+> The gallery must match SS3 exactly.
+> 
+> Use the same property images visible in the reference screenshots wherever the assets are legitimately available to the project.
+> 
+> Do NOT replace them with random Unsplash images.
+> 
+> Match:
+> 
+> - 1 large left image
+> - 4 smaller images on right
+> - image ordering
+> - image cropping
+> - image aspect ratios
+> - gaps between images
+> - rounded corners
+> - gallery height
+> - gallery width
+> - "Show all photos" button
+> - button position
+> - button styling
+> - gallery margins
+> 
+> The large image in the original is different from the current implementation.
+> 
+> Correct the image ordering and cropping.
+> 
+> The gallery should visually resemble SS3, not SS1.
+> 
+> ============================================================
+> # 7. PHOTO TOUR
+> ============================================================
+> 
+> "Show all photos" MUST WORK.
+> 
+> Clicking:
+> 
+> - Show all photos
+> - ANY hero/gallery image
+> 
+> must open the Photo Tour view.
+> 
+> Implement the Photo Tour according to the assignment requirement.
+> 
+> It must include:
+> 
+> - full photo gallery
+> - correct property images
+> - proper layout
+> - close/back control
+> - smooth transition
+> - correct spacing
+> - desktop presentation
+> 
+> ============================================================
+> # 8. LIGHTBOX
+> ============================================================
+> 
+> Clicking an individual photo from the Photo Tour must open the Lightbox.
+> 
+> The Lightbox MUST WORK.
+> 
+> Required:
+> 
+> - single large image
+> - previous button
+> - next button
+> - close button
+> - image counter if appropriate
+> - keyboard LEFT ARROW → previous image
+> - keyboard RIGHT ARROW → next image
+> - ESC → close
+> - focus management
+> - body scroll lock while open
+> - smooth transition
+> 
+> Do not create a fake/non-functional lightbox.
+> 
+> Test every control.
+> 
+> ============================================================
+> # 9. PROMOTIONAL OFFER CARD
+> ============================================================
+> 
+> The original page contains the promotional card shown in SS3.
+> 
+> Recreate it.
+> 
+> It contains:
+> 
+> - green tag icon
+> - "Get 10% off your next stay."
+> - "Terms apply"
+> - "Claim" button
+> 
+> Match:
+> 
+> - card width
+> - height
+> - border
+> - radius
+> - shadow
+> - typography
+> - spacing
+> - button styling
+> - position relative to booking card
+> 
+> This is missing from the current implementation and MUST be added.
+> 
+> ============================================================
+> # 10. LISTING SUMMARY
+> ============================================================
+> 
+> Match SS3.
+> 
+> Text:
+> 
+> "Entire serviced apartment in Candolim, India"
+> 
+> Below:
+> 
+> "3 guests · 1 bedroom · 1 bed · 1 bathroom"
+> 
+> Match exact typography and spacing.
+> 
+> ============================================================
+> # 11. GUEST FAVOURITE CARD
+> ============================================================
+> 
+> Recreate the Guest favourite section exactly like SS3.
+> 
+> Include:
+> 
+> - decorative/laurel graphics
+> - "Guest favourite"
+> - explanatory text
+> - 4.95 rating
+> - star rating
+> - 19 Reviews
+> 
+> IMPORTANT:
+> 
+> Use the values shown in the ORIGINAL reference screenshots.
+> 
+> Do not keep the current project's:
+> - 4.97
+> - 33 reviews
+> 
+> unless they are actually shown in the reference.
+> 
+> Reference values have priority.
+> 
+> ============================================================
+> # 12. HOST SECTION
+> ============================================================
+> 
+> Rebuild the host section shown in SS3.
+> 
+> Include:
+> 
+> - host avatar/logo
+> - "Hosted by Mirashya Homes"
+> - "2 years hosting"
+> - host details
+> - response rate
+> - response time
+> - Message host button
+> - protection/payment notice
+> - host information cards/details visible further down the page
+> 
+> Match the structure and spacing from the reference.
+> 
+> Do not simplify this into the current small host avatar.
+> 
+> ============================================================
+> # 13. DESCRIPTION / HIGHLIGHTS
+> ============================================================
+> 
+> Recreate the listing description area from SS3 and SS8.
+> 
+> Include the visible content:
+> 
+> "Plan Your Relaxing Holiday at Amor De Goa by Mirashya Homes!"
+> 
+> and the surrounding description text visible in the reference.
+> 
+> Include:
+> 
+> - translated-content notice
+> - "Show original"
+> - "Show more"
+> - icons/highlights
+> - section dividers
+> 
+> Match line-height and typography.
+> 
+> ============================================================
+> # 14. WHERE YOU'LL SLEEP
+> ============================================================
+> 
+> The original contains multiple sleeping/accommodation cards.
+> 
+> Recreate the cards shown in SS8.
+> 
+> At minimum match:
+> 
+> - Bedroom image
+> - Bedroom
+> - 1 double bed
+> - Living room image
+> - Living room
+> - 1 sofa
+> 
+> Use the actual property images.
+> 
+> Do NOT reduce this to the current single plain card.
+> 
+> ============================================================
+> # 15. WHAT THIS PLACE OFFERS
+> ============================================================
+> 
+> Recreate the amenities section from the reference.
+> 
+> Visible examples include:
+> 
+> - Kitchen
+> - Wifi
+> - Dedicated workspace
+> - Free parking on premises
+> - Pool
+> - Hot tub
+> 
+> Continue with the additional amenities visible in the reference.
+> 
+> Include:
+> 
+> "Show all 50 amenities"
+> 
+> The current project incorrectly shows "Show all 24 amenities".
+> 
+> Use the reference value.
+> 
+> Make the button functional by opening an amenities modal/panel if appropriate.
+> 
+> ============================================================
+> # 16. STICKY SECTION NAVIGATION
+> ============================================================
+> 
+> This is a major missing feature.
+> 
+> Implement the sticky navigation shown in SS4–SS8.
+> 
+> Navigation:
+> 
+> - Photos
+> - Amenities
+> - Reviews
+> - Location
+> 
+> When scrolling:
+> 
+> - navigation becomes sticky
+> - active section updates
+> - underline/active state matches reference
+> - clicking a navigation item scrolls to the correct section
+> 
+> Match:
+> 
+> - height
+> - border
+> - typography
+> - position
+> - spacing
+> - active underline
+> 
+> Also implement the sticky reservation summary on the right/top as shown in the reference.
+> 
+> ============================================================
+> # 17. BOOKING CARD
+> ============================================================
+> 
+> The booking card must visually match SS3–SS8.
+> 
+> Reference values:
+> 
+> ₹28,499 for 5 nights
+> 
+> Rating:
+> 4.95 · 19 reviews
+> 
+> Dates:
+> 
+> CHECK-IN
+> 10/18/2026
+> 
+> CHECKOUT
+> 10/23/2026
+> 
+> Guests:
+> 
+> 2 guests
+> 
+> Include:
+> 
+> - price
+> - rating
+> - reviews
+> - check-in
+> - checkout
+> - guest selector
+> - cancellation information
+> - Reserve button
+> - "You won't be charged yet"
+> - report listing
+> 
+> Match:
+> 
+> - card width
+> - position
+> - shadow
+> - radius
+> - border
+> - typography
+> - spacing
+> - pink button color
+> - button height
+> 
+> Do NOT use the current incorrect:
+> 
+> ₹3500 night
+> 33 reviews
+> 1 guest
+> 5-night fee breakdown
+> 
+> unless those values appear in the original screenshots.
+> 
+> The ORIGINAL SCREENSHOTS have priority.
+> 
+> ============================================================
+> # 18. CALENDAR
+> ============================================================
+> 
+> Recreate the calendar shown in SS7.
+> 
+> Include:
+> 
+> - "5 nights in Candolim"
+> - "18 Oct 2026 - 23 Oct 2026"
+> - October 2026
+> - November 2026
+> - previous/next month controls
+> - weekday labels
+> - dates
+> - selected dates
+> - disabled dates
+> - Clear dates
+> 
+> The calendar must be visually similar to SS7.
+> 
+> Implement basic working date selection.
+> 
+> Do not create a static screenshot-like calendar.
+> 
+> ============================================================
+> # 19. LOCATION SECTION
+> ============================================================
+> 
+> Recreate the Location section shown in SS6.
+> 
+> Include:
+> 
+> "Candolim, Goa, India"
+> 
+> Then the map area.
+> 
+> The map does not need a real external map API if unnecessary.
+> 
+> However, visually reproduce the reference:
+> 
+> - map container
+> - colors
+> - grid/map appearance
+> - zoom buttons
+> - location marker
+> - search control
+> - rounded corners
+> - dimensions
+> 
+> Include:
+> 
+> "Exact location will be provided after booking."
+> 
+> Then:
+> 
+> "Neighbourhood highlights"
+> 
+> and the visible description.
+> 
+> ============================================================
+> # 20. MEET YOUR HOST
+> ============================================================
+> 
+> Recreate the Meet your host section shown in SS6.
+> 
+> Include:
+> 
+> - Mirashya host card
+> - review count
+> - rating
+> - host information
+> - co-hosts
+> - profile images
+> - names
+> - layout
+> 
+> Match the original visual structure.
+> 
+> ============================================================
+> # 21. REVIEWS
+> ============================================================
+> 
+> Recreate the Reviews section shown in SS5.
+> 
+> Include:
+> 
+> - Overall rating
+> - rating bars
+> - Cleanliness
+> - Accuracy
+> - Check-in
+> - Communication
+> - Location
+> - Value
+> 
+> Match the icons and layout.
+> 
+> Then recreate:
+> 
+> review category pills such as:
+> 
+> - Comfort
+> - Accuracy
+> - Hot tub
+> - Condition
+> - Hospitality
+> - Cleanliness
+> - Amenities
+> 
+> Then recreate the review grid/cards.
+> 
+> Include the visible reviewers and review text from the reference screenshots where needed.
+> 
+> Button:
+> 
+> "Show all 19 reviews"
+> 
+> Make it functional by opening the complete reviews view/modal.
+> 
+> ============================================================
+> # 22. AMENITIES SECTION / AMENITIES TAB
+> ============================================================
+> 
+> The reference has a dedicated Amenities navigation state.
+> 
+> Make the Amenities tab functional.
+> 
+> Clicking "Amenities" should scroll to the amenities section.
+> 
+> The section should show the same style and content as SS7.
+> 
+> Include unavailable/disabled amenities where they appear crossed out.
+> 
+> Example:
+> 
+> Carbon monoxide alarm
+> Smoke alarm
+> 
+> Do not remove them if they are visible in the reference.
+> 
+> ============================================================
+> # 23. THINGS TO KNOW
+> ============================================================
+> 
+> Recreate the section shown in SS4.
+> 
+> Three columns:
+> 
+> 1. Cancellation policy
+> 2. House rules
+> 3. Safety & property
+> 
+> Include the visible text from the reference.
+> 
+> Match:
+> 
+> - icons
+> - column widths
+> - typography
+> - spacing
+> - dividers
+> - Learn more links
+> 
+> ============================================================
+> # 24. MORE STAYS NEARBY
+> ============================================================
+> 
+> Recreate the "More stays nearby" section shown in SS4.
+> 
+> Include:
+> 
+> - five property cards
+> - images
+> - titles
+> - prices
+> - ratings
+> - navigation arrows
+> - carousel behavior
+> 
+> Match card dimensions and spacing.
+> 
+> Do not omit this section.
+> 
+> ============================================================
+> # 25. GUEST FAVOURITE LARGE SECTION
+> ============================================================
+> 
+> Recreate the large Guest favourite section shown in SS7.
+> 
+> Include:
+> 
+> 4.95
+> 
+> Guest favourite
+> 
+> "This home is a guest favourite based on ratings, reviews and reliability"
+> 
+> "How reviews work"
+> 
+> Match the large typography and decorative laurel graphics.
+> 
+> ============================================================
+> # 26. DESCRIPTION / EXTRA PROPERTY INFORMATION
+> ============================================================
+> 
+> Continue all content visible below the sections in SS8.
+> 
+> Do not stop the page after amenities.
+> 
+> The final page should have the same overall information architecture and visual rhythm as the reference.
+> 
+> ============================================================
+> # 27. LOGO / ICONS
+> ============================================================
+> 
+> Do not use random icons.
+> 
+> Use a consistent icon library such as Lucide React where appropriate.
+> 
+> For Airbnb-specific branding, reproduce the visual appearance carefully without copying source code.
+> 
+> Icons must match:
+> 
+> - stroke weight
+> - size
+> - alignment
+> - spacing
+> 
+> ============================================================
+> # 28. TYPOGRAPHY
+> ============================================================
+> 
+> Typography is extremely important.
+> 
+> Audit the entire project for:
+> 
+> - font family
+> - font loading
+> - font size
+> - font weight
+> - line height
+> - letter spacing
+> 
+> The result should visually match the screenshots.
+> 
+> Do NOT use oversized headings or generic system-font styling if it differs from the reference.
+> 
+> ============================================================
+> # 29. COLORS
+> ============================================================
+> 
+> Match the reference colors.
+> 
+> Pay special attention to:
+> 
+> - Airbnb pink
+> - black text
+> - secondary gray text
+> - borders
+> - background colors
+> - booking button
+> - disabled text
+> - selected calendar dates
+> - cards
+> - sticky navigation
+> 
+> Do not introduce custom colors that aren't visible in the reference.
+> 
+> ============================================================
+> # 30. RESPONSIVE SCOPE
+> ============================================================
+> 
+> The assignment is DESKTOP ONLY.
+> 
+> Prioritize exact desktop visual parity.
+> 
+> Do not spend time building a separate mobile design.
+> 
+> However, do not break the desktop page because of responsive CSS.
+> 
+> ============================================================
+> # 31. ANIMATIONS / INTERACTIONS
+> ============================================================
+> 
+> Implement the interactions visible/expected from the reference:
+> 
+> - hover states
+> - button transitions
+> - gallery hover
+> - image transitions
+> - lightbox transitions
+> - photo tour transitions
+> - modal transitions
+> - sticky navigation
+> - smooth section scrolling
+> - calendar interactions
+> - guest selector
+> - amenities modal
+> - reviews modal
+> - reserve button interaction
+> - close buttons
+> - keyboard navigation
+> 
+> Animations should be subtle and close to the reference.
+> 
+> Do not add flashy animations that aren't present in the screenshots.
+> 
+> ============================================================
+> # 32. ACCESSIBILITY
+> ============================================================
+> 
+> Maintain production-quality accessibility.
+> 
+> Required:
+> 
+> - semantic HTML
+> - accessible buttons
+> - aria-labels
+> - keyboard navigation
+> - visible focus states
+> - modal focus management
+> - ESC handling
+> - LEFT/RIGHT keyboard navigation in lightbox
+> - body scroll lock when modal is open
+> - appropriate alt text
+> - logical tab order
+> 
+> ============================================================
+> # 33. PROJECT ARCHITECTURE
+> ============================================================
+> 
+> Keep the existing stack unless there is a strong reason to change it.
+> 
+> Preferred:
+> 
+> - Next.js
+> - React
+> - TypeScript
+> - CSS Modules / clean CSS
+> - Framer Motion if already installed
+> - Lucide React
+> - static local data
+> 
+> No backend/database is required unless already needed.
+> 
+> Keep the implementation clean and componentized.
+> 
+> Suggested component structure:
+> 
+> components/
+>   Header
+>   ListingHeader
+>   PhotoGallery
+>   PhotoTour
+>   Lightbox
+>   GuestFavourite
+>   HostSection
+>   DescriptionSection
+>   SleepingSection
+>   AmenitiesSection
+>   AmenitiesModal
+>   BookingCard
+>   StickyNavigation
+>   Calendar
+>   ReviewsSection
+>   ReviewsModal
+>   LocationSection
+>   HostDetails
+>   ThingsToKnow
+>   NearbyStays
+> 
+> Use reusable data-driven components.
+> 
+> ============================================================
+> # 34. IMPORTANT — DO NOT COPY SOURCE CODE
+> ============================================================
+> 
+> This is an assignment.
+> 
+> Do NOT copy the original website's source code.
+> 
+> Do NOT copy JavaScript bundles.
+> 
+> Do NOT reproduce proprietary implementation details.
+> 
+> Use the screenshots as visual/behavioral reference and implement the UI independently.
+> 
+> The goal is visual and behavioral reconstruction, not source-code duplication.
+> 
+> ============================================================
+> # 35. ASSETS
+> ============================================================
+> 
+> Use the correct property images visible in SS3–SS8 wherever legitimately available to the project.
+> 
+> If an image asset already exists in the project, reuse it.
+> 
+> If an image needs to be replaced, use the correct corresponding property image.
+> 
+> Do NOT substitute unrelated stock images.
+> 
+> Maintain the exact image order shown in the screenshots.
+> 
+> ============================================================
+> # 36. CURRENT PROJECT AUDIT
+> ============================================================
+> 
+> Before changing code, inspect the entire existing project.
+> 
+> Identify:
+> 
+> - what is already correct
+> - what is missing
+> - what is visually incorrect
+> - what is non-functional
+> - what is using incorrect data
+> - what is using incorrect images
+> - what is missing from lower sections
+> 
+> Create an internal checklist.
+> 
+> Then implement all missing pieces.
+> 
+> ============================================================
+> # 37. VISUAL QA IS MANDATORY
+> ============================================================
+> 
+> DO NOT simply say:
+> 
+> "Implementation complete."
+> 
+> You must actually verify the result.
+> 
+> Run the project.
+> 
+> Take screenshots of the implementation at approximately the same desktop viewport as the reference screenshots.
+> 
+> Compare:
+> 
+> CURRENT IMPLEMENTATION
+> vs
+> SS3–SS8
+> 
+> Check every section.
+> 
+> Pay particular attention to:
+> 
+> 1. Header
+> 2. Gallery
+> 3. Listing title
+> 4. Offer card
+> 5. Guest favourite
+> 6. Host
+> 7. Description
+> 8. Sleeping section
+> 9. Amenities
+> 10. Sticky navigation
+> 11. Booking card
+> 12. Calendar
+> 13. Location
+> 14. Meet your host
+> 15. Reviews
+> 16. Things to know
+> 17. Nearby stays
+> 18. Large Guest favourite section
+> 19. Photo Tour
+> 20. Lightbox
+> 
+> Fix discrepancies.
+> 
+> Repeat the screenshot comparison until the result is visually close.
+> 
+> ============================================================
+> # 38. DO NOT CLAIM PIXEL PERFECT WITHOUT CHECKING
+> ============================================================
+> 
+> Do NOT claim:
+> 
+> "100% pixel perfect"
+> 
+> unless you have actually compared screenshots.
+> 
+> If something cannot be verified because the original website is inaccessible, use the supplied SS3–SS8 screenshots as the authoritative reference.
+> 
+> Do not invent missing UI.
+> 
+> ============================================================
+> # 39. FUNCTIONAL QA
+> ============================================================
+> 
+> Before declaring completion, test:
+> 
+> [ ] Show all photos
+> [ ] Clicking hero image
+> [ ] Photo Tour
+> [ ] Lightbox
+> [ ] Previous image
+> [ ] Next image
+> [ ] ESC close
+> [ ] LEFT arrow
+> [ ] RIGHT arrow
+> [ ] Sticky navigation
+> [ ] Photos tab
+> [ ] Amenities tab
+> [ ] Reviews tab
+> [ ] Location tab
+> [ ] Amenities modal
+> [ ] Reviews modal
+> [ ] Calendar
+> [ ] Date selection
+> [ ] Guest selector
+> [ ] Reserve button
+> [ ] Close buttons
+> [ ] Scroll behavior
+> [ ] Keyboard navigation
+> 
+> No visible button should be a dead UI element if it is expected to work.
+> 
+> ============================================================
+> # 40. PRODUCTION CHECK
+> ============================================================
+> 
+> Run:
+> 
+> npm run build
+> 
+> Fix all errors.
+> 
+> Check:
+> 
+> - no console errors
+> - no broken images
+> - no broken routes
+> - no hydration errors
+> - no TypeScript errors
+> - no accessibility-breaking issues
+> - no layout overflow on target desktop viewport
+> 
+> ============================================================
+> # 41. FINAL ACCEPTANCE CRITERIA
+> ============================================================
+> 
+> The implementation is considered complete ONLY when:
+> 
+> 1. SS3–SS8 can be visually recognized immediately in the implementation.
+> 2. The complete page exists from top to bottom.
+> 3. The correct images are used.
+> 4. Header matches the reference.
+> 5. Typography matches closely.
+> 6. Colors match closely.
+> 7. Spacing matches closely.
+> 8. Booking card matches.
+> 9. Sticky navigation works.
+> 10. Calendar exists and works.
+> 11. Reviews exist.
+> 12. Location section exists.
+> 13. Host section exists.
+> 14. Things to know exists.
+> 15. Nearby stays exists.
+> 16. Amenities exists.
+> 17. Photo Tour works.
+> 18. Lightbox works.
+> 19. Keyboard navigation works.
+> 20. Production build passes.
+> 
+> ============================================================
+> # 42. FINAL RESPONSE FROM YOU
+> ============================================================
+> 
+> After completing the work, report ONLY:
+> 
+> 1. What was changed
+> 2. What interactions were implemented
+> 3. Whether production build passes
+> 4. What visual QA was performed
+> 5. Any remaining known mismatch
+> 
+> Do NOT say "pixel perfect" unless verified.
+> 
+> MOST IMPORTANT:
+> 
+> DO NOT STOP AFTER FIXING THE FIRST SCREEN.
+> 
+> SS3–SS8 represent the full reference page.
+> 
+> Rebuild the COMPLETE page and make the missing sections and interactions actually visible and functional.
+> 
+> The reference screenshots are the source of truth.
+
+**Prompt 19 — Master Reference Inspection + Design Extraction + Full Reconstruction Prompt**
+> # AIRBNB CLONE — MASTER REFERENCE INSPECTION + DESIGN EXTRACTION + FULL RECONSTRUCTION PROMPT
+> 
+> You are working on my Playpower Labs Airbnb Clone assignment.
+> 
+> This is NOT a generic Airbnb-inspired UI task.
+> 
+> Your job is to reconstruct the provided reference listing page as accurately as possible using:
+> 
+> 1. The original reference website
+> 2. The provided reference screenshots
+> 3. The current project/deployment
+> 4. Browser-based visual and DOM/CSS inspection
+> 5. Screenshot comparison and iterative visual QA
+> 
+> The final result must independently reproduce the visual appearance, structure, content, interactions, animations, and desktop behaviour of the reference.
+> 
+> ============================================================
+> # 1. PROJECT URLS
+> ============================================================
+> 
+> CURRENT DEPLOYED PROJECT:
+> 
+> https://airbnb-clone-playpower-seven.vercel.app/
+> 
+> ORIGINAL REFERENCE WEBSITE:
+> 
+> https://airbnb-clone-umber-two.vercel.app/#
+> 
+> IMPORTANT:
+> 
+> The ORIGINAL REFERENCE WEBSITE above is the primary website that must be inspected.
+> 
+> Do NOT treat the current project as the design reference.
+> 
+> The current project may contain incorrect UI, content, images, spacing, values, components, or simplified sections.
+> 
+> REFERENCE SCREENSHOTS:
+> 
+> SS3
+> SS4
+> SS5
+> SS6
+> SS7
+> SS8
+> 
+> CURRENT IMPLEMENTATION SCREENSHOTS:
+> 
+> SS1
+> SS2
+> 
+> SS3–SS8 are the primary visual source of truth.
+> 
+> The original reference website is an additional source for inspecting publicly rendered behaviour, styling, dimensions, assets, and interactions.
+> 
+> ============================================================
+> # 2. ABSOLUTE FIRST STEP — DO NOT CODE YET
+> ============================================================
+> 
+> DO NOT immediately modify the project.
+> 
+> FIRST inspect everything.
+> 
+> Before writing or changing any component:
+> 
+> 1. Open the original reference URL:
+> 
+> https://airbnb-clone-umber-two.vercel.app/#
+> 
+> 2. Open the current deployed project:
+> 
+> https://airbnb-clone-playpower-seven.vercel.app/
+> 
+> 3. Inspect the reference website in the browser.
+> 
+> 4. Inspect the current implementation.
+> 
+> 5. Compare both against SS3–SS8.
+> 
+> 6. Build a complete reference specification.
+> 
+> ONLY AFTER THIS AUDIT should implementation begin.
+> 
+> ============================================================
+> # 3. ORIGINAL WEBSITE INSPECTION
+> ============================================================
+> 
+> Inspect the ORIGINAL WEBSITE as deeply as the available browser/devtools environment allows.
+> 
+> Reference:
+> 
+> https://airbnb-clone-umber-two.vercel.app/#
+> 
+> You must inspect the publicly rendered page.
+> 
+> Analyze:
+> 
+> ------------------------------------------------------------
+> DOM / STRUCTURE
+> ------------------------------------------------------------
+> 
+> Inspect the rendered DOM to understand:
+> 
+> - page hierarchy
+> - header structure
+> - navigation structure
+> - gallery structure
+> - content containers
+> - columns
+> - booking sidebar
+> - cards
+> - sections
+> - sticky elements
+> - modals
+> - dialogs
+> - buttons
+> - links
+> - image containers
+> - section boundaries
+> 
+> Use the DOM only to understand the rendered structure.
+> 
+> DO NOT copy the original source implementation.
+> 
+> ------------------------------------------------------------
+> COMPUTED CSS
+> ------------------------------------------------------------
+> 
+> Where browser inspection permits, inspect computed styles for important elements.
+> 
+> Determine:
+> 
+> - width
+> - height
+> - max-width
+> - min-width
+> - padding
+> - margin
+> - gap
+> - display
+> - flex/grid configuration
+> - position
+> - top/left/right/bottom
+> - border
+> - border width
+> - border radius
+> - box shadow
+> - background
+> - opacity
+> - overflow
+> - z-index
+> 
+> Pay special attention to:
+> 
+> - header
+> - search bar
+> - gallery
+> - title
+> - cards
+> - booking card
+> - sticky navigation
+> - buttons
+> - calendar
+> - review cards
+> - modals
+> - footer/lower sections
+> 
+> ------------------------------------------------------------
+> TYPOGRAPHY INSPECTION
+> ------------------------------------------------------------
+> 
+> Inspect the rendered typography.
+> 
+> Determine as accurately as possible:
+> 
+> - font family
+> - fallback font
+> - font source if publicly and legitimately accessible
+> - font size
+> - font weight
+> - line height
+> - letter spacing
+> - text-transform
+> - heading hierarchy
+> - body text size
+> - small text size
+> - button text size
+> - navigation text size
+> 
+> Do NOT randomly choose a font.
+> 
+> Use the closest legitimate font configuration supported by the observed reference.
+> 
+> ------------------------------------------------------------
+> COLOR INSPECTION
+> ------------------------------------------------------------
+> 
+> Inspect actual rendered colors wherever possible.
+> 
+> Determine:
+> 
+> - Airbnb pink
+> - primary text
+> - secondary text
+> - muted text
+> - border
+> - background
+> - card background
+> - hover background
+> - selected calendar background
+> - disabled text
+> - button colors
+> - map colors
+> - accent colors
+> 
+> Do NOT randomly approximate colors when the rendered value can be observed.
+> 
+> Create reusable CSS variables/design tokens.
+> 
+> Example:
+> 
+> --airbnb-pink
+> --text-primary
+> --text-secondary
+> --border
+> --surface
+> --muted
+> --selected
+> --disabled
+> --success
+> --map-water
+> --map-land
+> 
+> ------------------------------------------------------------
+> IMAGE INSPECTION
+> ------------------------------------------------------------
+> 
+> THIS IS VERY IMPORTANT.
+> 
+> Inspect EVERY visible image in the reference.
+> 
+> For each image determine:
+> 
+> - what image it represents
+> - where it appears
+> - image dimensions
+> - aspect ratio
+> - crop
+> - object-fit
+> - object-position
+> - border radius
+> - image order
+> - whether the same image is reused elsewhere
+> - whether a corresponding publicly accessible asset exists
+> 
+> Inspect:
+> 
+> - hero gallery
+> - bedroom
+> - living room
+> - host visuals
+> - review avatars
+> - nearby stays
+> - decorative graphics
+> - map visuals
+> - logos
+> - icons
+> - any other visible image
+> 
+> If a legitimate public asset URL is exposed by the rendered page, identify it.
+> 
+> Prefer using the actual corresponding asset where permitted.
+> 
+> DO NOT replace the reference property images with random Unsplash images.
+> 
+> DO NOT blindly hotlink unstable assets.
+> 
+> If an asset can legitimately be included locally, use it appropriately in the project.
+> 
+> If an exact asset cannot legitimately be obtained, document the limitation and reproduce the appearance as closely as possible with an appropriate independent asset.
+> 
+> ------------------------------------------------------------
+> LOGO INSPECTION
+> ------------------------------------------------------------
+> 
+> Inspect the Airbnb logo shown in the reference.
+> 
+> Determine:
+> 
+> - icon shape
+> - text
+> - dimensions
+> - proportions
+> - color
+> - spacing
+> - placement
+> - visual weight
+> 
+> Do not replace it with:
+> 
+> - emoji
+> - random icon
+> - generic text
+> - unrelated logo
+> 
+> Create/use an independent legitimate implementation that visually matches the reference.
+> 
+> Do not copy the original site's component/source code.
+> 
+> ------------------------------------------------------------
+> ICON INSPECTION
+> ------------------------------------------------------------
+> 
+> Inspect the icons used throughout the reference.
+> 
+> Determine:
+> 
+> - icon type
+> - shape
+> - size
+> - stroke width
+> - visual weight
+> - alignment
+> - spacing
+> 
+> Use Lucide React or another appropriate icon library where visually appropriate.
+> 
+> For unique decorative graphics, create an independent SVG/CSS implementation.
+> 
+> Do not use random icons just because they are available.
+> 
+> ------------------------------------------------------------
+> ANIMATION / TRANSITION INSPECTION
+> ------------------------------------------------------------
+> 
+> Inspect observable interaction behaviour.
+> 
+> Determine:
+> 
+> - hover transitions
+> - button hover behaviour
+> - gallery transitions
+> - modal open/close animation
+> - lightbox transition
+> - sticky navigation behaviour
+> - smooth scrolling
+> - carousel movement
+> - calendar interaction
+> - overlay transitions
+> - focus behaviour
+> 
+> Reproduce only the behaviour that is supported by the reference.
+> 
+> Do not add unnecessary animations.
+> 
+> ============================================================
+> # 4. IMPORTANT — IF ORIGINAL WEBSITE IS BLOCKED
+> ============================================================
+> 
+> If the original website returns:
+> 
+> - 429
+> - rate limit
+> - bot protection
+> - authentication
+> - unavailable
+> - network error
+> 
+> DO NOT:
+> 
+> - bypass bot protection
+> - bypass authentication
+> - circumvent security
+> - scrape protected/private APIs
+> - copy source bundles
+> - download minified application code
+> - reverse engineer hidden APIs
+> 
+> Instead:
+> 
+> 1. Use SS3–SS8 as the authoritative visual reference.
+> 2. Inspect the current implementation.
+> 3. Use screenshot analysis.
+> 4. Document that live reference inspection was unavailable.
+> 5. Reconstruct from the screenshots.
+> 
+> DO NOT invent unsupported design details.
+> 
+> ============================================================
+> # 5. REFERENCE DESIGN SPECIFICATION
+> ============================================================
+> 
+> Before implementation, create an internal specification containing:
+> 
+> ------------------------------------------------------------
+> HEADER
+> ------------------------------------------------------------
+> 
+> Record:
+> 
+> - height
+> - logo position
+> - logo dimensions
+> - search pill dimensions
+> - search item spacing
+> - search button size
+> - host button
+> - globe
+> - profile/menu
+> - border
+> - shadow
+> - typography
+> 
+> ------------------------------------------------------------
+> PAGE CONTAINER
+> ------------------------------------------------------------
+> 
+> Record:
+> 
+> - maximum width
+> - left/right margins
+> - main content width
+> - sidebar width
+> - column gap
+> - section spacing
+> - vertical rhythm
+> 
+> ------------------------------------------------------------
+> GALLERY
+> ------------------------------------------------------------
+> 
+> Record:
+> 
+> - total gallery width
+> - total gallery height
+> - left image width
+> - right image dimensions
+> - gaps
+> - border radius
+> - crop
+> - object-position
+> - image order
+> 
+> ------------------------------------------------------------
+> TYPOGRAPHY
+> ------------------------------------------------------------
+> 
+> Record:
+> 
+> - primary font
+> - heading sizes
+> - body sizes
+> - small text
+> - weights
+> - line heights
+> - letter spacing
+> 
+> ------------------------------------------------------------
+> COLORS
+> ------------------------------------------------------------
+> 
+> Record actual/observed values where possible.
+> 
+> ------------------------------------------------------------
+> CARDS
+> ------------------------------------------------------------
+> 
+> Record:
+> 
+> - padding
+> - radius
+> - border
+> - shadow
+> - background
+> - internal spacing
+> 
+> ------------------------------------------------------------
+> BUTTONS
+> ------------------------------------------------------------
+> 
+> Record:
+> 
+> - dimensions
+> - background
+> - text
+> - radius
+> - border
+> - hover state
+> - transition
+> 
+> ============================================================
+> # 6. CURRENT PROJECT AUDIT
+> ============================================================
+> 
+> Open:
+> 
+> https://airbnb-clone-playpower-seven.vercel.app/
+> 
+> Inspect the current implementation.
+> 
+> Identify every mismatch against:
+> 
+> - SS3
+> - SS4
+> - SS5
+> - SS6
+> - SS7
+> - SS8
+> - original reference website
+> 
+> Create a mismatch checklist.
+> 
+> Known incorrect examples include:
+> 
+> - 4.97 rating
+> - 33 reviews
+> - ₹3500
+> - 1 guest
+> - 24 amenities
+> - simplified sleeping section
+> - missing lower sections
+> 
+> These are examples only.
+> 
+> Do NOT assume they are the only problems.
+> 
+> Audit the entire page.
+> 
+> ============================================================
+> # 7. REFERENCE CONTENT VALUES
+> ============================================================
+> 
+> Where screenshots clearly show values, the reference values override the current project.
+> 
+> Use:
+> 
+> TITLE:
+> 
+> Romantic Jacuzzi 1BHK Candolim | Mirashya UG10
+> 
+> LOCATION:
+> 
+> Candolim, Goa, India
+> 
+> LISTING:
+> 
+> Entire serviced apartment in Candolim, India
+> 
+> SUMMARY:
+> 
+> 3 guests · 1 bedroom · 1 bed · 1 bathroom
+> 
+> GUEST FAVOURITE:
+> 
+> 4.95
+> 
+> 19 Reviews
+> 
+> BOOKING:
+> 
+> ₹28,499 for 5 nights
+> 
+> CHECK-IN:
+> 
+> 10/18/2026
+> 
+> CHECKOUT:
+> 
+> 10/23/2026
+> 
+> GUESTS:
+> 
+> 2 guests
+> 
+> CANCELLATION:
+> 
+> Free cancellation before 17 October
+> 
+> AMENITIES:
+> 
+> Show all 50 amenities
+> 
+> Do not preserve incorrect values from the current project when the screenshots show different values.
+> 
+> ============================================================
+> # 8. HEADER
+> ============================================================
+> 
+> Reconstruct the header to visually match the reference.
+> 
+> Include:
+> 
+> - Airbnb logo
+> - Anywhere
+> - Anytime
+> - Add guests
+> - pink search button
+> - Become a host
+> - globe
+> - menu/profile control
+> 
+> Match:
+> 
+> - exact approximate positioning
+> - dimensions
+> - spacing
+> - font
+> - border
+> - radius
+> - shadows
+> - colors
+> - hover behaviour
+> 
+> ============================================================
+> # 9. HERO GALLERY
+> ============================================================
+> 
+> Recreate the reference gallery.
+> 
+> Structure:
+> 
+> LEFT:
+> 
+> One large property image.
+> 
+> RIGHT:
+> 
+> Four smaller property images.
+> 
+> Match:
+> 
+> - exact image order
+> - image crop
+> - image dimensions
+> - aspect ratios
+> - gaps
+> - radius
+> - object-position
+> - overall height
+> 
+> Include:
+> 
+> SHOW ALL PHOTOS
+> 
+> The button must work.
+> 
+> Clicking any gallery image must also work.
+> 
+> ============================================================
+> # 10. TITLE / SHARE / SAVE
+> ============================================================
+> 
+> Display:
+> 
+> Romantic Jacuzzi 1BHK Candolim | Mirashya UG10
+> 
+> Include:
+> 
+> - Share
+> - Save
+> 
+> Match:
+> 
+> - position
+> - icon
+> - size
+> - spacing
+> - typography
+> - alignment
+> 
+> ============================================================
+> # 11. PROMOTIONAL CARD
+> ============================================================
+> 
+> Recreate:
+> 
+> Get 10% off your next stay.
+> 
+> Terms apply
+> 
+> Claim
+> 
+> Match:
+> 
+> - green tag icon
+> - border
+> - radius
+> - padding
+> - button
+> - typography
+> - position
+> 
+> ============================================================
+> # 12. GUEST FAVOURITE CARD
+> ============================================================
+> 
+> Recreate:
+> 
+> Guest favourite
+> 
+> One of the most loved homes on Airbnb,
+> according to guests
+> 
+> 4.95
+> 
+> 19 Reviews
+> 
+> Use the decorative laurel graphics visible in the reference.
+> 
+> Match:
+> 
+> - layout
+> - typography
+> - borders
+> - spacing
+> - card height
+> - rating presentation
+> 
+> ============================================================
+> # 13. HOST SECTION
+> ============================================================
+> 
+> Rebuild the host section shown in SS3.
+> 
+> Include:
+> 
+> - host avatar/logo
+> - "Hosted by Mirashya Homes"
+> - "2 years hosting"
+> - host details
+> - response rate
+> - response time
+> - Message host button
+> - protection/payment notice
+> - host information cards/details visible further down the page
+> 
+> Match the structure and spacing from the reference.
+> 
+> Do not simplify this into the current small host avatar.
+> 
+> ============================================================
+> # 14. DESCRIPTION
+> ============================================================
+> 
+> Include:
+> 
+> Some info has been automatically translated.
+> Show original
+> 
+> Then reproduce the visible listing description from the reference.
+> 
+> Include:
+> 
+> - highlights
+> - icons
+> - Show more
+> - separators
+> - correct spacing
+> 
+> ============================================================
+> # 15. WHERE YOU'LL SLEEP
+> ============================================================
+> 
+> Create TWO cards.
+> 
+> CARD 1:
+> 
+> Bedroom
+> 1 double bed
+> 
+> CARD 2:
+> 
+> Living room
+> 1 sofa
+> 
+> Each must use the corresponding reference property image where legitimately available.
+> 
+> Match:
+> 
+> - dimensions
+> - image crop
+> - radius
+> - typography
+> - card spacing
+> 
+> ============================================================
+> # 16. WHAT THIS PLACE OFFERS
+> ============================================================
+> 
+> Include visible reference amenities:
+> 
+> - Kitchen
+> - Wifi
+> - Dedicated workspace
+> - Free parking on premises
+> - Pool
+> - Hot tub
+> 
+> Button:
+> 
+> Show all 50 amenities
+> 
+> The button must open a functional amenities modal/panel.
+> 
+> The modal must be keyboard accessible.
+> 
+> ============================================================
+> # 17. STICKY NAVIGATION
+> ============================================================
+> 
+> Implement:
+> 
+> Photos
+> Amenities
+> Reviews
+> Location
+> 
+> When scrolling:
+> 
+> - navigation becomes sticky
+> - active section changes
+> - active underline changes
+> - clicking an item scrolls to the correct section
+> 
+> Match:
+> 
+> - height
+> - position
+> - border
+> - spacing
+> - font
+> - underline
+> 
+> ============================================================
+> # 18. STICKY BOOKING SUMMARY
+> ============================================================
+> 
+> When appropriate during scrolling, display:
+> 
+> ₹28,499 for 5 nights
+> 
+> 4.95 · 19 reviews
+> 
+> Reserve
+> 
+> Match the reference position and styling.
+> 
+> ============================================================
+> # 19. BOOKING CARD
+> ============================================================
+> 
+> Recreate:
+> 
+> ₹28,499 for 5 nights
+> 
+> 4.95 · 19 reviews
+> 
+> CHECK-IN
+> 10/18/2026
+> 
+> CHECKOUT
+> 10/23/2026
+> 
+> GUESTS
+> 2 guests
+> 
+> Free cancellation before 17 October
+> 
+> Reserve
+> 
+> You won't be charged yet
+> 
+> Report this listing
+> 
+> Match:
+> 
+> - width
+> - radius
+> - shadow
+> - padding
+> - typography
+> - input layout
+> - dividers
+> - button
+> - spacing
+> 
+> DO NOT use:
+> 
+> ₹3500
+> 33 reviews
+> 1 guest
+> 
+> when the reference clearly shows different values.
+> 
+> ============================================================
+> # 20. CALENDAR
+> ============================================================
+> 
+> Recreate:
+> 
+> 5 nights in Candolim
+> 
+> 18 Oct 2026 - 23 Oct 2026
+> 
+> October 2026
+> November 2026
+> 
+> Include:
+> 
+> - previous month
+> - next month
+> - weekdays
+> - dates
+> - selected 18
+> - selected 23
+> - date range
+> - disabled dates
+> - Clear dates
+> 
+> Make date selection functional.
+> 
+> Match the reference styling.
+> 
+> ============================================================
+> # 21. LARGE GUEST FAVOURITE
+> ============================================================
+> 
+> Include:
+> 
+> 4.95
+> 
+> Guest favourite
+> 
+> This home is a guest favourite based on ratings, reviews and reliability
+> 
+> How reviews work
+> 
+> Match:
+> 
+> - huge rating
+> - decorative laurels
+> - centered layout
+> - spacing
+> - typography
+> 
+> ============================================================
+> # 22. LOCATION
+> ============================================================
+> 
+> Display:
+> 
+> Candolim, Goa, India
+> 
+> Create a visual map matching the reference.
+> 
+> Include:
+> 
+> - blue water
+> - light green land
+> - grid
+> - circles
+> - central home marker
+> - search control
+> - zoom controls
+> - rounded map container
+> 
+> Then:
+> 
+> Exact location will be provided after booking.
+> 
+> Neighbourhood highlights
+> 
+> Description
+> 
+> Show more
+> 
+> A real map API is NOT required unless already configured.
+> 
+> Visual parity is the priority.
+> 
+> ============================================================
+> # 23. MEET YOUR HOST
+> ============================================================
+> 
+> Include:
+> 
+> Meet your host
+> 
+> Mirashya Homes
+> 
+> 1,463 Reviews
+> 
+> 4.68 rating
+> 
+> Co-hosts:
+> 
+> Sharath
+> Aman Dev Pahwa
+> Maria Karen Priyanka
+> Simran
+> Pallavi
+> Sanyukta
+> 
+> Match the reference layout and visuals.
+> 
+> ============================================================
+> # 24. REVIEWS
+> ============================================================
+> 
+> Recreate:
+> 
+> Overall rating
+> 
+> Cleanliness 5.0
+> Accuracy 5.0
+> Check-in 5.0
+> Communication 5.0
+> Location 4.8
+> Value 4.8
+> 
+> Review category pills:
+> 
+> Comfort 6
+> Accuracy 5
+> Hot tub 5
+> Condition 4
+> Hospitality 8
+> Cleanliness 4
+> Amenities 2
+> 
+> Include visible review cards from the reference.
+> 
+> Button:
+> 
+> Show all 19 reviews
+> 
+> Make it functional.
+> 
+> ============================================================
+> # 25. AMENITIES TAB / FULL AMENITIES
+> ============================================================
+> 
+> Include additional visible items:
+> 
+> Pets allowed
+> Exterior security cameras on property
+> Carbon monoxide alarm
+> Smoke alarm
+> 
+> Preserve disabled/crossed-out styling where visible.
+> 
+> Show all 50 amenities must work.
+> 
+> ============================================================
+> # 26. THINGS TO KNOW
+> ============================================================
+> 
+> Three columns:
+> 
+> Cancellation policy
+> 
+> House rules
+> 
+> Safety & property
+> 
+> Include:
+> 
+> - icons
+> - headings
+> - visible text
+> - Learn more
+> - correct spacing
+> - separators
+> 
+> ============================================================
+> # 27. MORE STAYS NEARBY
+> ============================================================
+> 
+> Create the reference carousel.
+> 
+> Include five visible property cards.
+> 
+> Each should contain:
+> 
+> - image
+> - title
+> - price
+> - rating
+> 
+> Include:
+> 
+> - carousel arrows
+> - pagination indicator
+> - correct image radius
+> - correct spacing
+> 
+> Make it functional.
+> 
+> ============================================================
+> # 28. PHOTO TOUR
+> ============================================================
+> 
+> Clicking:
+> 
+> - Show all photos
+> - any gallery image
+> 
+> must open Photo Tour.
+> 
+> Photo Tour must contain:
+> 
+> - all property photos
+> - close/back control
+> - reference-style layout
+> - smooth transition
+> - correct image ordering
+> 
+> ============================================================
+> # 29. LIGHTBOX
+> ============================================================
+> 
+> Clicking a Photo Tour image opens a Lightbox.
+> 
+> Required:
+> 
+> - large image
+> - previous
+> - next
+> - close
+> - image counter
+> - LEFT keyboard navigation
+> - RIGHT keyboard navigation
+> - ESC
+> - focus management
+> - body scroll lock
+> 
+> Test every behaviour.
+> 
+> ============================================================
+> # 30. ASSET EXTRACTION / ASSET MAPPING
+> ============================================================
+> 
+> Create an internal asset map.
+> 
+> For EVERY reference image record:
+> 
+> IMAGE ID
+> LOCATION
+> REFERENCE PURPOSE
+> DIMENSIONS
+> ASPECT RATIO
+> CROP
+> OBJECT POSITION
+> SOURCE/LEGITIMATE PUBLIC ASSET IF AVAILABLE
+> 
+> Example:
+> 
+> hero-01
+> hero gallery
+> large left image
+> ...
+> 
+> hero-02
+> hero gallery
+> top-right image
+> ...
+> 
+> bedroom
+> sleeping section
+> ...
+> 
+> Do the same for:
+> 
+> - host visuals
+> - review avatars
+> - nearby properties
+> - decorative graphics
+> - logo
+> - icons
+> 
+> If legitimate public assets are accessible, use them appropriately.
+> 
+> Do not copy protected source code.
+> 
+> Do not scrape private/internal APIs.
+> 
+> ============================================================
+> # 31. DESIGN TOKEN SYSTEM
+> ============================================================
+> 
+> Create a centralized design system.
+> 
+> Example:
+> 
+> :root {
+>   --airbnb-pink: ...;
+>   --text-primary: ...;
+>   --text-secondary: ...;
+>   --border: ...;
+>   --surface: ...;
+>   --muted: ...;
+>   --selected: ...;
+>   --disabled: ...;
+>   --radius-small: ...;
+>   --radius-medium: ...;
+>   --radius-large: ...;
+> }
+> 
+> Values should be based on observed reference styling whenever possible.
+> 
+> ============================================================
+> # 32. COMPONENT ARCHITECTURE
+> ============================================================
+> 
+> Use reusable components.
+> 
+> Recommended:
+> 
+> Header
+> ListingHeader
+> PhotoGallery
+> PhotoTour
+> Lightbox
+> OfferCard
+> GuestFavourite
+> HostSection
+> DescriptionSection
+> SleepingSection
+> AmenitiesSection
+> AmenitiesModal
+> BookingCard
+> StickyNavigation
+> StickyBookingSummary
+> CalendarSection
+> LocationSection
+> MeetYourHost
+> ReviewsSection
+> ReviewsModal
+> ThingsToKnow
+> NearbyStays
+> LargeGuestFavourite
+> 
+> Use data-driven arrays for:
+> 
+> - images
+> - amenities
+> - reviews
+> - nearby stays
+> - co-hosts
+> - calendar
+> 
+> Do not duplicate large amounts of JSX unnecessarily.
+> 
+> ============================================================
+> # 33. TECHNOLOGY
+> ============================================================
+> 
+> Use the existing project stack where practical.
+> 
+> Preferred:
+> 
+> Next.js
+> React
+> TypeScript
+> CSS Modules / global CSS
+> Framer Motion
+> Lucide React
+> 
+> Static local data is sufficient.
+> 
+> No backend/database is required unless already present.
+> 
+> Do not introduce unnecessary technologies.
+> 
+> ============================================================
+> # 34. ACCESSIBILITY
+> ============================================================
+> 
+> Implement:
+> 
+> - semantic HTML
+> - aria-labels
+> - keyboard navigation
+> - visible focus states
+> - logical tab order
+> - accessible buttons
+> - accessible dialogs
+> - modal focus management
+> - ESC
+> - LEFT/RIGHT lightbox navigation
+> - alt text
+> - body scroll lock
+> 
+> ============================================================
+> # 35. ANIMATIONS
+> ============================================================
+> 
+> Use subtle reference-matching animation.
+> 
+> Implement where observable:
+> 
+> - hover
+> - button transitions
+> - gallery
+> - modal
+> - Photo Tour
+> - Lightbox
+> - sticky navigation
+> - smooth section scrolling
+> - carousel
+> 
+> Do not over-animate.
+> 
+> ============================================================
+> # 36. VISUAL QA
+> ============================================================
+> 
+> After implementation:
+> 
+> Run the application.
+> 
+> Capture screenshots at approximately the same viewport as the reference screenshots.
+> 
+> Compare:
+> 
+> SS3 → implementation
+> SS4 → implementation
+> SS5 → implementation
+> SS6 → implementation
+> SS7 → implementation
+> SS8 → implementation
+> 
+> Audit:
+> 
+> - header
+> - logo
+> - search
+> - gallery
+> - title
+> - share/save
+> - offer card
+> - guest favourite
+> - host
+> - description
+> - sleeping section
+> - amenities
+> - sticky navigation
+> - booking card
+> - calendar
+> - location
+> - meet your host
+> - reviews
+> - things to know
+> - nearby stays
+> - lower page
+> - modals
+> 
+> Do NOT stop after the first viewport.
+> 
+> ============================================================
+> # 37. PIXEL-LEVEL QA LOOP
+> ============================================================
+> 
+> For each major mismatch:
+> 
+> 1. Identify the mismatch.
+> 2. Determine whether it is:
+>    - layout
+>    - typography
+>    - color
+>    - image
+>    - spacing
+>    - icon
+>    - component size
+>    - interaction
+>    - animation
+> 3. Fix it.
+> 4. Re-run screenshot comparison.
+> 5. Repeat.
+> 
+> Pay special attention to:
+> 
+> - 1–5 px spacing differences
+> - incorrect card width
+> - wrong image crop
+> - wrong font weight
+> - wrong line height
+> - wrong border radius
+> - wrong shadows
+> - incorrect sticky offsets
+> - wrong button dimensions
+> - incorrect text alignment
+> 
+> ============================================================
+> # 38. FUNCTIONAL QA
+> ============================================================
+> 
+> Test:
+> 
+> [ ] Header controls
+> [ ] Share
+> [ ] Save
+> [ ] Show all photos
+> [ ] Gallery image click
+> [ ] Photo Tour
+> [ ] Lightbox
+> [ ] Previous
+> [ ] Next
+> [ ] ESC
+> [ ] LEFT
+> [ ] RIGHT
+> [ ] Sticky navigation
+> [ ] Photos
+> [ ] Amenities
+> [ ] Reviews
+> [ ] Location
+> [ ] Amenities modal
+> [ ] Reviews modal
+> [ ] Calendar
+> [ ] Date selection
+> [ ] Guest selector
+> [ ] Reserve
+> [ ] Nearby carousel
+> [ ] Close controls
+> [ ] Scroll behaviour
+> [ ] Keyboard navigation
+> [ ] Focus management
+> 
+> No major visible control should remain a dead button.
+> 
+> ============================================================
+> # 39. BUILD QA
+> ============================================================
+> 
+> Run:
+> 
+> npm run build
+> 
+> Fix all:
+> 
+> - TypeScript errors
+> - ESLint errors
+> - hydration errors
+> - broken imports
+> - broken images
+> - runtime errors
+> - console errors
+> - overflow
+> - layout issues
+> 
+> The production build MUST pass.
+> 
+> ============================================================
+> # 40. DEPLOYMENT QA
+> ============================================================
+> 
+> After implementation:
+> 
+> 1. Run local application.
+> 2. Run npm run build.
+> 3. Fix all issues.
+> 4. Commit changes.
+> 5. Push using the existing repository workflow if configured.
+> 6. Wait for deployment.
+> 7. Open:
+> 
+> https://airbnb-clone-playpower-seven.vercel.app/
+> 
+> 8. Verify the DEPLOYED website.
+> 
+> IMPORTANT:
+> 
+> Do NOT assume that a Git push automatically means the deployed site contains the changes.
+> 
+> Actually inspect the deployed URL.
+> 
+> ============================================================
+> # 41. IMPORTANT — DO NOT JUST MODIFY LOCALHOST
+> ============================================================
+> 
+> The final result must be visible on:
+> 
+> https://airbnb-clone-playpower-seven.vercel.app/
+> 
+> Verify:
+> 
+> - correct title
+> - correct images
+> - correct logo
+> - correct typography
+> - correct values
+> - complete page
+> - working gallery
+> - working Photo Tour
+> - working Lightbox
+> - working navigation
+> - working booking UI
+> - working modals
+> - correct lower sections
+> 
+> ============================================================
+> # 42. ASSIGNMENT SAFETY / ORIGINAL IMPLEMENTATION
+> ============================================================
+> 
+> You may inspect the original reference website for:
+> 
+> - rendered DOM structure
+> - computed CSS
+> - visual dimensions
+> - spacing
+> - typography
+> - colors
+> - images
+> - publicly accessible asset references
+> - icon appearance
+> - logo appearance
+> - animation behaviour
+> - interaction behaviour
+> 
+> BUT DO NOT:
+> 
+> - copy original source code
+> - copy React components
+> - copy JavaScript bundles
+> - copy minified JS
+> - copy proprietary implementation
+> - copy hidden APIs
+> - copy internal application logic
+> - bypass bot protection
+> - bypass authentication
+> - circumvent security controls
+> 
+> Use the reference as a DESIGN SPECIFICATION.
+> 
+> Then implement the result independently.
+> 
+> ============================================================
+> # 43. DO NOT REPLACE REFERENCE IMAGES WITH RANDOM ASSETS
+> ============================================================
+> 
+> This is especially important.
+> 
+> If the reference contains a specific property image:
+> 
+> DO NOT substitute:
+> 
+> - random Unsplash image
+> - random stock photo
+> - unrelated Airbnb image
+> - generated placeholder
+> 
+> First inspect whether the corresponding publicly accessible asset can legitimately be used.
+> 
+> If yes:
+> 
+> Use the correct asset.
+> 
+> If no:
+> 
+> Use the closest legitimate alternative and document the limitation.
+> 
+> ============================================================
+> # 44. DO NOT INVENT CONTENT
+> ============================================================
+> 
+> When the screenshot clearly provides:
+> 
+> - rating
+> - reviews
+> - price
+> - dates
+> - amenities
+> - host information
+> - property information
+> - nearby stay information
+> 
+> use the reference values.
+> 
+> Do not invent different values just to make the page look realistic.
+> 
+> ============================================================
+> # 45. DO NOT STOP AT THE FIRST SCREEN
+> ============================================================
+> 
+> The assignment is NOT complete after recreating the hero section.
+> 
+> The entire visible page represented by SS3–SS8 must be implemented.
+> 
+> Required lower sections include:
+> 
+> - sleeping
+> - amenities
+> - location
+> - meet your host
+> - reviews
+> - things to know
+> - nearby stays
+> - large guest favourite
+> - all required sticky interactions
+> - Photo Tour
+> - Lightbox
+> 
+> ============================================================
+> # 46. FINAL SELF-AUDIT
+> ============================================================
+> 
+> Before declaring completion, ask yourself:
+> 
+> 1. Did I inspect the ORIGINAL reference website?
+> 2. Did I inspect the CURRENT deployed project?
+> 3. Did I compare against SS3–SS8?
+> 4. Did I inspect rendered DOM/layout?
+> 5. Did I inspect computed CSS?
+> 6. Did I inspect typography?
+> 7. Did I inspect colors?
+> 8. Did I inspect image assets?
+> 9. Did I inspect logo?
+> 10. Did I inspect icons?
+> 11. Did I inspect spacing?
+> 12. Did I inspect animations?
+> 13. Did I reproduce the full page?
+> 14. Did I reproduce the correct reference values?
+> 15. Did I test all interactions?
+> 16. Did I test keyboard controls?
+> 17. Did I test modals?
+> 18. Did I test Photo Tour?
+> 19. Did I test Lightbox?
+> 20. Did I run npm run build?
+> 21. Did I verify the DEPLOYED Vercel page?
+> 22. Did I perform screenshot comparison?
+> 
+> If any answer is NO, continue working.
+> 
+> ============================================================
+> # 47. FINAL REPORT
+> ============================================================
+> 
+> When finished, provide a concise final report containing:
+> 
+> 1. Reference website inspection result
+> 2. Current project audit result
+> 3. Files/components changed
+> 4. Major visual corrections
+> 5. Image/asset corrections
+> 6. Logo correction
+> 7. Font/typography correction
+> 8. Color/design-token correction
+> 9. Functional corrections
+> 10. Photo Tour status
+> 11. Lightbox status
+> 12. Accessibility status
+> 13. Screenshot comparison status
+> 14. npm run build result
+> 15. Deployment verification result
+> 16. Remaining known mismatches
+> 
+> Do NOT say:
+> 
+> "100% pixel perfect"
+> 
+> unless you actually performed screenshot-level verification.
+> 
+> ============================================================
+> # 48. FINAL OBJECTIVE
+> ============================================================
+> 
+> The final deployed application must visually and behaviourally resemble the ORIGINAL REFERENCE as closely as possible.
+> 
+> Reference:
+> 
+> https://airbnb-clone-umber-two.vercel.app/#
+> 
+> Deployment:
+> 
+> https://airbnb-clone-playpower-seven.vercel.app/
+> 
+> The implementation must match:
+> 
+> - UI
+> - layout
+> - images
+> - logo
+> - typography
+> - colors
+> - spacing
+> - icons
+> - cards
+> - gallery
+> - booking UI
+> - calendar
+> - navigation
+> - reviews
+> - location
+> - animations
+> - interactions
+> - accessibility
+> 
+> Use the reference website and screenshots as the design specification.
+> 
+> Inspect first.
+> 
+> Analyze second.
+> 
+> Implement third.
+> 
+> Compare fourth.
+> 
+> Fix fifth.
+> 
+> Build sixth.
+> 
+> Deploy seventh.
+> 
+> Verify the DEPLOYED result last.
+> 
+> DO NOT STOP UNTIL THE COMPLETE PAGE HAS BEEN AUDITED AND RECONSTRUCTED.
+
+**Prompt 20 — Photo Tour — Exact Reference Video Reconstruction**
+> # PHOTO TOUR — EXACT REFERENCE VIDEO RECONSTRUCTION
+> 
+> I have attached a screen recording showing the EXACT behavior of the original reference website after clicking the "Show all photos" button.
+> 
+> You MUST watch and analyze the ENTIRE attached screen recording before changing any code.
+> 
+> IMPORTANT:
+> Do not implement a generic Airbnb photo gallery.
+> 
+> Reproduce the exact Photo Tour experience shown in the attached video.
+> 
+> ============================================================
+> # 1. TRIGGER
+> ============================================================
+> 
+> The current HeroGallery.tsx contains:
+> 
+> <button
+>   className={styles.showAllBtn}
+>   onClick={onShowAllPhotos}
+> >
+>   <Grid size={16} />
+>   <span>Show all photos</span>
+> </button>
+> 
+> When this button is clicked, the current implementation must open the Photo Tour experience shown in the attached reference video.
+> 
+> The current "Show all photos" button must remain the trigger.
+> 
+> Do NOT create a completely unrelated gallery.
+> 
+> ============================================================
+> # 2. FIRST — WATCH THE ENTIRE VIDEO
+> ============================================================
+> 
+> Before coding:
+> 
+> 1. Watch the attached screen recording from beginning to end.
+> 2. Do not only inspect the first frame.
+> 3. Analyze the complete scrolling sequence.
+> 4. Analyze the exact layout.
+> 5. Analyze the header.
+> 6. Analyze the thumbnail navigation.
+> 7. Analyze each photo category.
+> 8. Analyze the image arrangement.
+> 9. Analyze the scrolling behaviour.
+> 10. Analyze the spacing.
+> 11. Analyze the image sizes.
+> 12. Analyze the typography.
+> 13. Analyze the rounded corners.
+> 14. Analyze the sticky/fixed header behaviour.
+> 15. Analyze the overall page width.
+> 16. Analyze the left/right content alignment.
+> 17. Analyze the order of every photo section.
+> 
+> The video is the behavioural and visual reference for this feature.
+> 
+> ============================================================
+> # 3. REFERENCE WEBSITE
+> ============================================================
+> 
+> Original reference:
+> 
+> https://airbnb-clone-umber-two.vercel.app/#
+> 
+> The video was recorded from the original reference website.
+> 
+> If possible, also inspect the original rendered Photo Tour page in the browser.
+> 
+> Do NOT copy source code.
+> 
+> You may inspect publicly rendered:
+> 
+> - DOM structure
+> - computed CSS
+> - dimensions
+> - spacing
+> - typography
+> - colors
+> - image dimensions
+> - image URLs where legitimately accessible
+> - image ordering
+> - layout
+> - scroll behaviour
+> - sticky positioning
+> - visible interactions
+> 
+> Use these as design specifications and independently implement the feature.
+> 
+> ============================================================
+> # 4. IMPORTANT — THIS IS NOT A SIMPLE MODAL
+> ============================================================
+> 
+> The video clearly shows that clicking:
+> 
+> "Show all photos"
+> 
+> opens a dedicated full Photo Tour experience.
+> 
+> Do NOT implement this as:
+> 
+> - a small centered modal
+> - a simple image popup
+> - a basic 3x3 gallery
+> - a generic lightbox
+> - a single fullscreen image
+> 
+> The reference uses a dedicated Photo Tour page/view with vertically scrollable content.
+> 
+> Implement the same concept.
+> 
+> ============================================================
+> # 5. PHOTO TOUR TOP HEADER
+> ============================================================
+> 
+> At the top of Photo Tour, recreate the reference header.
+> 
+> LEFT:
+> 
+> Back arrow.
+> 
+> CENTER:
+> 
+> Photo tour
+> 
+> RIGHT:
+> 
+> - Share icon
+> - Heart/favourite icon
+> 
+> Match the video as closely as possible:
+> 
+> - position
+> - width
+> - height
+> - typography
+> - icon size
+> - spacing
+> - alignment
+> - background
+> - border/shadow if present
+> 
+> The header should remain visually consistent while the Photo Tour content is being scrolled, as shown in the recording.
+> 
+> ============================================================
+> # 6. PHOTO CATEGORY THUMBNAIL NAVIGATION
+> ============================================================
+> 
+> At the top of the Photo Tour content, recreate the horizontal category navigation shown in the video.
+> 
+> Categories shown in the reference include:
+> 
+> 1. Living room 1
+> 2. Living room 2
+> 3. Full kitchen
+> 4. Bedroom
+> 5. Full bathroom
+> 6. Gym
+> 7. Exterior
+> 8. Pool
+> 9. Additional photos
+> 
+> Each category contains:
+> 
+> - thumbnail image
+> - category label
+> 
+> Match:
+> 
+> - thumbnail dimensions
+> - aspect ratio
+> - border radius
+> - gap
+> - text size
+> - text color
+> - alignment
+> - horizontal spacing
+> 
+> The thumbnails must be clickable.
+> 
+> When a category thumbnail is clicked:
+> 
+> scroll smoothly to the corresponding Photo Tour section.
+> 
+> Do NOT reload the page.
+> 
+> ============================================================
+> # 7. PHOTO TOUR PAGE WIDTH
+> ============================================================
+> 
+> Analyze the video carefully.
+> 
+> The content is NOT full-width.
+> 
+> There is a large amount of whitespace.
+> 
+> The content uses a centered constrained layout.
+> 
+> Reproduce:
+> 
+> - max-width
+> - left margin
+> - right margin
+> - content column width
+> - image column width
+> - text column width
+> - spacing between text and gallery
+> 
+> Do not simply use:
+> 
+> width: 100%
+> 
+> for the Photo Tour content.
+> 
+> Use the actual visual proportions from the video.
+> 
+> ============================================================
+> # 8. SECTION STRUCTURE
+> ============================================================
+> 
+> Every Photo Tour category should follow the visual structure shown in the recording.
+> 
+> General structure:
+> 
+> ------------------------------------------------------------
+> LEFT SIDE
+> ------------------------------------------------------------
+> 
+> Category heading
+> 
+> Example:
+> 
+> Living room 1
+> 
+> Below it:
+> 
+> Sofa · Air conditioning · Ceiling fan · TV
+> 
+> ------------------------------------------------------------
+> RIGHT SIDE
+> ------------------------------------------------------------
+> 
+> Photo gallery.
+> 
+> The exact image layout shown in the video should be reproduced.
+> 
+> Do not create an arbitrary masonry layout.
+> 
+> ============================================================
+> # 9. LIVING ROOM 1
+> ============================================================
+> 
+> The first visible major section is:
+> 
+> Living room 1
+> 
+> Description:
+> 
+> Sofa · Air conditioning · Ceiling fan · TV
+> 
+> Image layout:
+> 
+> 1 large image at the top/right.
+> 
+> Below it:
+> 
+> 2 smaller images side-by-side.
+> 
+> Match:
+> 
+> - image order
+> - image dimensions
+> - aspect ratio
+> - crop
+> - object-position
+> - gaps
+> - rounded corners
+> 
+> Use the same property images shown in the video/reference whenever legitimately accessible.
+> 
+> ============================================================
+> # 10. LIVING ROOM 2
+> ============================================================
+> 
+> Next section:
+> 
+> Living room 2
+> 
+> Description:
+> 
+> Ceiling fan · Hot tub
+> 
+> The video shows:
+> 
+> - large main image
+> - smaller images underneath
+> - additional large image(s)
+> 
+> Reproduce the exact image ordering and layout shown in the video.
+> 
+> Do NOT use placeholder images.
+> 
+> ============================================================
+> # 11. FULL KITCHEN
+> ============================================================
+> 
+> Next category:
+> 
+> Full kitchen
+> 
+> The video shows the category heading and description.
+> 
+> The description visible includes:
+> 
+> Freezer · Fridge · Blender · Cooker · Cooking basics · Kettle ·
+> Microwave · Toaster · Wine glasses · Coffee · Crockery and cutlery
+> 
+> Recreate the section layout and image gallery exactly as shown.
+> 
+> ============================================================
+> # 12. BEDROOM
+> ============================================================
+> 
+> Implement the Bedroom Photo Tour section.
+> 
+> Use the corresponding reference images.
+> 
+> Match the same:
+> 
+> - heading position
+> - description
+> - image layout
+> - image sizes
+> - gaps
+> - rounded corners
+> 
+> ============================================================
+> # 13. FULL BATHROOM
+> ============================================================
+> 
+> Implement:
+> 
+> Full bathroom
+> 
+> Use the reference bathroom imagery.
+> 
+> Reproduce the same gallery layout.
+> 
+> ============================================================
+> # 14. GYM
+> ============================================================
+> 
+> The video clearly shows:
+> 
+> Gym
+> 
+> Description:
+> 
+> Air conditioning · Gym · Exercise equipment · Ceiling fan
+> 
+> The gallery contains:
+> 
+> - one large main image
+> - multiple smaller images below
+> - consistent rounded corners
+> - consistent spacing
+> 
+> Reproduce the exact structure.
+> 
+> ============================================================
+> # 15. EXTERIOR
+> ============================================================
+> 
+> The video shows:
+> 
+> Exterior
+> 
+> Use the actual reference exterior/property images.
+> 
+> The layout contains:
+> 
+> - large aerial/property image
+> - additional smaller exterior images
+> 
+> Match the video.
+> 
+> ============================================================
+> # 16. POOL
+> ============================================================
+> 
+> The video shows:
+> 
+> Pool
+> 
+> Description:
+> 
+> Pool
+> 
+> Gallery:
+> 
+> - large pool image
+> - two smaller pool images
+> 
+> Match the reference image order and proportions.
+> 
+> ============================================================
+> # 17. ADDITIONAL PHOTOS
+> ============================================================
+> 
+> At the end of the Photo Tour:
+> 
+> Additional photos
+> 
+> Recreate the gallery exactly as shown in the video.
+> 
+> Use the actual corresponding property imagery whenever legitimately available.
+> 
+> ============================================================
+> # 18. IMAGE DATA STRUCTURE
+> ============================================================
+> 
+> Do NOT hardcode a giant amount of repeated JSX.
+> 
+> Create structured data.
+> 
+> Example:
+> 
+> const photoTourSections = [
+>   {
+>     id: "living-room-1",
+>     title: "Living room 1",
+>     description: "Sofa · Air conditioning · Ceiling fan · TV",
+>     images: [...]
+>   },
+>   {
+>     id: "living-room-2",
+>     title: "Living room 2",
+>     description: "Ceiling fan · Hot tub",
+>     images: [...]
+>   },
+>   {
+>     id: "full-kitchen",
+>     title: "Full kitchen",
+>     description: "...",
+>     images: [...]
+>   }
+> ];
+> 
+> Continue for every category visible in the video.
+> 
+> ============================================================
+> # 19. IMAGE SOURCES
+> ============================================================
+> 
+> IMPORTANT.
+> 
+> Use the actual property images from the reference whenever legitimately accessible.
+> 
+> Do NOT replace the images with:
+> 
+> - random Unsplash images
+> - random stock images
+> - generic Airbnb images
+> - placeholders
+> 
+> First inspect the existing project's image assets.
+> 
+> Then inspect the publicly rendered reference assets if legitimately accessible.
+> 
+> Map the correct image to the correct Photo Tour section.
+> 
+> For every image verify:
+> 
+> - section
+> - order
+> - aspect ratio
+> - crop
+> - object-position
+> 
+> Do not blindly hotlink unstable third-party assets.
+> 
+> If an exact image cannot legitimately be obtained, use the closest legitimate asset and document the mismatch.
+> 
+> ============================================================
+> # 20. SCROLLING BEHAVIOUR
+> ============================================================
+> 
+> The video shows continuous vertical scrolling through the Photo Tour.
+> 
+> Implement:
+> 
+> - smooth scrolling
+> - natural vertical page flow
+> - correct section spacing
+> - no unexpected jumps
+> - no horizontal overflow
+> 
+> The Photo Tour must support a long scroll.
+> 
+> The scrollbar behaviour should feel like the reference.
+> 
+> ============================================================
+> # 21. HEADER / TOP NAVIGATION DURING SCROLL
+> ============================================================
+> 
+> Analyze the video carefully.
+> 
+> The Photo Tour top navigation remains available while scrolling.
+> 
+> Implement the correct sticky/fixed behaviour.
+> 
+> Do not allow the header to disappear if the reference keeps it visible.
+> 
+> Match:
+> 
+> - top offset
+> - height
+> - background
+> - z-index
+> - alignment
+> 
+> ============================================================
+> # 22. CATEGORY THUMBNAIL NAVIGATION
+> ============================================================
+> 
+> The category thumbnails at the top should act as navigation.
+> 
+> Example:
+> 
+> Click:
+> 
+> Living room 1
+> 
+> → smoothly scroll to Living room 1.
+> 
+> Click:
+> 
+> Gym
+> 
+> → smoothly scroll to Gym.
+> 
+> Click:
+> 
+> Pool
+> 
+> → smoothly scroll to Pool.
+> 
+> Click:
+> 
+> Additional photos
+> 
+> → smoothly scroll to Additional photos.
+> 
+> Use:
+> 
+> scrollIntoView({
+>   behavior: "smooth",
+>   block: "start"
+> })
+> 
+> or an equivalent implementation adjusted for the sticky header offset.
+> 
+> ============================================================
+> # 23. BACK BUTTON
+> ============================================================
+> 
+> The top-left back arrow must work.
+> 
+> When clicked:
+> 
+> Return to the main listing page.
+> 
+> Preserve normal navigation behaviour.
+> 
+> If the existing project uses state-based view switching, restore the listing view correctly.
+> 
+> If the project uses routing, navigate back appropriately.
+> 
+> Do not leave the user on a blank page.
+> 
+> ============================================================
+> # 24. SHARE BUTTON
+> ============================================================
+> 
+> The Photo Tour top-right Share control must behave like the reference as closely as practical.
+> 
+> If the reference opens a share interaction:
+> 
+> reproduce the visible interaction.
+> 
+> If browser share APIs are unavailable:
+> 
+> use a graceful fallback.
+> 
+> Do not leave it as a completely dead button.
+> 
+> ============================================================
+> # 25. HEART / SAVE BUTTON
+> ============================================================
+> 
+> Implement the heart/favourite interaction.
+> 
+> It should visually respond when clicked.
+> 
+> Match the reference behaviour.
+> 
+> ============================================================
+> # 26. PHOTO CLICK → LIGHTBOX
+> ============================================================
+> 
+> Every Photo Tour image must remain clickable.
+> 
+> When a photo is clicked:
+> 
+> open the existing Lightbox implementation.
+> 
+> The Lightbox must support:
+> 
+> - large image
+> - previous
+> - next
+> - close
+> - image counter
+> - LEFT arrow
+> - RIGHT arrow
+> - ESC
+> - focus management
+> - body scroll lock
+> 
+> IMPORTANT:
+> 
+> Do not break the existing Lightbox.
+> 
+> Reuse/improve it if already implemented.
+> 
+> ============================================================
+> # 27. PHOTO TOUR → LIGHTBOX IMAGE INDEX
+> ============================================================
+> 
+> When a specific Photo Tour image is clicked:
+> 
+> the Lightbox must open on THAT exact image.
+> 
+> Do NOT always open the first image.
+> 
+> Example:
+> 
+> If the user clicks the 8th Photo Tour image:
+> 
+> Lightbox should start at image 8.
+> 
+> Previous/Next should continue through the correct global photo sequence.
+> 
+> ============================================================
+> # 28. ANIMATION
+> ============================================================
+> 
+> Match the reference's subtle transitions.
+> 
+> Implement:
+> 
+> - Photo Tour opening transition
+> - smooth scrolling
+> - hover transitions
+> - image interaction transitions
+> - Lightbox open/close transition
+> 
+> Do NOT add flashy animations that are not present in the reference.
+> 
+> ============================================================
+> # 29. TYPOGRAPHY
+> ============================================================
+> 
+> Match the reference Photo Tour typography.
+> 
+> Analyze:
+> 
+> - font family
+> - heading size
+> - heading weight
+> - description size
+> - thumbnail label size
+> - line height
+> - color
+> 
+> Do not use arbitrary typography.
+> 
+> Use the same global typography system already established for the listing page.
+> 
+> ============================================================
+> # 30. RESPONSIVE SCOPE
+> ============================================================
+> 
+> This assignment is desktop-focused.
+> 
+> Prioritize the exact desktop layout shown in the attached video.
+> 
+> Do NOT spend excessive time creating a completely different mobile experience.
+> 
+> However:
+> 
+> - prevent horizontal overflow
+> - maintain basic layout integrity
+> - ensure the Photo Tour remains usable
+> 
+> ============================================================
+> # 31. ACCESSIBILITY
+> ============================================================
+> 
+> Implement:
+> 
+> - semantic buttons
+> - aria-labels
+> - alt text
+> - keyboard focus
+> - visible focus states
+> - logical tab order
+> - keyboard accessible category navigation
+> - keyboard accessible image buttons
+> - ESC support in Lightbox
+> 
+> ============================================================
+> # 32. VISUAL QA AGAINST THE VIDEO
+> ============================================================
+> 
+> After implementation:
+> 
+> Run the application.
+> 
+> Click:
+> 
+> Show all photos
+> 
+> Then compare the implementation against the attached screen recording.
+> 
+> Check the ENTIRE sequence.
+> 
+> Do not compare only the first viewport.
+> 
+> Compare:
+> 
+> 1. Photo Tour opening
+> 2. Header
+> 3. Category thumbnail row
+> 4. Living room 1
+> 5. Living room 2
+> 6. Full kitchen
+> 7. Bedroom
+> 8. Full bathroom
+> 9. Gym
+> 10. Exterior
+> 11. Pool
+> 12. Additional photos
+> 13. Scrolling
+> 14. Image sizes
+> 15. Image ordering
+> 16. Text placement
+> 17. whitespace
+> 18. sticky header
+> 19. back button
+> 20. share
+> 21. heart
+> 22. image click
+> 23. Lightbox
+> 
+> ============================================================
+> # 33. SCREENSHOT QA
+> ============================================================
+> 
+> Capture screenshots from the implementation at similar scroll positions to the attached video.
+> 
+> Compare:
+> 
+> REFERENCE VIDEO FRAME
+> vs
+> IMPLEMENTATION FRAME
+> 
+> For every mismatch:
+> 
+> 1. Identify it.
+> 2. Fix it.
+> 3. Re-run.
+> 4. Compare again.
+> 
+> Pay special attention to:
+> 
+> - content width
+> - whitespace
+> - image width
+> - image height
+> - section spacing
+> - heading position
+> - image crop
+> - border radius
+> - thumbnail dimensions
+> - header height
+> - sticky positioning
+> 
+> ============================================================
+> # 34. DO NOT BREAK THE MAIN LISTING PAGE
+> ============================================================
+> 
+> Before changing HeroGallery.tsx or PhotoTour:
+> 
+> Inspect the current implementation.
+> 
+> Preserve existing working functionality.
+> 
+> After implementation verify:
+> 
+> Main Listing
+> → Show all photos
+> → Photo Tour
+> → Back
+> → Main Listing
+> 
+> must all work correctly.
+> 
+> ============================================================
+> # 35. DO NOT BREAK EXISTING LIGHTBOX
+> ============================================================
+> 
+> If a Lightbox already exists:
+> 
+> do not replace it unnecessarily.
+> 
+> Integrate Photo Tour with the existing Lightbox.
+> 
+> If it is incomplete:
+> 
+> fix it.
+> 
+> ============================================================
+> # 36. BUILD CHECK
+> ============================================================
+> 
+> Run:
+> 
+> npm run build
+> 
+> Fix all:
+> 
+> - TypeScript errors
+> - import errors
+> - runtime errors
+> - hydration errors
+> - CSS errors
+> - broken image paths
+> - console errors
+> 
+> The production build must pass.
+> 
+> ============================================================
+> # 37. DEPLOYMENT CHECK
+> ============================================================
+> 
+> After implementation:
+> 
+> 1. Build successfully.
+> 2. Commit changes.
+> 3. Push using the existing repository workflow.
+> 4. Wait for Vercel deployment.
+> 5. Open:
+> 
+> https://airbnb-clone-playpower-seven.vercel.app/
+> 
+> 6. Test:
+> 
+> Main listing
+> → Show all photos
+> → Photo Tour
+> → scroll entire page
+> → category navigation
+> → image click
+> → Lightbox
+> → back
+> 
+> IMPORTANT:
+> 
+> Verify the DEPLOYED website, not only localhost.
+> 
+> ============================================================
+> # 38. FINAL REQUIREMENT
+> ============================================================
+> 
+> The final behaviour of:
+> 
+> HeroGallery.tsx
+> → Show all photos
+> → Photo Tour
+> 
+> must reproduce the attached screen recording as closely as possible.
+> 
+> Do not create a generic implementation.
+> 
+> Do not stop after creating the first Photo Tour screen.
+> 
+> The complete long-scroll Photo Tour shown in the recording must be implemented.
+> 
+> ============================================================
+> # 39. FINAL REPORT
+> ============================================================
+> 
+> After finishing, report:
+> 
+> 1. What you observed from the attached video.
+> 2. Photo Tour structure implemented.
+> 3. Sections implemented.
+> 4. Image mapping implemented.
+> 5. Header behaviour.
+> 6. Category navigation.
+> 7. Scroll behaviour.
+> 8. Back behaviour.
+> 9. Share/heart behaviour.
+> 10. Lightbox integration.
+> 11. Accessibility.
+> 12. Visual QA result.
+> 13. npm run build result.
+> 14. Deployment verification result.
+> 15. Any remaining mismatch.
+> 
+> Do not claim pixel-perfect unless you actually performed visual comparison.
+> 
+> MOST IMPORTANT:
+> 
+> WATCH THE ATTACHED VIDEO FIRST.
+> 
+> ANALYZE THE COMPLETE VIDEO.
+> 
+> THEN IMPLEMENT THE EXACT PHOTO TOUR EXPERIENCE SHOWN IN IT.
+> 
+> DO NOT IMPLEMENT A GENERIC AIRBNB PHOTO GALLERY.
