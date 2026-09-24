@@ -30,7 +30,6 @@
 ## 📋 Table of Contents
 
 - [✨ Core Features](#-core-features)
-- [🎯 Task Alignment](#-task-alignment)
 - [🏗️ Architecture](#️-architecture)
 - [🧰 Tech Stack](#-tech-stack)
 - [🤖 AI Workflow & Sub-Agents](#-ai-workflow--sub-agents)
@@ -58,20 +57,6 @@
 - **Full-Screen Immersion:** A pitch-black overlay highlighting a single high-resolution image.
 - **Keyboard Navigation:** Full support for `ArrowRight` (Next), `ArrowLeft` (Previous), and `Escape` (Close).
 - **Focus Management:** Focus is trapped and managed for maximum accessibility.
-
----
-
-## 🎯 Task Alignment
-
-This project was built to satisfy the requirements of reproducing a production-quality UI.
-
-| Requirement | Implementation |
-|---|---|
-| **Pixel-Perfect Clone** | Built 1:1 matching layout, spacing, fonts, and borders. |
-| **Hover & Scroll Animations** | Included subtle image tinting, button background transitions, and sticky-nav appearance on scroll. |
-| **Keyboard Accessibility** | Full keyboard support integrated directly into the Lightbox view. |
-| **AI-Assisted Workflow** | Utilized agents, skills, and iterative prompts mapped out in `PROMPTS.md`. |
-| **Architecture Diagram** | High-level `architecture.html` included with CI/CD and Kubernetes mapping. |
 
 ---
 
