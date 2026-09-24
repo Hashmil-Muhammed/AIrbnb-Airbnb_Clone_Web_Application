@@ -11,8 +11,9 @@
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 40px; background: #f7f7f7; }
         .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 1200px; margin: 0 auto; }
-        h1 { color: #FF385C; text-align: center; margin-bottom: 40px; }
+        h1 { color: #FF385C; text-align: center; margin-bottom: 10px; }
         .instructions { text-align: center; color: #717171; margin-bottom: 40px; }
+        .mermaid { display: flex; justify-content: center; }
     </style>
 </head>
 <body>
@@ -21,60 +22,52 @@
         <p class="instructions">Use your browser's Print feature (Ctrl+P / Cmd+P) to save this diagram as a PDF.</p>
         <div class="mermaid">
             graph TD
-                %% Users & Edge
+                Monitor[Monitoring / Logging - Datadog/CloudWatch]
+                
+                %% Frontend & Edge
                 User((User)) --> CDN[CDN / Vercel - Frontend Scaling]
-                
-                %% Frontend
                 CDN --> Frontend[Frontend / Next.js - Vercel Deployment]
-                
-                %% API Gateway
                 Frontend --> Gateway[API Gateway - Load Balancer]
+                
+                %% Connect Monitoring neatly to Gateway to avoid crossing lines
+                Gateway -.-> Monitor
                 
                 %% Backend Services
                 subgraph "Backend Services (Kubernetes Deployment - Auto Scaling)"
+                    UserSvc[User Service]
                     Listing[Listing Service]
                     Booking[Booking Service]
-                    UserSvc[User Service]
                     Review[Review Service]
                     SearchSvc[Search Service]
                 end
                 
+                Gateway --> UserSvc
                 Gateway --> Listing
                 Gateway --> Booking
-                Gateway --> UserSvc
                 Gateway --> Review
                 Gateway --> SearchSvc
                 
-                %% Search
-                SearchSvc --> SearchIndex[(Search Index - Elasticsearch)]
-                
                 %% Data Storage
                 subgraph "Data Storage & Caching Layer (Storage Scaling)"
-                    DB[(Database - PostgreSQL)]
                     ObjectStorage[(Object Storage - AWS S3)]
+                    DB[(Database - PostgreSQL)]
                     Cache[(Cache - Redis)]
+                    SearchIndex[(Search Index - Elasticsearch)]
                 end
                 
-                %% Backend to DB/Storage
+                %% Storage Connections Grouped for Clean Layout
+                UserSvc --> ObjectStorage
+                Listing --> ObjectStorage
+                
+                UserSvc --> DB
                 Listing --> DB
                 Booking --> DB
-                UserSvc --> DB
                 Review --> DB
-                
-                Listing --> ObjectStorage
-                UserSvc --> ObjectStorage
                 
                 Listing --> Cache
                 Booking --> Cache
                 
-                %% Monitoring
-                subgraph Observability
-                    Monitor[Monitoring / Logging - Datadog/CloudWatch]
-                end
-                
-                Gateway -.-> Monitor
-                Listing -.-> Monitor
-                Booking -.-> Monitor
+                SearchSvc --> SearchIndex
                 
                 classDef aws fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:white;
                 classDef db fill:#336791,stroke:#fff,stroke-width:2px,color:white;
