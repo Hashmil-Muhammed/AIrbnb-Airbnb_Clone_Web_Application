@@ -15,7 +15,7 @@ export default function ThingsToKnow() {
           <h3 className={styles.columnTitle}>Cancellation policy</h3>
           <p className={styles.textItem}>Free cancellation before 17 October. Cancel before check-in on 18 October for a partial refund.</p>
           <p className={styles.textItem}>Review this host's full policy for details.</p>
-          <a href="#" className={styles.learnMoreLink}>Learn more</a>
+          <span className={styles.learnMoreLink}>Learn more</span>
         </div>
 
         {/* House rules */}
@@ -27,7 +27,7 @@ export default function ThingsToKnow() {
           <p className={styles.textItem}>Check-in after 2:00 pm</p>
           <p className={styles.textItem}>Checkout before 11:00 am</p>
           <p className={styles.textItem}>3 guests maximum</p>
-          <a href="#" className={styles.learnMoreLink}>Learn more</a>
+          <span className={styles.learnMoreLink}>Learn more</span>
         </div>
 
         {/* Safety & property */}
@@ -39,7 +39,7 @@ export default function ThingsToKnow() {
           <p className={styles.textItem}>Carbon monoxide alarm not reported</p>
           <p className={styles.textItem}>Smoke alarm not reported</p>
           <p className={styles.textItem}>Exterior security cameras on property</p>
-          <a href="#" className={styles.learnMoreLink}>Learn more</a>
+          <span className={styles.learnMoreLink}>Learn more</span>
         </div>
         
       </div>
