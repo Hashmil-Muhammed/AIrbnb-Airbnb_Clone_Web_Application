@@ -71,7 +71,8 @@ export default function StickyNav() {
   };
 
   return (
-    <div className={styles.stickyNavContainer}>
+    <>
+      <div className={styles.stickyNavContainer}>
       <div className={`container ${styles.stickyNavInner}`}>
         <nav className={styles.navLinks}>
           <a href="#photos" className={activeSection === 'photos' ? styles.active : ''}>Photos</a>
@@ -95,6 +96,6 @@ export default function StickyNav() {
           {toastMessage}
         </div>
       )}
-    </div>
+    </>
   );
 }
