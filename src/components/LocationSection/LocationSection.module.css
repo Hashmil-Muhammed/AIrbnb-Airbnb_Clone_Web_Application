@@ -94,8 +94,8 @@
 
 .markerIcon {
   background-color: #222222;
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -105,16 +105,16 @@
 }
 
 .markerIcon svg {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
 }
 
 .searchBtn {
   position: absolute;
   top: 24px;
   left: 24px;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   background: white;
   border: none;
   border-radius: 8px;
@@ -135,8 +135,8 @@
 }
 
 .zoomBtn {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);

@@ -122,7 +122,7 @@ export default function CalendarSection() {
 
       <div className={styles.footer}>
         <button className={styles.keyboardBtn}>
-          <svg viewBox="0 0 32 22" width="20" height="14" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="1" y="1" width="30" height="20" rx="3"></rect><path d="M6 7h.01M11 7h.01M16 7h.01M21 7h.01M26 7h.01M6 12h.01M26 12h.01M9 16h14"></path></svg>
+          <svg viewBox="0 0 32 22" width="18" height="12" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="1" y="1" width="30" height="20" rx="3"></rect><path d="M6 7h.01M11 7h.01M16 7h.01M21 7h.01M26 7h.01M6 12h.01M26 12h.01M9 16h14"></path></svg>
         </button>
         <button className={styles.clearBtn}>Clear dates</button>
       </div>
