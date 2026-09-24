@@ -21,65 +21,73 @@
         <h1>Production-Scale Airbnb Architecture</h1>
         <p class="instructions">Use your browser's Print feature (Ctrl+P / Cmd+P) to save this diagram as a PDF.</p>
         <div class="mermaid">
-            graph TD
-                Monitor[Monitoring / Logging - Datadog/CloudWatch]
+            flowchart TD
+                %% CI/CD Pipeline
+                subgraph CICD[Deployment Pipeline]
+                    Git[Git Repository] --> Pipeline[CI / CD]
+                end
                 
-                %% Frontend & Edge
-                User((User)) --> CDN[CDN / Vercel - Frontend Scaling]
-                CDN --> Frontend[Frontend / Next.js - Vercel Deployment]
-                Frontend --> Gateway[API Gateway - Load Balancer]
+                %% Users & Edge
+                User((User)) --> CDN[CDN / Edge Network]
                 
-                %% Connect Monitoring neatly to Gateway to avoid crossing lines
-                Gateway -.-> Monitor
+                %% Frontend
+                CDN --> Frontend[Next.js Frontend - Vercel Deployment]
+                
+                %% API Gateway & Load Balancer
+                Frontend --> Gateway[API Gateway]
+                Gateway --> LB[Load Balancer]
+                
+                %% CI/CD Connections
+                Pipeline -.-> Frontend
+                Pipeline -.-> K8sCluster
                 
                 %% Backend Services
-                subgraph "Backend Services (Kubernetes Deployment - Auto Scaling)"
-                    UserSvc[User Service]
+                subgraph K8sCluster[Kubernetes / Auto Scaling]
                     Listing[Listing Service]
-                    Booking[Booking Service]
+                    UserSvc[User Service]
                     Review[Review Service]
+                    Booking[Booking Service]
                     SearchSvc[Search Service]
                 end
                 
-                Gateway --> UserSvc
-                Gateway --> Listing
-                Gateway --> Booking
-                Gateway --> Review
-                Gateway --> SearchSvc
+                LB --> K8sCluster
                 
                 %% Data Storage
-                subgraph "Data Storage & Caching Layer (Storage Scaling)"
-                    ObjectStorage[(Object Storage - AWS S3)]
-                    DB[(Database - PostgreSQL)]
-                    Cache[(Cache - Redis)]
-                    SearchIndex[(Search Index - Elasticsearch)]
+                subgraph StorageCluster[Data Storage & Cache]
+                    S3[(AWS S3 Images)]
+                    DB[(PostgreSQL Database)]
+                    Cache[(Redis Cache)]
+                    SearchIndex[(Elasticsearch)]
                 end
                 
-                %% Storage Connections Grouped for Clean Layout
-                UserSvc --> ObjectStorage
-                Listing --> ObjectStorage
-                
-                UserSvc --> DB
+                %% Clean Storage Connections (Zero Crossing)
+                Listing --> S3
                 Listing --> DB
-                Booking --> DB
+                UserSvc --> DB
                 Review --> DB
-                
-                Listing --> Cache
+                Booking --> DB
                 Booking --> Cache
-                
                 SearchSvc --> SearchIndex
+                
+                %% Monitoring
+                Monitor[Monitoring / Logging - Datadog / CloudWatch]
+                
+                K8sCluster -.-> Monitor
+                StorageCluster -.-> Monitor
                 
                 classDef aws fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:white;
                 classDef db fill:#336791,stroke:#fff,stroke-width:2px,color:white;
                 classDef svc fill:#FF385C,stroke:#fff,stroke-width:2px,color:white;
                 classDef cache fill:#DC382D,stroke:#fff,stroke-width:2px,color:white;
                 classDef obs fill:#1C1C1C,stroke:#fff,stroke-width:2px,color:white;
+                classDef pipe fill:#4CAF50,stroke:#fff,stroke-width:2px,color:white;
                 
-                class ObjectStorage aws;
+                class S3 aws;
                 class DB,SearchIndex db;
-                class Listing,Booking,UserSvc,Review,SearchSvc svc;
+                class UserSvc,Review,Listing,Booking,SearchSvc svc;
                 class Cache cache;
                 class Monitor obs;
+                class Git,Pipeline pipe;
         </div>
     </div>
 </body>
