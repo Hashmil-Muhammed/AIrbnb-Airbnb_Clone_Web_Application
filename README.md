@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/Airbnb-Pixel%20Perfect%20Clone-FF385C?style=for-the-badge&logo=airbnb&logoColor=white" alt="Airbnb Clone" />
 </h1>
 
-<h3 align="center"><em>A Pixel-Perfect, High-Fidelity UI Reconstruction</em></h3>
+<h3 align="center"><em>A High-Fidelity UI Reconstruction</em></h3>
 
 <p align="center">
   <a href="https://react.dev/"><img src="https://img.shields.io/badge/React_18-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React" /></a>
@@ -22,14 +22,16 @@
 </h3>
 
 <p align="center">
-  <strong>Airbnb Clone</strong> is a meticulously crafted frontend application that perfectly reconstructs a real Airbnb listing page. It focuses heavily on <strong>pixel-perfect UI fidelity</strong>, seamless animations, and accessibility, providing a 1:1 visual and behavioral match to the original design.
+  <strong>Airbnb Clone</strong> is a meticulously crafted frontend application that closely reproduces a real Airbnb listing page. It focuses heavily on high-fidelity visual design, seamless animations, and accessibility, providing a desktop-focused experience.
 </p>
 
 <hr />
 
 ## 📋 Table of Contents
 
+- [🎯 Reference & Scope](#-reference--scope)
 - [✨ Core Features](#-core-features)
+- [🎨 Visual & Interaction Fidelity](#-visual--interaction-fidelity)
 - [🏗️ Architecture](#️-architecture)
 - [🧰 Tech Stack](#-tech-stack)
 - [🤖 AI Workflow & Sub-Agents](#-ai-workflow--sub-agents)
@@ -40,16 +42,26 @@
 
 ---
 
+## 🎯 Reference & Scope
+This project reconstructs the desktop Airbnb listing page provided as the Playpower Labs assignment reference. The implementation includes three primary views:
+1. Listing Page
+2. Photo Tour
+3. Lightbox
+
+The project is intentionally focused on the required desktop experience. Mobile implementation is outside the assignment scope.
+
+---
+
 ## ✨ Core Features
 
 ### 🏠 Listing Page
-- **Pixel-Perfect UI:** Exact layout, spacing, typography (using Inter to match Circular), and colors (`#FF385C` primary).
+- **High-Fidelity UI:** Exact layout, spacing, typography (using Inter to match Circular), and colors (`#FF385C` primary).
 - **Sticky Navigation:** An intersection-observer-powered sticky nav that highlights the active section (Photos, Amenities, Reviews, Location) as the user scrolls.
 - **Booking Sidebar:** A sticky booking widget that remains fixed to the viewport while scrolling the main content.
-- **Amenities Modal:** A clean, categorized list of 50+ amenities inside an overlay modal.
+- **Amenities Modal:** A categorized list of 50 amenities inside an accessible overlay modal.
 
 ### 🖼️ Photo Tour
-- **Grid Gallery:** A beautifully masonry-style or grid-based layout for listing images.
+- **Grid Gallery:** A full-screen photo tour organized into reference-based photo categories.
 - **Scroll Lock:** Background body scrolling is properly disabled when the overlay is active.
 - **Smooth Animations:** Bottom-up transition animations to match the reference behavior.
 
@@ -60,18 +72,36 @@
 
 ---
 
+## 🎨 Visual & Interaction Fidelity
+The implementation focuses on reproducing the reference in:
+- Layout and spacing
+- Typography
+- Colors
+- Icons
+- Images and visual assets
+- Hover states
+- Scroll behavior
+- Transitions and animations
+- Keyboard navigation
+- Focus management
+- Accessible interactions
+
+---
+
 ## 🏗️ Architecture
 
-Although this specific repository is a Frontend-only implementation, we have designed a **production-scale vacation-rental marketplace architecture**. 
+This project includes a high-level production-scale architecture for a vacation-rental marketplace.
 
-You can view the full Mermaid architecture diagram by opening the `architecture.html` file in the root directory. 
+The architecture illustrates:
+- Frontend / CDN scaling
+- Backend service scaling
+- Database and object storage
+- Redis caching
+- Search infrastructure
+- CI/CD deployment
+- Monitoring and logging
 
-It maps out a complete theoretical system including:
-- **CDN / Edge Network** (Vercel)
-- **API Gateway & Load Balancer**
-- **Kubernetes Microservices** (Listing, Booking, User, Review, Search)
-- **Data Layer** (PostgreSQL, AWS S3, Redis, Elasticsearch)
-- **CI/CD Pipeline & Monitoring**
+Architecture diagram: `docs/architecture.png`
 
 ---
 
@@ -90,7 +120,7 @@ It maps out a complete theoretical system including:
 
 ## 🤖 AI Workflow & Sub-Agents
 
-This project was built utilizing a heavily AI-assisted workflow to guarantee speed and fidelity.
+This project was built utilizing an AI-assisted workflow to guarantee speed and fidelity.
 
 ### Configurations Included:
 - **`PROMPTS.md`**: The full sequence of prompts detailing the exact step-by-step build process.
@@ -110,68 +140,68 @@ This project was built utilizing a heavily AI-assisted workflow to guarantee spe
 ```text
 Airbnb/
 │
-├── .claude/                # AI Agent & Skill configurations
-├── public/                 # Static assets (images, SVGs)
+├── .claude/                
+│   ├── agents/
+│   └── skills/
+├── docs/                   
+│   └── architecture.png
+├── public/                 
 ├── src/
-│   ├── components/         # Reusable, modular UI components
+│   ├── components/         
 │   │   ├── Amenities/
 │   │   ├── BookingCard/
 │   │   ├── HeroGallery/
 │   │   ├── Lightbox/
 │   │   ├── StickyNav/
 │   │   └── ...
-│   ├── data/               # Static data model (listing.ts)
-│   ├── pages/              # Next.js page routing
-│   └── styles/             # Global CSS variables & resets
+│   ├── data/               
+│   │   └── listing.ts
+│   ├── pages/              
+│   └── styles/             
 │
-├── architecture.html       # Mermaid Architecture Diagram
-├── PROMPTS.md              # AI-Assisted Prompt History
+├── PROMPTS.md              
 ├── package.json
-└── README.md               # Project documentation
+└── README.md               
 ```
 
 ---
 
 ## 🚀 Local Development
 
-### 1. Clone the repository
+### 1. Get the Project
+Extract the submitted ZIP file and open the project directory.
 
-```bash
-git clone https://github.com/Hashmil-Muhammed/AIrbnb.git
-cd AIrbnb
-```
-
-### 2. Install dependencies
-
+### 2. Install Dependencies
 ```bash
 npm install
 ```
 
-### 3. Run the development server
-
+### 3. Run the Development Server
 ```bash
 npm run dev
 ```
 
-### 4. View the application
+### 4. View the Application
+Open: [http://localhost:3000](http://localhost:3000)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
+
+## 📦 Production Build
+
+For a production build:
+```bash
+npm run build
+```
 
 ---
 
 ## ☁️ Deployment
 
-This project is optimized for deployment on Vercel.
-
-1. Push your code to a GitHub repository.
-2. Import the project into Vercel.
-3. Vercel will automatically detect the **Next.js** framework.
-4. Leave the build settings as default (`npm run build`).
-5. Deploy!
+The application is deployed on Vercel. 
+**Live Application:** https://airbnb-clone-playpower-seven.vercel.app/
 
 ---
 
 ## 👨💻 Author
 
 **Hashmil Muhammed**
-- GitHub: [https://github.com/Hashmil-Muhammed](https://github.com/Hashmil-Muhammed)
