@@ -30,8 +30,11 @@
 
 
 ### 🎥 Project Working Demo
+https://github.com/user-attachments/assets/20aa54de-f2f1-4b5b-a83e-7c94c15d2ad9
 
-[*(Demo video coming soon...)*](https://github.com/user-attachments/assets/dbdfbaa6-6178-4f2b-b671-307893ed276a)
+
+
+
 
 
 
